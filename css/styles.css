@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.hero-bg {
+  background: url("../assets/images/4213e74f0677563bf1e032aef4c50eb4bbfefd35bdae61ce1c11ce4a4ee9706b.jpg")
+    center/cover no-repeat;
+  background-position: center;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.35) 35%,
+    rgba(0, 0, 0, 0) 72%
+  );
+}
+
+.nav-shell {
+  background: rgba(230, 236, 242, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+.shadow-nav {
+  box-shadow: 0 12px 30px rgba(9, 26, 46, 0.18);
+}
+
+.shadow-cta {
+  box-shadow: 0 16px 24px rgba(212, 74, 69, 0.35);
+}
