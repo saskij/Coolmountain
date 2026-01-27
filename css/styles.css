@@ -24,8 +24,8 @@ body {
 }
 
 .nav-shell {
-  background: rgba(230, 236, 242, 0.8);
-  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 }
 
 .shadow-nav {
@@ -34,4 +34,50 @@ body {
 
 .shadow-cta {
   box-shadow: 0 16px 24px rgba(212, 74, 69, 0.35);
+}
+
+#site-header.scrolled {
+  background-color: #0f172a !important;
+}
+
+#site-header.scrolled a,
+#site-header.scrolled #logo-title,
+#site-header.scrolled #logo-subtitle {
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  #site-header {
+    background-color: #0f172a !important;
+  }
+
+  #mobile-menu {
+    background-color: #0f172a !important;
+  }
+
+  #mobile-menu a {
+    color: #ffffff !important;
+  }
+
+  #mobile-menu a:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hero-bg {
+    background-image: url("../assets/images/hero-mobile.jpg");
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+    min-height: 100svh;
+    height: 100vh;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0.45) 60%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+  }
 }

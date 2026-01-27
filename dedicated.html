@@ -17,7 +17,7 @@
 
       <header
         id="site-header"
-        class="fixed top-0 left-0 z-[100] w-full px-4 py-4 flex items-center justify-between lg:px-[7vw] bg-transparent"
+        class="fixed top-0 left-0 z-[100] w-full px-4 py-4 flex items-center justify-between lg:px-[7vw] bg-transparent scrolled transition-all duration-300"
       >
         <div class="flex items-center gap-3 flex-shrink-0">
           <a href="index.html" class="flex items-center gap-3">
@@ -45,7 +45,7 @@
 
         <div class="ml-auto flex items-center gap-2 md:gap-4">
         <nav
-          class="nav-shell hidden items-center gap-4 rounded-full px-4 py-2 text-sm font-semibold shadow-nav drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)] xl:flex"
+          class="nav-shell hidden items-center gap-4 rounded-full px-4 py-2 text-sm font-semibold text-white/90 shadow-nav drop-shadow-[0_1px_1px_rgba(0,0,0,0.5)] xl:flex"
         >
           <a class="py-2 hover:text-white transition" href="index.html">
             Home
@@ -61,22 +61,22 @@
               Drivers
             </a>
             <div
-              class="absolute left-0 top-full z-20 mt-2 hidden w-56 rounded-xl bg-white/95 shadow-lg ring-1 ring-slate-200 group-hover:block"
+              class="absolute left-0 top-full z-20 mt-2 hidden w-56 rounded-xl bg-slate-900 shadow-lg ring-1 ring-white/10 group-hover:block"
             >
               <a
-                class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
+                class="block px-4 py-2 text-sm text-white hover:bg-slate-800"
                 href="drivers.html"
               >
                 Drivers
               </a>
               <a
-                class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-100"
+                class="block px-4 py-2 text-sm text-white hover:bg-slate-800"
                 href="over-the-road.html"
               >
                 Over the Road
               </a>
               <a
-                class="block px-4 py-2 text-sm font-semibold text-red-500"
+                class="block px-4 py-2 text-sm font-semibold text-white hover:bg-slate-800"
                 href="dedicated.html"
               >
                 Dedicated
@@ -321,9 +321,7 @@
     <script>
       const toggle = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
-      const logoTitle = document.getElementById("logo-title");
-      const logoSubtitle = document.getElementById("logo-subtitle");
-      const navLinks = document.querySelectorAll("#site-header .nav-shell a");
+      const header = document.getElementById("site-header");
       const backToTop = document.getElementById("back-to-top");
       if (toggle && mobileMenu) {
         const openMenu = () => {
@@ -347,29 +345,20 @@
         });
       }
 
-      const updateHeaderColors = () => {
-        const useDarkText = window.scrollY > 120;
-        if (logoTitle) {
-          logoTitle.classList.toggle("text-slate-900", useDarkText);
-          logoTitle.classList.toggle("text-white", !useDarkText);
+      const updateHeaderBackground = () => {
+        if (!header) {
+          return;
         }
-        if (logoSubtitle) {
-          logoSubtitle.classList.toggle("text-slate-900", useDarkText);
-          logoSubtitle.classList.toggle("text-white/80", !useDarkText);
+        const smartHeader = header.dataset.smartHeader === "true";
+        if (smartHeader) {
+          header.classList.toggle("scrolled", window.scrollY > 50);
+        } else {
+          header.classList.add("scrolled");
         }
-        navLinks.forEach((link) => {
-          if (link.classList.contains("text-red-500")) {
-            return;
-          }
-          link.classList.toggle("text-slate-900", useDarkText);
-          link.classList.toggle("text-white/90", !useDarkText);
-          link.classList.toggle("hover:text-slate-900", useDarkText);
-          link.classList.toggle("hover:text-white", !useDarkText);
-        });
       };
 
       const updateScrollUI = () => {
-        updateHeaderColors();
+        updateHeaderBackground();
         if (backToTop) {
           if (window.scrollY >= 500) {
             backToTop.classList.remove("hidden");
