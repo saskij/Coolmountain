@@ -1,104 +1,70 @@
 <!DOCTYPE html>
-<html lang="ru">
-  <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png?v=3" />
-    <link rel="icon" href="/favicon.png?v=3" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png?v=3" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Cool Mountain Transport</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="css/styles.css" />
-  </head>
-  <body class="bg-slate-200 text-slate-900">
-    <section class="hero-bg relative min-h-screen overflow-hidden flex flex-col pt-32 lg:pt-36">
-      <div class="hero-overlay absolute inset-0"></div>
+<html lang="en">
 
-      <header
-        id="site-header"
-        class="fixed top-0 left-0 z-[100] w-full transition-all duration-300"
-      >
-        <div class="bg-white text-slate-900">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png?v=3" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png?v=3" />
+  <link rel="icon" href="/favicon.png?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.png?v=3" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Cool Mountain Transport</title>
+  <meta name="description"
+    content="Get in touch with Cool Mountain Transport for freight quotes, driver applications, and general inquiries. We are here to support your logistics needs." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-slate-200 text-slate-900">
+  <section class="hero-bg relative min-h-[30vh] lg:min-h-[35vh] overflow-hidden flex flex-col pt-24 lg:pt-36">
+    <div class="hero-overlay absolute inset-0"></div>
+
+    <header id="site-header" data-smart-header="true"
+      class="fixed top-0 left-0 z-[100] w-full transition-all duration-300 glass-header">
+      <div class="text-slate-900">
         <div class="mx-auto flex items-center justify-between px-4 py-1 lg:px-[7vw]">
-            <div class="flex items-center gap-3 flex-shrink-0">
-          <a href="index.html" class="flex items-center gap-3">
-              <img
-                src="assets/images/logo-transparent.png"
-                alt="Cool Mountain"
-                class="h-11 w-auto sm:h-13 lg:h-20"
-              />
-            <div class="leading-tight">
-              <div
-                id="logo-title"
-                class="text-slate-900 text-lg font-bold"
-              >
-                COOL MOUNTAIN
+          <div class="flex items-center gap-3 flex-shrink-0">
+            <a href="index.html" class="flex items-center gap-3">
+              <img src="assets/images/logo-transparent.png" alt="Cool Mountain" class="h-11 w-auto sm:h-13 lg:h-20" />
+              <div class="leading-tight">
+                <div id="logo-title" class="text-slate-900 text-lg font-bold">
+                  COOL MOUNTAIN
+                </div>
+                <div id="logo-subtitle" class="text-slate-500 text-xs tracking-widest font-semibold">
+                  TRANSPORT
+                </div>
               </div>
-              <div
-                id="logo-subtitle"
-                class="text-slate-500 text-xs tracking-widest font-semibold"
-              >
-                TRANSPORT
-              </div>
-            </div>
-          </a>
-        </div>
+            </a>
+          </div>
 
-        <div class="ml-auto flex items-center gap-2 md:gap-4">
-              <nav
-                class="nav-shell hidden items-center gap-4 px-1 py-1 text-[13px] font-medium text-slate-700 xl:flex"
-              >
-          <a class="py-2 hover:text-slate-900 transition" href="index.html">
-            Home
-          </a>
-          <a class="py-2 hover:text-slate-900 transition" href="about.html">
-            About
-          </a>
-          <a class="py-2 hover:text-slate-900 transition" href="join-our-team.html">
-            Join Our Team
-          </a>
-          <a class="py-2 hover:text-slate-900 transition" href="equipment.html">
-            Equipment
-          </a>
-          <a
-            class="relative py-2 text-red-500 after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:rounded-full after:bg-red-500"
-            href="contact.html"
-          >
-            Contact
-          </a>
-          </nav>
-              <div class="flex items-center gap-2 md:gap-4">
-              <a
-                class="header-cta inline-flex min-h-[36px] items-center justify-center rounded-sm border-2 border-slate-900 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-slate-900 hover:bg-slate-900 hover:text-white sm:min-h-[40px] sm:px-4 sm:py-2 sm:text-[11px]"
-                href="contact.html"
-              >
-                  Request a Quote
-                </a>
-              <button
-                id="menu-toggle"
+          <div class="ml-auto flex items-center gap-2 md:gap-4">
+            <nav class="nav-shell hidden items-center gap-4 px-1 py-1 text-[13px] font-medium text-slate-700 xl:flex">
+              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link" href="about.html">About</a>
+              <a class="nav-link" href="join-our-team.html">Join Our Team</a>
+              <a class="nav-link" href="equipment.html">Equipment</a>
+              <a class="nav-link active" href="contact.html">Contact</a>
+            </nav>
+            <div class="flex items-center gap-2 md:gap-4">
+              <a href="join-our-team.html"
+                class="inline-flex items-center justify-center bg-slate-900 px-4 py-2 text-[11px] font-semibold uppercase tracking-widest text-white hover:bg-slate-800 transition-colors rounded-none">
+                Driver Application
+              </a>
+              <button id="menu-toggle"
                 class="h-9 w-9 rounded-full border border-slate-200 bg-white text-sm font-semibold text-slate-700 transition hover:bg-slate-50 sm:h-10 sm:w-10 xl:hidden"
-                type="button"
-              >
-              <svg
-                class="mx-auto h-5 w-5 text-slate-700"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              >
-                <line x1="4" y1="7" x2="20" y2="7"></line>
-                <line x1="4" y1="12" x2="20" y2="12"></line>
-                <line x1="4" y1="17" x2="20" y2="17"></line>
-              </svg>
-            </button>
+                type="button">
+                <svg class="mx-auto h-5 w-5 text-slate-700" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round">
+                  <line x1="4" y1="7" x2="20" y2="7"></line>
+                  <line x1="4" y1="12" x2="20" y2="12"></line>
+                  <line x1="4" y1="17" x2="20" y2="17"></line>
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
-          <div
-            id="mobile-menu"
-            class="xl:hidden hidden absolute top-full right-0 mt-3 w-72 max-w-[90vw] -translate-y-4 rounded-2xl bg-slate-900 p-4 opacity-0 shadow-lg ring-1 ring-white/10 transition-all duration-200"
-          >
+        <div id="mobile-menu"
+          class="xl:hidden hidden absolute top-full right-0 mt-3 w-72 max-w-[90vw] -translate-y-4 rounded-2xl bg-slate-900 p-4 opacity-0 shadow-lg ring-1 ring-white/10 transition-all duration-200 z-[110]">
           <a class="block min-h-[48px] py-4 text-sm text-white" href="index.html">Home</a>
           <a class="block min-h-[48px] py-4 text-sm text-white" href="about.html">About</a>
           <a class="block min-h-[48px] py-4 text-sm text-white" href="join-our-team.html">
@@ -107,26 +73,21 @@
           <a class="block min-h-[48px] py-4 text-sm text-white" href="equipment.html">
             Equipment
           </a>
-          <a
-            class="block min-h-[48px] py-4 text-sm font-semibold text-red-400"
-            href="contact.html"
-          >
+          <a class="block min-h-[48px] py-4 text-sm font-semibold text-white" href="contact.html">
             Contact
           </a>
-            <a
-              class="mt-4 inline-flex min-h-[48px] w-full items-center justify-center rounded-sm bg-[#b91c1c] px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-white"
-              href="contact.html"
-            >
-              Apply Now
-            </a>
+          <a class="mt-4 inline-flex min-h-[48px] w-full items-center justify-center rounded-sm bg-[#b91c1c] px-4 py-3 text-[11px] font-semibold uppercase tracking-widest text-white"
+            href="contact.html">
+            Apply Now
+          </a>
         </div>
-          </div>
-        </div>
-      </header>
-      <div id="menu-backdrop" class="fixed inset-0 z-[90] bg-black/40 hidden opacity-0 transition-opacity duration-300 xl:hidden"></div>
+      </div>
+    </header>
+    <div id="menu-backdrop"
+      class="fixed inset-0 z-[90] bg-black/40 hidden opacity-0 transition-opacity duration-300 xl:hidden"></div>
 
-      <div class="flex-grow flex flex-col justify-end pb-12 pt-16 sm:pt-24">
-        <div class="relative z-10 px-[7vw] max-w-[540px]">
+    <div class="flex-grow flex flex-col justify-end pb-8 pt-20 sm:pt-24">
+      <div class="relative z-10 px-[7vw] max-w-[540px] reveal reveal-up active">
         <h1 class="text-4xl font-bold text-white">Contact</h1>
         <p class="mt-3 text-lg leading-relaxed text-slate-200">
           Let us know how we can support your freight needs.
@@ -138,281 +99,145 @@
             <span>MC #654322</span>
           </div>
           <div class="mt-2 flex items-center gap-2">
-            <img
-              src="assets/images/smartway-logo.png"
-              alt="SmartWay Partner"
-              class="h-4 w-auto"
-            />
+            <img src="assets/images/smartway-logo.png" alt="SmartWay Partner" class="h-4 w-auto" />
             <span>SmartWay Partner</span>
           </div>
         </div>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="relative overflow-hidden bg-slate-50 py-20">
-      <div
-        class="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-[7vw] lg:grid-cols-2 lg:items-start"
-      >
-        <div class="space-y-6">
-          <div>
-            <h2 class="text-3xl font-semibold text-slate-900">
-              Request a Call Back
-            </h2>
-            <div class="mt-2 h-1 w-28 bg-gradient-to-r from-slate-900 to-transparent"></div>
-          </div>
-          <p class="text-base leading-relaxed text-gray-700">
-            Share your shipment details and a member of our team will respond
-            quickly with pricing, availability, and next steps.
-          </p>
-          <div>
-            <img
-              src="assets/images/cool-mountain-home-image-1.jpg"
-              alt="Cool Mountain truck"
-              class="w-full max-w-xl rounded-2xl"
-            />
-          </div>
+  <section class="relative overflow-hidden bg-slate-50 py-20 reveal reveal-up">
+    <div class="relative mx-auto grid max-w-6xl grid-cols-1 gap-12 px-[7vw] lg:grid-cols-2 lg:items-start">
+      <div class="space-y-6">
+        <div>
+          <h2 class="text-3xl font-semibold text-slate-900">
+            Request a Call Back
+          </h2>
+          <div class="mt-2 h-1 w-28 bg-gradient-to-r from-slate-900 to-transparent"></div>
         </div>
-
-        <form
-          class="rounded-2xl bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-          action="#"
-          method="post"
-        >
-          <div class="grid gap-5">
-            <div>
-              <label class="text-sm font-semibold text-slate-700" for="name">
-                Full Name
-              </label>
-              <input
-                class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
-                id="name"
-                name="name"
-                type="text"
-                placeholder="Your name"
-              />
-            </div>
-            <div>
-              <label class="text-sm font-semibold text-slate-700" for="email">
-                Email Address
-              </label>
-              <input
-                class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
-                id="email"
-                name="email"
-                type="email"
-                placeholder="you@email.com"
-              />
-            </div>
-            <div>
-              <label class="text-sm font-semibold text-slate-700" for="phone">
-                Phone
-              </label>
-              <input
-                class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="(000) 000-0000"
-              />
-            </div>
-            <div>
-              <label class="text-sm font-semibold text-slate-700" for="message">
-                Message
-              </label>
-              <textarea
-                class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="Tell us about your freight needs"
-              ></textarea>
-            </div>
-            <button
-              class="rounded-sm bg-[#b91c1c] px-6 py-4 text-[11px] font-semibold uppercase tracking-widest text-white min-h-[48px] w-full hover:bg-[#991b1b]"
-              type="submit"
-            >
-              Submit Request
-            </button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-    <footer class="bg-slate-100">
-      <div
-        class="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-8 py-16 lg:grid-cols-2 lg:px-[7vw]"
-      >
-        <div class="grid grid-cols-1 gap-8 text-sm text-slate-600 sm:grid-cols-2 sm:text-left text-center">
-          <div class="space-y-3">
-            <a class="block hover:text-slate-800 transition" href="index.html">
-              Homepage
-            </a>
-            <a class="block hover:text-slate-800 transition" href="about.html">
-              About
-            </a>
-            <a class="block hover:text-slate-800 transition" href="join-our-team.html">
-              Join Our Team
-            </a>
-            <a class="block hover:text-slate-800 transition" href="#">
-              Customers
-            </a>
-          </div>
-          <div class="space-y-3">
-            <a class="block hover:text-slate-800 transition" href="equipment.html">
-              Equipment
-            </a>
-            <a class="block hover:text-slate-800 transition" href="join-our-team.html">
-              Careers
-            </a>
-            <a class="block hover:text-slate-800 transition" href="news.html">
-              News
-            </a>
-            <a class="block hover:text-slate-800 transition" href="contact.html">
-              Contact
-            </a>
-          </div>
-        </div>
-
-        <div class="flex flex-col items-center gap-6 lg:items-end">
-          <div class="flex flex-col items-center gap-6 sm:flex-row sm:gap-10 sm:items-center">
-            <img
-              src="assets/images/logo-transparent.png"
-              alt="Cool Mountain"
-              class="h-24 w-auto object-contain"
-            />
-            <img
-              src="assets/images/smartway-logo.png"
-              alt="SmartWay Transport Partner"
-              class="h-20 w-auto object-contain"
-            />
-          </div>
-          <div class="flex items-center justify-center gap-4 text-amber-700 sm:justify-end">
-            <a class="transition hover:text-amber-800" href="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="h-6 w-6"
-              >
-                <path
-                  d="M13.5 9H15V6.5c0-.7.1-1 .9-1H18V3h-2.5C12.9 3 12 4.5 12 6.7V9H10v2.5h2V21h2.5v-9.5H17L17.5 9h-3z"
-                />
-              </svg>
-            </a>
-            <a class="transition hover:text-amber-800" href="#">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="h-6 w-6"
-              >
-                <path
-                  d="M20.5 3h-17A1.5 1.5 0 0 0 2 4.5v15A1.5 1.5 0 0 0 3.5 21h17a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 20.5 3zM8.3 18H5.7V9.7h2.6V18zm-1.3-9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18.5 18h-2.6v-4.1c0-1-.3-1.6-1.2-1.6-.7 0-1 .5-1.2 1-.1.2-.1.5-.1.8V18h-2.6s.1-6.9 0-8.3h2.6v1.2c.3-.5.9-1.3 2.3-1.3 1.7 0 3 1.1 3 3.5V18z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-slate-300">
-        <p class="py-6 text-center text-xs text-slate-500">
-          © 2026 Cool Mountain Transport. All Rights Reserved.
+        <p class="text-base leading-relaxed text-gray-700">
+          Share your shipment details and a member of our team will respond
+          quickly with pricing, availability, and next steps.
         </p>
+        <div class="img-zoom-container rounded-2xl">
+          <img src="assets/images/cool-mountain-home-image-1.jpg" alt="Cool Mountain truck"
+            class="w-full max-w-xl rounded-2xl img-zoom" />
+        </div>
       </div>
-    </footer>
-    <button
-      id="back-to-top"
-      class="fixed bottom-8 right-8 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-red-500 text-base font-semibold text-white shadow-lg opacity-0 translate-y-2 transition-all duration-200 hover:bg-red-600 lg:h-11 lg:w-11 lg:text-sm"
-      aria-label="Back to top"
-      type="button"
-    >
-      &uarr;
-    </button>
-    <script>
-      const toggle = document.getElementById("menu-toggle");
-      const mobileMenu = document.getElementById("mobile-menu");
-      const header = document.getElementById("site-header");
-      const backToTop = document.getElementById("back-to-top");
-      const menuBackdrop = document.getElementById("menu-backdrop");
-      if (toggle && mobileMenu && menuBackdrop) {
-        const openMenu = () => {
-          mobileMenu.classList.remove("hidden");
-          menuBackdrop.classList.remove("hidden");
-          requestAnimationFrame(() => {
-            mobileMenu.classList.remove("opacity-0", "-translate-y-4");
-            mobileMenu.classList.add("opacity-100", "translate-y-0");
-            menuBackdrop.classList.remove("opacity-0");
-            menuBackdrop.classList.add("opacity-100");
-          });
-        };
-        const closeMenu = () => {
-          mobileMenu.classList.add("opacity-0", "-translate-y-4");
-          mobileMenu.classList.remove("opacity-100", "translate-y-0");
-          menuBackdrop.classList.remove("opacity-100");
-          menuBackdrop.classList.add("opacity-0");
-          setTimeout(() => {
-            mobileMenu.classList.add("hidden");
-            menuBackdrop.classList.add("hidden");
-          }, 200);
-        };
-        toggle.addEventListener("click", (e) => {
-          e.stopPropagation();
-          if (mobileMenu.classList.contains("hidden")) {
-            openMenu();
-          } else {
-            closeMenu();
-          }
-        });
-        menuBackdrop.addEventListener("click", closeMenu);
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
-            closeMenu();
-          }
-        });
-      }
 
-      const updateHeaderBackground = () => {
-        if (!header) {
-          return;
-        }
-        const smartHeader = header.dataset.smartHeader === "true";
-        if (smartHeader) {
-          header.classList.toggle("scrolled", window.scrollY > 50);
-        } else {
-          header.classList.add("scrolled");
-        }
-      };
+      <form class="rounded-2xl bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg" action="#"
+        method="post">
+        <div class="grid gap-5">
+          <div>
+            <label class="text-sm font-semibold text-slate-700" for="name">
+              Full Name
+            </label>
+            <input
+              class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
+              id="name" name="name" type="text" placeholder="Your name" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold text-slate-700" for="email">
+              Email Address
+            </label>
+            <input
+              class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
+              id="email" name="email" type="email" placeholder="you@email.com" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold text-slate-700" for="phone">
+              Phone
+            </label>
+            <input
+              class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
+              id="phone" name="phone" type="tel" placeholder="(000) 000-0000" />
+          </div>
+          <div>
+            <label class="text-sm font-semibold text-slate-700" for="message">
+              Message
+            </label>
+            <textarea
+              class="mt-2 w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none"
+              id="message" name="message" rows="5" placeholder="Tell us about your freight needs"></textarea>
+          </div>
+          <button
+            class="rounded-sm bg-[#b91c1c] px-6 py-4 text-[11px] font-semibold uppercase tracking-widest text-white min-h-[48px] w-full hover:bg-[#991b1b]"
+            type="submit">
+            Submit Request
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
 
-      const updateScrollUI = () => {
-        updateHeaderBackground();
-        if (backToTop) {
-          if (window.scrollY >= 500) {
-            backToTop.classList.remove("hidden");
-            backToTop.classList.add("flex");
-            requestAnimationFrame(() => {
-              backToTop.classList.remove("opacity-0", "translate-y-2");
-              backToTop.classList.add("opacity-100", "translate-y-0");
-            });
-          } else {
-            backToTop.classList.add("opacity-0", "translate-y-2");
-            backToTop.classList.remove("opacity-100", "translate-y-0");
-            setTimeout(() => {
-              backToTop.classList.add("hidden");
-              backToTop.classList.remove("flex");
-            }, 200);
-          }
-        }
-      };
+  <footer class="bg-slate-100 reveal reveal-up">
+    <div class="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-8 py-16 lg:grid-cols-2 lg:px-[7vw]">
+      <div class="grid grid-cols-1 gap-8 text-sm text-slate-600 sm:grid-cols-2 sm:text-left text-center">
+        <div class="space-y-3">
+          <a class="block hover:text-slate-800 transition" href="index.html">
+            Homepage
+          </a>
+          <a class="block hover:text-slate-800 transition" href="about.html">
+            About
+          </a>
+          <a class="block hover:text-slate-800 transition" href="join-our-team.html">
+            Join Our Team
+          </a>
+          <a class="block hover:text-slate-800 transition" href="#">
+            Customers
+          </a>
+        </div>
+        <div class="space-y-3">
+          <a class="block hover:text-slate-800 transition" href="equipment.html">
+            Equipment
+          </a>
+          <a class="block hover:text-slate-800 transition" href="join-our-team.html">
+            Careers
+          </a>
+          <a class="block hover:text-slate-800 transition" href="news.html">
+            News
+          </a>
+          <a class="block hover:text-slate-800 transition" href="contact.html">
+            Contact
+          </a>
+        </div>
+      </div>
 
-      if (backToTop) {
-        backToTop.addEventListener("click", () => {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
+      <div class="flex flex-col items-center gap-6 lg:items-end">
+        <div class="flex flex-col items-center gap-6 sm:flex-row sm:gap-10 sm:items-center">
+          <img src="assets/images/logo-transparent.png" alt="Cool Mountain" class="h-24 w-auto object-contain" />
+          <img src="assets/images/smartway-logo.png" alt="SmartWay Transport Partner"
+            class="h-20 w-auto object-contain" />
+        </div>
+        <div class="flex items-center justify-center gap-4 text-amber-700 sm:justify-end">
+          <a class="transition hover:text-amber-800" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+              <path
+                d="M13.5 9H15V6.5c0-.7.1-1 .9-1H18V3h-2.5C12.9 3 12 4.5 12 6.7V9H10v2.5h2V21h2.5v-9.5H17L17.5 9h-3z" />
+            </svg>
+          </a>
+          <a class="transition hover:text-amber-800" href="#">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
+              <path
+                d="M20.5 3h-17A1.5 1.5 0 0 0 2 4.5v15A1.5 1.5 0 0 0 3.5 21h17a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 20.5 3zM8.3 18H5.7V9.7h2.6V18zm-1.3-9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18.5 18h-2.6v-4.1c0-1-.3-1.6-1.2-1.6-.7 0-1 .5-1.2 1-.1.2-.1.5-.1.8V18h-2.6s.1-6.9 0-8.3h2.6v1.2c.3-.5.9-1.3 2.3-1.3 1.7 0 3 1.1 3 3.5V18z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-slate-300">
+      <p class="py-6 text-center text-xs text-slate-500">
+        © 2026 Cool Mountain Transport. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+  <button id="back-to-top"
+    class="fixed bottom-8 right-8 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-red-500 text-base font-semibold text-white shadow-lg opacity-0 translate-y-2 transition-all duration-200 hover:bg-red-600 lg:h-11 lg:w-11 lg:text-sm"
+    aria-label="Back to top" type="button">
+    &uarr;
+  </button>
+  <script src="js/main.js"></script>
+</body>
 
-      window.addEventListener("scroll", updateScrollUI);
-      updateScrollUI();
-    </script>
-  </body>
 </html>
