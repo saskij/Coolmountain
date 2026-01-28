@@ -126,6 +126,7 @@
           </div>
         </div>
       </header>
+      <div id="menu-backdrop" class="fixed inset-0 z-[90] bg-black/40 hidden opacity-0 transition-opacity duration-300 xl:hidden"></div>
 
     <div class="flex-grow flex flex-col justify-end pb-12 pt-20 sm:pt-24">
         <div class="relative z-10 px-[7vw] max-w-[540px]">
@@ -295,23 +296,39 @@
       const mobileMenu = document.getElementById("mobile-menu");
       const header = document.getElementById("site-header");
       const backToTop = document.getElementById("back-to-top");
-      if (toggle && mobileMenu) {
+      const menuBackdrop = document.getElementById("menu-backdrop");
+      if (toggle && mobileMenu && menuBackdrop) {
         const openMenu = () => {
           mobileMenu.classList.remove("hidden");
+          menuBackdrop.classList.remove("hidden");
           requestAnimationFrame(() => {
             mobileMenu.classList.remove("opacity-0", "-translate-y-4");
             mobileMenu.classList.add("opacity-100", "translate-y-0");
+            menuBackdrop.classList.remove("opacity-0");
+            menuBackdrop.classList.add("opacity-100");
           });
         };
         const closeMenu = () => {
           mobileMenu.classList.add("opacity-0", "-translate-y-4");
           mobileMenu.classList.remove("opacity-100", "translate-y-0");
-          setTimeout(() => mobileMenu.classList.add("hidden"), 200);
+          menuBackdrop.classList.remove("opacity-100");
+          menuBackdrop.classList.add("opacity-0");
+          setTimeout(() => {
+            mobileMenu.classList.add("hidden");
+            menuBackdrop.classList.add("hidden");
+          }, 200);
         };
-        toggle.addEventListener("click", () => {
+        toggle.addEventListener("click", (e) => {
+          e.stopPropagation();
           if (mobileMenu.classList.contains("hidden")) {
             openMenu();
           } else {
+            closeMenu();
+          }
+        });
+        menuBackdrop.addEventListener("click", closeMenu);
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
             closeMenu();
           }
         });
