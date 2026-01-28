@@ -45,10 +45,6 @@ button {
   border: none;
 }
 
-.shadow-nav {
-  box-shadow: 0 12px 30px rgba(9, 26, 46, 0.18);
-}
-
 .shadow-cta {
   box-shadow: none;
 }
@@ -79,7 +75,7 @@ button {
     height: 64px;
     padding-top: 8px !important;
     padding-bottom: 8px !important;
-    background-color: #0f172a !important;
+    background-color: white !important;
   }
 
   #mobile-menu {
