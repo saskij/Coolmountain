@@ -76,7 +76,9 @@ button {
 
 @media (max-width: 768px) {
   #site-header {
-    height: 80px;
+    height: 64px;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
     background-color: #0f172a !important;
   }
 
@@ -92,13 +94,17 @@ button {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
+  #site-header .header-cta {
+    display: none !important;
+  }
+
   .hero-bg {
     background-image: url("../assets/images/hero-mobile.jpg");
     background-size: cover !important;
-    background-position: center !important;
+    background-position: 80% center !important;
     background-repeat: no-repeat;
-    min-height: 100svh;
-    height: 100vh;
+    min-height: 75vh;
+    height: 75vh;
   }
 
   .hero-overlay {
