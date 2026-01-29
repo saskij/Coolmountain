@@ -8,6 +8,12 @@
 
 body {
   font-family: "Inter", system-ui, -apple-system, sans-serif;
+  color: #334155;
+  /* slate-700 for better contrast */
+}
+
+p {
+  color: #334155;
 }
 
 h1,
@@ -50,16 +56,15 @@ button {
 }
 
 .hero-bg {
-  background: url("../assets/images/4213e74f0677563bf1e032aef4c50eb4bbfefd35bdae61ce1c11ce4a4ee9706b.jpg") right center/cover no-repeat;
-  background-position: right center;
+  background: url("../assets/images/header-bg-final-v2.jpg") right center/cover no-repeat;
+  background-position: center center;
 }
 
 .hero-overlay {
-  background: linear-gradient(100deg,
-      rgba(7, 15, 31, 0.9) 0%,
-      rgba(7, 15, 31, 0.7) 35%,
-      rgba(7, 15, 31, 0.3) 60%,
-      rgba(7, 15, 31, 0) 78%);
+  background: linear-gradient(to bottom,
+      rgba(15, 23, 42, 0.7) 0%,
+      rgba(15, 23, 42, 0.3) 40%,
+      rgba(15, 23, 42, 0.8) 100%);
 }
 
 .nav-shell {
@@ -97,37 +102,39 @@ button {
     min-height: 40px;
     padding-top: 4px !important;
     padding-bottom: 4px !important;
-    background-color: white !important;
+    /* background-color: white !important; Removed to allow transparent header */
   }
 
-  #mobile-menu {
-    background-color: #0f172a !important;
-  }
-
-  #mobile-menu a {
-    color: #ffffff !important;
-  }
-
-  #mobile-menu a:not(:last-child) {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
+  /* #mobile-menu styles removed to allow Tailwind classes to control the slide-in drawer design */
 
   #site-header .header-cta {
     display: none !important;
   }
 
   .hero-bg {
-    background-image: url("../assets/images/hero-mobile.jpg");
+    background-image: url("../assets/images/header-bg-final-v2.jpg");
     background-size: cover !important;
-    background-position: 80% center !important;
+    background-position: center center !important;
     background-repeat: no-repeat;
   }
 
   .hero-overlay {
-    background: linear-gradient(180deg,
-        rgba(0, 0, 0, 0.15) 0%,
-        rgba(0, 0, 0, 0.45) 60%,
-        rgba(0, 0, 0, 0.7) 100%);
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.5) 0%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.6) 100%);
+  }
+
+  /* Mobile Hero Layout Fixes */
+  .hero-bg h1 {
+    font-size: 2.25rem !important;
+    /* Smaller on mobile */
+    line-height: 1.1;
+  }
+
+  .hero-bg .container,
+  .hero-bg .mx-auto {
+    padding-top: 2rem;
   }
 }
 
@@ -299,4 +306,34 @@ select {
 
 .hover-glaze:hover::before {
   left: 125%;
+}
+
+/* Floating Button Animation */
+@keyframes twitch {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  5% {
+    transform: rotate(10deg);
+  }
+
+  10% {
+    transform: rotate(-10deg);
+  }
+
+  15% {
+    transform: rotate(10deg);
+  }
+
+  20% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-twitch {
+  animation: twitch 5s infinite;
+  animation-delay: 2s;
 }

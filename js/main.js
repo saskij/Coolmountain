@@ -8,23 +8,35 @@ if (toggle && mobileMenu && menuBackdrop) {
   const openMenu = () => {
     mobileMenu.classList.remove("hidden");
     menuBackdrop.classList.remove("hidden");
+    // Force reflow
+    void mobileMenu.offsetWidth;
+
     requestAnimationFrame(() => {
-      mobileMenu.classList.remove("opacity-0", "-translate-y-4");
-      mobileMenu.classList.add("opacity-100", "translate-y-0");
+      // Background fade in
       menuBackdrop.classList.remove("opacity-0");
       menuBackdrop.classList.add("opacity-100");
+
+      // Drawer slide in
+      mobileMenu.classList.remove("translate-x-full");
+      mobileMenu.classList.add("translate-x-0");
     });
   };
+
   const closeMenu = () => {
-    mobileMenu.classList.add("opacity-0", "-translate-y-4");
-    mobileMenu.classList.remove("opacity-100", "translate-y-0");
+    // Background fade out
     menuBackdrop.classList.remove("opacity-100");
     menuBackdrop.classList.add("opacity-0");
+
+    // Drawer slide out
+    mobileMenu.classList.remove("translate-x-0");
+    mobileMenu.classList.add("translate-x-full");
+
     setTimeout(() => {
       mobileMenu.classList.add("hidden");
       menuBackdrop.classList.add("hidden");
-    }, 200);
+    }, 300); // 300ms matches duration-300
   };
+
   toggle.addEventListener("click", (e) => {
     e.stopPropagation();
     if (mobileMenu.classList.contains("hidden")) {
@@ -33,7 +45,15 @@ if (toggle && mobileMenu && menuBackdrop) {
       closeMenu();
     }
   });
+
   menuBackdrop.addEventListener("click", closeMenu);
+
+  // Close button inside menu
+  const closeBtn = document.getElementById("menu-close");
+  if (closeBtn) {
+    closeBtn.addEventListener("click", closeMenu);
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && !mobileMenu.classList.contains("hidden")) {
       closeMenu();
@@ -44,8 +64,6 @@ if (toggle && mobileMenu && menuBackdrop) {
   const menuLinks = mobileMenu.querySelectorAll("a");
   menuLinks.forEach((link) => {
     link.addEventListener("click", () => {
-      // Allow the default link behavior to happen (navigation)
-      // Delay closing the menu slightly so it doesn't interfere with the click
       setTimeout(() => {
         closeMenu();
       }, 150);
