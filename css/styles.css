@@ -110,14 +110,18 @@ button {
   width: auto !important;
   padding: 0 !important;
   margin: 0 !important;
+  text-indent: 0 !important;
+  /* Force left edge alignment */
   background: transparent !important;
   font-family: inherit !important;
   font-weight: 800 !important;
   color: #0f172a !important;
   text-transform: uppercase !important;
   line-height: 0.95 !important;
-  /* Tighter for optical balance */
   display: block !important;
+  position: relative !important;
+  left: 0 !important;
+  /* Explicit left position */
 }
 
 #logo-subtitle {
@@ -125,6 +129,8 @@ button {
   width: auto !important;
   padding: 0 !important;
   margin: 0 !important;
+  text-indent: 0 !important;
+  /* Force left edge alignment */
   background: transparent !important;
   font-family: inherit !important;
   font-weight: 600 !important;
@@ -133,6 +139,9 @@ button {
   letter-spacing: 0.15em !important;
   line-height: 1 !important;
   display: block !important;
+  position: relative !important;
+  left: 0 !important;
+  /* Explicit left position - matches title */
 }
 
 /* Ensure all nested wrappers allow overflow */
