@@ -90,20 +90,26 @@ button {
 }
 
 /* Ensure branding text is strictly left-aligned */
+/* Ensure branding text is strictly left-aligned */
 #site-header .leading-tight {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: center !important;
   text-align: left !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
 }
 
 #logo-title,
 #logo-subtitle {
   text-align: left !important;
-  width: 100% !important;
+  width: auto !important;
+  /* Allow width to fit content */
   padding: 0 !important;
   margin: 0 !important;
+  background: transparent !important;
 }
 
 /* Ensure all nested wrappers allow overflow */
