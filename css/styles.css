@@ -343,6 +343,60 @@ button {
   }
 }
 
+/* Tablet Layout (769px to 1023px) - Global Extreme Left Alignment */
+@media (min-width: 769px) and (max-width: 1023px) {
+
+  /* Tablet Header */
+  header#site-header {
+    height: 68px !important;
+    min-height: 68px !important;
+    max-height: 68px !important;
+  }
+
+  /* Main Flex Container - Zero padding for max alignment */
+  header#site-header .mx-auto {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    padding: 0 0 !important;
+    /* Zero padding */
+    gap: 6px !important;
+    /* Compact gap */
+  }
+
+  /* Left Side: Logo + Brand - Extreme left shift */
+  header#site-header .mx-auto>div:first-child {
+    flex: 0 1 auto !important;
+    gap: 10px !important;
+    max-width: calc(100% - 65px) !important;
+    margin-left: -20px !important;
+    /* Extreme left shift */
+  }
+
+  /* Tablet logo size */
+  header#site-header img {
+    height: 92px !important;
+    transform: translateY(14px);
+  }
+
+  /* Brand Text */
+  header#site-header .brand-text-link {
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Right Side: Menu Button - Right aligned */
+  header#site-header .ml-auto {
+    margin-left: 0 !important;
+    flex-shrink: 0 !important;
+    flex-grow: 0 !important;
+  }
+}
+
+
+
 @media (max-width: 768px) {
 
   /* Stabilized Mobile Header Layout */
@@ -355,7 +409,7 @@ button {
     /* Allow logo overlap on mobile too */
   }
 
-  /* Main Flex Container */
+  /* Main Flex Container - Zero padding for max alignment */
   header#site-header .mx-auto {
     display: flex !important;
     align-items: center !important;
@@ -364,25 +418,32 @@ button {
     height: 100% !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 24px !important;
-    /* Spacing from edges */
+    padding: 0 0 !important;
+    /* Zero padding */
     margin: 0 !important;
     overflow: visible !important;
+    gap: 4px !important;
+    /* Compact gap */
   }
 
-  /* Left Side: Logo + Brand Identity */
+  /* Left Side: Logo + Brand Identity - Extreme left shift */
   header#site-header .mx-auto>div:first-child {
     display: flex !important;
     align-items: center !important;
-    flex: 1 1 auto !important;
+    flex: 0 1 auto !important;
+    /* Don't expand to fill space */
     min-width: 0 !important;
+    /* Allow shrinking below content size */
     height: 100% !important;
-    gap: 12px !important;
+    gap: 4px !important;
+    /* Compact gap */
     z-index: 10 !important;
     overflow: visible !important;
+    max-width: calc(100% - 55px) !important;
+    margin-left: -16px !important;
+    /* Extreme left shift */
   }
 
-  /* Logo Image - Increased to 84px (~30% more than previous 64px state) */
   /* Logo Image - Increased to 84px (~30% more than previous 64px state) */
   header#site-header img {
     height: 84px !important;
@@ -395,9 +456,13 @@ button {
     /* Align flush to top (84-60)/2 = 12px needed */
   }
 
-  /* Logo Image Rule Removed */
+  /* Brand Text - Allow truncation on very small screens */
+  header#site-header .brand-text-link {
+    flex-shrink: 1 !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
 
-  /* Brand Text */
   #logo-title {
     font-size: 1.05rem !important;
     line-height: 1 !important;
@@ -411,10 +476,20 @@ button {
     font-size: 0.6rem !important;
     line-height: 1 !important;
     letter-spacing: 0.1em !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
 
-  /* Right Side: Menu Button */
-  /* Using global rule for menu button */
+  /* Right Side: Menu Button Container - Right aligned */
+  header#site-header .ml-auto {
+    margin-left: 0 !important;
+    /* Remove auto margin */
+    flex-shrink: 0 !important;
+    /* Never shrink */
+    flex-grow: 0 !important;
+    /* Never grow */
+  }
 
   /* Hide Header CTA as requested */
   #site-header .header-cta {
@@ -484,9 +559,17 @@ button {
   }
 }
 
+
 .reveal {
   opacity: 0;
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Force immediate visibility */
+.reveal-immediately {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
 .reveal.active {

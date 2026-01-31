@@ -72,12 +72,9 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </nav>
             <div class="flex items-center gap-2 md:gap-4">
-              <button id="menu-toggle"
-                class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-slate-900 shadow-sm transition hover:bg-slate-50 xl:hidden"
-                type="button">
+              <button id="menu-toggle" class="xl:hidden" type="button">
                 <span>Menu</span>
-                <svg class="h-4 w-4 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                   <line x1="4" y1="12" x2="20" y2="12"></line>
                   <line x1="4" y1="6" x2="20" y2="6"></line>
                   <line x1="4" y1="18" x2="20" y2="18"></line>
@@ -179,11 +176,11 @@
     </div>
 
 
-    <div class="flex-grow flex flex-col justify-end pb-8 pt-20 sm:pt-24">
-      <div class="relative z-10 px-[7vw] max-w-[540px] reveal reveal-up active flex flex-col gap-6">
-        <h1 class="text-4xl font-bold text-white">Dedicated</h1>
+    <div class="flex-grow flex flex-col justify-end pb-8 pt-12 sm:pt-24">
+      <div class="relative z-10 px-[7vw] max-w-[540px] reveal reveal-up reveal-immediately active flex flex-col gap-6">
+        <h1 class="text-4xl font-bold text-white">Temperature-Controlled Logistics</h1>
         <p class="mt-3 text-lg leading-relaxed text-slate-200">
-          Consistent lanes and long-term partnerships for dedicated drivers.
+          Maintaining the perfect environment for your sensitive cargo.
         </p>
 
         <div class="flex flex-col items-start gap-4 sm:flex-row reveal reveal-up active"
@@ -221,30 +218,49 @@
       <div class="absolute left-12 top-24 h-32 w-32 rotate-12 border border-slate-200/70"></div>
       <div class="absolute bottom-10 left-1/3 h-40 w-1 rotate-12 bg-red-500/10"></div>
     </div>
-    <div class="relative mx-auto max-w-6xl px-[7vw] space-y-6">
+    <div class="relative mx-auto max-w-6xl px-[7vw] space-y-8">
       <div>
-        <h2 class="text-2xl font-semibold text-slate-900">
-          Dedicated Opportunities
+        <h2 class="text-3xl font-bold text-slate-900">
+          Temperature-Controlled Logistics
         </h2>
         <div class="mt-2 h-1 w-28 bg-gradient-to-r from-slate-900 to-transparent"></div>
       </div>
-      <div
-        class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-        <p class="text-base leading-relaxed text-gray-700">
-          Cool Mountain Transport provides dedicated positions to drivers as
-          they become available after they have worked in its Over The Road
-          division for 3+ years.
+
+      <div class="space-y-6">
+        <p class="text-lg leading-relaxed text-slate-700">
+          Cool Mountain Transport specializes in the transport of temperature-sensitive freight. Whether you are
+          shipping fresh produce, frozen goods, or pharmaceuticals, our state-of-the-art reefer units maintain precise
+          temperatures from -20°F to +70°F throughout the entire journey.
         </p>
-        <p class="mt-4 text-base leading-relaxed text-gray-700">
-          Cool Mountain Transport dedicated drivers represent the very best
-          Cool Mountain Transport has to offer. Dedicated drivers are the face
-          of the company and are expected to perform to the highest standards
-          at all times.
-        </p>
-        <p class="mt-4 text-base leading-relaxed text-gray-700">
-          Dedicated drivers have the opportunity for more home time and are
-          able to work exclusively with one customer’s product line.
-        </p>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+          <h3 class="text-xl font-semibold text-slate-900 mb-4">
+            Key Features
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <svg class="h-6 w-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-base text-slate-700">Food Safety Modernization Act (FSMA) compliant</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-6 w-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-base text-slate-700">Remote temperature monitoring and downloadable logs</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="h-6 w-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span class="text-base text-slate-700">24/7 dispatch support for time-sensitive deliveries</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
