@@ -136,27 +136,39 @@ button {
 
 /* Menu Button - Reset height and ensure clickability */
 /* Menu Button - Pill Style (Mobile/Tablet) */
+/* Menu Button - Premium Pill Style (Re-written from scratch) */
 #site-header #menu-toggle {
-  z-index: 161 !important;
-  position: relative !important;
-  display: flex !important;
+  display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   height: 40px !important;
-  /* Fixed height to prevent "huge" expansion */
   width: auto !important;
+  min-width: 90px !important;
+  /* Ensure substantial width */
   padding: 0 16px !important;
-  /* Adjust padding for fixed height */
   border-radius: 9999px !important;
   gap: 8px !important;
   background-color: #ffffff !important;
-  border: 1px solid #e2e8f0 !important;
-  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+  /* slate-300 for crisp border */
+  color: #1e293b !important;
+  /* slate-800 for strong text contrast */
+  font-family: inherit !important;
   font-weight: 700 !important;
-  font-size: 12px !important;
+  font-size: 13px !important;
   letter-spacing: 0.05em !important;
   text-transform: uppercase !important;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+  white-space: nowrap !important;
+  z-index: 161 !important;
+  position: relative !important;
+  cursor: pointer !important;
+  transition: all 200ms ease;
+}
+
+#site-header #menu-toggle:active {
+  transform: scale(0.98);
+  background-color: #f8fafc !important;
 }
 
 /* RESTORED Desktop Logo Styles */
