@@ -96,10 +96,13 @@ button {
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: center !important;
+  /* Vertically align block */
   text-align: left !important;
   padding: 0 !important;
   margin: 0 !important;
   width: auto !important;
+  height: 100% !important;
+  /* Ensure it takes full height to center within */
 }
 
 #logo-title {
@@ -107,6 +110,8 @@ button {
   width: auto !important;
   padding: 0 !important;
   margin: 0 !important;
+  margin-bottom: 2px !important;
+  /* Small gap between lines */
   background: transparent !important;
   font-family: inherit !important;
   font-weight: 800 !important;
@@ -114,6 +119,9 @@ button {
   color: #0f172a !important;
   /* Slate-900 */
   text-transform: uppercase !important;
+  line-height: 1 !important;
+  /* Tight spacing */
+  display: block !important;
 }
 
 #logo-subtitle {
@@ -130,6 +138,9 @@ button {
   text-transform: uppercase !important;
   letter-spacing: 0.15em !important;
   /* Increased spacing */
+  line-height: 1 !important;
+  /* Tight spacing */
+  display: block !important;
 }
 
 /* Ensure all nested wrappers allow overflow */
