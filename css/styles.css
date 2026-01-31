@@ -152,6 +152,10 @@ button {
   nav.nav-shell {
     display: flex !important;
   }
+
+  #site-header #menu-toggle {
+    display: none !important;
+  }
 }
 
 @media (max-width: 768px) {
