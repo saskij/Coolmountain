@@ -89,6 +89,23 @@ button {
   /* Critical for logo breakout */
 }
 
+/* Ensure branding text is strictly left-aligned */
+#site-header .leading-tight {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  text-align: left !important;
+}
+
+#logo-title,
+#logo-subtitle {
+  text-align: left !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
 /* Ensure all nested wrappers allow overflow */
 #site-header .text-slate-900,
 #site-header .mx-auto {
