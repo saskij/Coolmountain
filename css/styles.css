@@ -97,6 +97,8 @@ button {
   overflow: visible !important;
   display: flex !important;
   align-items: center !important;
+  padding: 0 32px !important;
+  /* Reduced horizontal padding (was 7vw) */
 }
 
 /* Right-side Navigation / Menu Container - FORCE Z-INDEX & ALIGNMENT */
