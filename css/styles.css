@@ -199,10 +199,16 @@ button {
   display: none !important;
 }
 
-/* Ensure Icon Sizing */
+/* Ensure Icon Sizing and Perfect Centering */
 #site-header #menu-toggle svg {
-  width: 20px !important;
-  height: 20px !important;
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  stroke: #b91c1c !important;
+  /* Brand red for the icon lines */
+  stroke-width: 2.5 !important;
+  /* Slightly bolder for visibility */
+  margin: 0 auto !important;
 }
 
 #site-header #menu-toggle:active {
