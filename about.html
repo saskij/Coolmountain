@@ -58,6 +58,14 @@
             <nav class="nav-shell hidden items-center gap-4 px-1 py-1 text-[13px] font-medium text-slate-700 xl:flex">
               <a class="nav-link" href="index.html">Home</a>
               <a class="nav-link active" href="about.html">About</a>
+              <div class="nav-item-wrapper">
+                <a class="nav-link" style="cursor: pointer;">Services</a>
+                <div class="dropdown-menu">
+                  <a href="over-the-road.html">Dry Van</a>
+                  <a href="dedicated.html">Refrigerated</a>
+                  <a href="expedited.html">Expedited</a>
+                </div>
+              </div>
               <a class="nav-link" href="join-our-team.html">Join Our Team</a>
               <a class="nav-link" href="equipment.html">Equipment</a>
               <a class="nav-link" href="news.html">News</a>
@@ -109,9 +117,27 @@
             href="index.html">Home</a>
           <a class="text-xl font-bold text-slate-800 hover:text-red-700 transition py-3 border-b border-slate-50"
             href="about.html">About</a>
+          <div class="border-b border-slate-50">
+            <div class="mobile-services-toggle text-xl font-bold text-slate-800 hover:text-red-700 transition py-3"
+              id="mobile-services-toggle">
+              <span>Services</span>
+              <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+            <div class="mobile-submenu" id="mobile-services-submenu">
+              <a class="text-lg text-slate-700 hover:text-red-700 transition py-2 block border-b border-slate-50"
+                href="over-the-road.html">Dry Van</a>
+              <a class="text-lg text-slate-700 hover:text-red-700 transition py-2 block border-b border-slate-50"
+                href="dedicated.html">Refrigerated</a>
+              <a class="text-lg text-slate-700 hover:text-red-700 transition py-2 block border-b border-slate-50"
+                href="expedited.html">Expedited</a>
+            </div>
+          </div>
           <a class="text-xl font-bold text-slate-800 hover:text-red-700 transition py-3 border-b border-slate-50"
             href="join-our-team.html">Join Our Team</a>
-          <a class="text-xl font-bold text-slate-800 hover:text-red-700 transition py-3 border-b border-slate-50"
+          <a class="text-xl font-bold text-slate-800 hover:text-red-700 transition py-3 border-b  border-slate-50"
             href="equipment.html">Equipment</a>
           <a class="text-xl font-bold text-slate-800 hover:text-red-700 transition py-3 border-b border-slate-50"
             href="news.html">News</a>

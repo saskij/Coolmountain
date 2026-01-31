@@ -52,13 +52,13 @@
 /* Desktop Hover Effect (1024px+) */
 @media (min-width: 1024px) {
     .brand-text-link:hover .brand-title {
-        color: #1e40af;
-        /* Blue accent on hover */
+        color: #b91c1c;
+        /* Brand red accent on hover */
     }
 
     .brand-text-link:hover .brand-subtitle {
-        color: #3b82f6;
-        /* Lighter blue on hover */
+        color: #dc2626;
+        /* Lighter red on hover */
         letter-spacing: 0.18em;
         /* Subtle spacing increase */
     }

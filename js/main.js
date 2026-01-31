@@ -138,4 +138,20 @@ window.addEventListener("scroll", updateScrollUI);
 document.addEventListener("DOMContentLoaded", () => {
   updateScrollUI();
   initReveals();
+
+  // Services dropdown toggle for mobile
+  const servicesToggle = document.getElementById('mobile-services-toggle');
+  const submenu = document.getElementById('mobile-services-submenu');
+
+  if (servicesToggle && submenu) {
+    servicesToggle.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      submenu.classList.toggle('active');
+      const chevron = this.querySelector('.chevron');
+      if (chevron) {
+        chevron.classList.toggle('rotate-180');
+      }
+    });
+  }
 });
