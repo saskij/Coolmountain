@@ -102,14 +102,37 @@ button {
 }
 
 /* Right-side Navigation / Menu Container - FORCE Z-INDEX & ALIGNMENT */
-#site-header .ml-auto,
-#site-header #menu-toggle {
+/* Right-side Navigation Container */
+#site-header .ml-auto {
   z-index: 160 !important;
-  /* Higher than logo (150) */
   position: relative !important;
   display: flex !important;
   align-items: center !important;
   height: 100% !important;
+}
+
+/* Menu Button - Reset height and ensure clickability */
+#site-header #menu-toggle {
+  z-index: 161 !important;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  height: auto !important;
+  /* Fix "huge" button issue */
+  padding: 8px 12px !important;
+  border-radius: 9999px !important;
+}
+
+/* Hide "Menu" text on mobile for compactness */
+@media (max-width: 768px) {
+  #site-header #menu-toggle span {
+    display: none !important;
+  }
+
+  #site-header #menu-toggle {
+    padding: 8px !important;
+    /* Square-ish compact button */
+  }
 }
 
 #site-header img {
