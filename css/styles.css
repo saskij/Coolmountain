@@ -134,7 +134,7 @@ button {
     display: flex !important;
   }
 
-  #menu-toggle {
+  #site-header #menu-toggle {
     display: none !important;
   }
 }
