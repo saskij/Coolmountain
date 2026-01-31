@@ -142,8 +142,11 @@ button {
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  height: auto !important;
-  padding: 8px 16px !important;
+  height: 40px !important;
+  /* Fixed height to prevent "huge" expansion */
+  width: auto !important;
+  padding: 0 16px !important;
+  /* Adjust padding for fixed height */
   border-radius: 9999px !important;
   gap: 8px !important;
   background-color: #ffffff !important;
@@ -250,16 +253,7 @@ button {
   }
 
   /* Right Side: Menu Button */
-  #menu-toggle {
-    flex-shrink: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
-    align-items: center !important;
-    padding: 8px 12px !important;
-    z-index: 160 !important;
-    /* Ensure clickable over logo */
-    position: relative !important;
-  }
+  /* Using global rule for menu button */
 
   /* Hide Header CTA as requested */
   #site-header .header-cta {
