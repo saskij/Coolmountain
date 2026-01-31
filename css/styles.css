@@ -102,13 +102,34 @@ button {
   width: auto !important;
 }
 
-#logo-title,
+#logo-title {
+  text-align: left !important;
+  width: auto !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  font-family: inherit !important;
+  font-weight: 800 !important;
+  /* Bold Sans-Serif */
+  color: #0f172a !important;
+  /* Slate-900 */
+  text-transform: uppercase !important;
+}
+
 #logo-subtitle {
   text-align: left !important;
   width: auto !important;
   padding: 0 !important;
   margin: 0 !important;
   background: transparent !important;
+  font-family: inherit !important;
+  font-weight: 600 !important;
+  /* Lighter than title but still visible */
+  color: #64748b !important;
+  /* Slate-500 */
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  /* Increased spacing */
 }
 
 /* Ensure all nested wrappers allow overflow */
