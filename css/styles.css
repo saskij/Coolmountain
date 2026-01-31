@@ -141,43 +141,10 @@ button {
 }
 
 /* Hide "Menu" text on mobile for compactness */
-@media (max-width: 768px) {
-  #site-header #menu-toggle span {
-    display: none !important;
-  }
-
-  #site-header #menu-toggle {
-    padding: 8px !important;
-    /* Square-ish compact button */
-  }
-}
-
-#site-header img {
-  display: block;
-  height: 120px !important;
-  /* ~30% increase from 92px */
-  width: auto !important;
-  max-height: none !important;
-  z-index: 150 !important;
-  /* Float above hero */
-  position: relative !important;
-  transform: translateY(24px);
-  /* Pushes logo down to align with header top (prevent clipping) */
-  transition: all 300ms ease;
-}
-
-#site-header .mx-auto>* {
-  flex-shrink: 0;
-}
-
 /* Force Navigation Links to appear on standard desktops (LG / 1024px+) */
 @media (min-width: 1024px) {
   nav.nav-shell {
     display: flex !important;
-  }
-
-  #site-header #menu-toggle {
-    display: none !important;
   }
 }
 
