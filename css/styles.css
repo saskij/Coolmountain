@@ -119,11 +119,24 @@ button {
   z-index: 150 !important;
   /* Float above hero */
   position: relative !important;
+  transform: translateY(24px);
+  /* Pushes logo down to align with header top (prevent clipping) */
   transition: all 300ms ease;
 }
 
 #site-header .mx-auto>* {
   flex-shrink: 0;
+}
+
+/* Force Navigation Links to appear on standard desktops (LG / 1024px+) */
+@media (min-width: 1024px) {
+  nav.nav-shell {
+    display: flex !important;
+  }
+
+  #menu-toggle {
+    display: none !important;
+  }
 }
 
 @media (max-width: 768px) {
