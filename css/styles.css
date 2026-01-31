@@ -186,6 +186,8 @@ button {
     display: block !important;
     object-fit: contain !important;
     position: relative !important;
+    transform: translateY(12px);
+    /* Align flush to top (84-60)/2 = 12px needed */
   }
 
   /* Brand Text */
