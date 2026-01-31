@@ -91,18 +91,18 @@ button {
 
 /* Ensure branding text is strictly left-aligned */
 /* Ensure branding text is strictly left-aligned */
+/* Logo Text Wrapper - Optical Centering */
 #site-header .leading-tight {
   display: flex !important;
   flex-direction: column !important;
   align-items: flex-start !important;
   justify-content: center !important;
-  /* Vertically align block */
   text-align: left !important;
   padding: 0 !important;
   margin: 0 !important;
   width: auto !important;
-  height: 100% !important;
-  /* Ensure it takes full height to center within */
+  gap: 1px !important;
+  /* Precise gap between lines */
 }
 
 #logo-title {
@@ -110,17 +110,13 @@ button {
   width: auto !important;
   padding: 0 !important;
   margin: 0 !important;
-  margin-bottom: 2px !important;
-  /* Small gap between lines */
   background: transparent !important;
   font-family: inherit !important;
   font-weight: 800 !important;
-  /* Bold Sans-Serif */
   color: #0f172a !important;
-  /* Slate-900 */
   text-transform: uppercase !important;
-  line-height: 1 !important;
-  /* Tight spacing */
+  line-height: 0.95 !important;
+  /* Tighter for optical balance */
   display: block !important;
 }
 
@@ -132,14 +128,10 @@ button {
   background: transparent !important;
   font-family: inherit !important;
   font-weight: 600 !important;
-  /* Lighter than title but still visible */
   color: #64748b !important;
-  /* Slate-500 */
   text-transform: uppercase !important;
   letter-spacing: 0.15em !important;
-  /* Increased spacing */
   line-height: 1 !important;
-  /* Tight spacing */
   display: block !important;
 }
 
