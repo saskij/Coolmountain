@@ -138,6 +138,7 @@ button {
 /* Menu Button - Pill Style (Mobile/Tablet) */
 /* Menu Button - Premium Pill Style (Re-written from scratch) */
 /* Menu Button - Icon-Only Circle (Simplified) */
+/* Menu Button - Icon-Only Circle (Simplified) */
 #site-header #menu-toggle {
   display: inline-flex !important;
   align-items: center !important;
@@ -151,8 +152,9 @@ button {
   border-radius: 50% !important;
   /* Perfect circle */
   background-color: #ffffff !important;
-  border: 1px solid #cbd5e1 !important;
-  color: #1e293b !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #b91c1c !important;
+  /* Brand Red (matches Call Us button) */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
   z-index: 161 !important;
   position: relative !important;
