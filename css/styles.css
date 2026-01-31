@@ -135,15 +135,39 @@ button {
 }
 
 /* Menu Button - Reset height and ensure clickability */
+/* Menu Button - Pill Style (Mobile/Tablet) */
 #site-header #menu-toggle {
   z-index: 161 !important;
   position: relative !important;
   display: flex !important;
   align-items: center !important;
+  justify-content: center !important;
   height: auto !important;
-  /* Fix "huge" button issue */
-  padding: 8px 12px !important;
+  padding: 8px 16px !important;
   border-radius: 9999px !important;
+  gap: 8px !important;
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* RESTORED Desktop Logo Styles */
+#site-header img {
+  display: block;
+  height: 120px !important;
+  /* ~30% increase from 92px */
+  width: auto !important;
+  max-height: none !important;
+  z-index: 150 !important;
+  position: relative !important;
+  transform: translateY(36px);
+  /* Pushes logo down (requested) */
+  transition: all 300ms ease;
 }
 
 /* Hide "Menu" text on mobile for compactness */
