@@ -180,12 +180,14 @@ button {
 /* RESTORED Desktop Logo Styles */
 #site-header img {
   display: block;
-  height: 92px !important;
+  height: 120px !important;
+  /* ~30% increase from 92px */
   width: auto !important;
   max-height: none !important;
   z-index: 150 !important;
   position: relative !important;
-  transform: translateY(24px);
+  transform: translateY(36px);
+  /* Pushes logo down (requested) */
   transition: all 300ms ease;
 }
 
@@ -245,13 +247,14 @@ button {
   /* Logo Image - Increased to 84px (~30% more than previous 64px state) */
   /* Logo Image - Increased to 84px (~30% more than previous 64px state) */
   header#site-header img {
-    height: 64px !important;
+    height: 84px !important;
     width: auto !important;
     flex-shrink: 0 !important;
     display: block !important;
     object-fit: contain !important;
     position: relative !important;
-    transform: translateY(0px);
+    transform: translateY(12px);
+    /* Align flush to top (84-60)/2 = 12px needed */
   }
 
   /* Logo Image Rule Removed */
