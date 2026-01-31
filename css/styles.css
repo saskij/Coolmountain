@@ -101,8 +101,8 @@ button {
     min-height: 60px !important;
     max-height: 60px !important;
     padding: 0 !important;
-    overflow: hidden !important;
-    /* Prevent scroll/overflow issues */
+    overflow: visible !important;
+    /* Allow logo to exceed boundaries */
   }
 
   /* Main Flex Container */
@@ -114,9 +114,10 @@ button {
     height: 100% !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 0 16px !important;
-    /* Hard padding for mobile safety */
+    padding: 0 24px !important;
+    /* Spacing from edges */
     margin: 0 !important;
+    overflow: visible !important;
   }
 
   /* Left Side: Logo + Brand Identity */
@@ -124,27 +125,27 @@ button {
     display: flex !important;
     align-items: center !important;
     flex: 1 1 auto !important;
-    /* Allow brand to take space and shrink */
     min-width: 0 !important;
-    /* Critical for shrinking text */
     height: 100% !important;
-    gap: 8px !important;
-    /* Reduced gap between logo and text */
+    gap: 12px !important;
+    /* Balanced gap */
+    z-index: 10 !important;
   }
 
   /* Logo Image - ~30% larger than default (48-50px) */
   header#site-header img {
-    height: 48px !important;
+    height: 64px !important;
+    /* ~30% larger than 48px */
     width: auto !important;
     flex-shrink: 0 !important;
-    /* Never shrink the logo itself */
     display: block !important;
     object-fit: contain !important;
+    position: relative !important;
   }
 
-  /* Brand Text - Allow slight reduction to protect Menu layout */
+  /* Brand Text */
   #logo-title {
-    font-size: 0.95rem !important;
+    font-size: 1.05rem !important;
     line-height: 1 !important;
     font-weight: 700 !important;
     white-space: nowrap !important;
@@ -153,7 +154,7 @@ button {
   }
 
   #logo-subtitle {
-    font-size: 0.55rem !important;
+    font-size: 0.6rem !important;
     line-height: 1 !important;
     letter-spacing: 0.1em !important;
   }
