@@ -3,7 +3,7 @@ import re
 
 # Definitons of the NEW content we want to propagate (taken from index.html)
 
-HEADER_LOGO_NEW = """<a href="index.html" class="flex items-center gap-3 transition-transform duration-300 hover:scale-105 origin-left">
+HEADER_LOGO_NEW = """<a href="index.html" class="flex items-center gap-3 transition-transform duration-300 hover:scale-110">
               <img src="assets/images/logo-transparent.png" alt="Cool Mountain"
                 class="h-[50px] w-auto sm:h-[60px] lg:h-[92px]" />
             </a>"""
