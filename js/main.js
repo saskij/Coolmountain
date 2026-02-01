@@ -126,9 +126,15 @@ const revealObserver = new IntersectionObserver(revealCallback, {
 const initReveals = () => {
   const revealElements = document.querySelectorAll(".reveal");
 
-  if (window.innerWidth < 1024) {
+  // Increased threshold to 1200px to cover iPad Pro and small laptops
+  if (window.innerWidth <= 1200) {
     // Mobile/Tablet: Show immediately without animation
-    revealElements.forEach(el => el.classList.add("active"));
+    revealElements.forEach(el => {
+      el.classList.add("active");
+      el.style.opacity = "1";
+      el.style.transform = "none";
+      el.style.transition = "none";
+    });
   } else {
     // Desktop: Use IntersectionObserver for scroll animations
     revealElements.forEach((el) => revealObserver.observe(el));
