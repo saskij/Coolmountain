@@ -18,7 +18,7 @@ export default function AboutPage() {
             <section className="py-20 bg-white">
                 <Container>
                     <div className="max-w-4xl mx-auto space-y-16">
-                        <Reveal direction="up" priority>
+                        <Reveal direction="up">
                             <div>
                                 <SectionTitle title="A Decade of Dedication" className="mb-6" />
                                 <div className="space-y-6 text-lg text-slate-700 leading-relaxed">

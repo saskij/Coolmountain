@@ -71,7 +71,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <Container className="relative z-10">
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
                         <div className="space-y-8">
-                            <Reveal direction="up" priority>
+                            <Reveal direction="up">
                                 <SectionTitle title={service.title} />
                             </Reveal>
                             <Reveal direction="up" delay={0.1}>

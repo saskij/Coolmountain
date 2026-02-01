@@ -33,7 +33,7 @@ export default function Home() {
       <section className="py-20 bg-slate-50">
         <Container>
           <div className="mb-12">
-            <Reveal direction="up" priority>
+            <Reveal direction="up">
               <SectionTitle title="Our Services" subtitle="Comprehensive shipping solutions." />
             </Reveal>
           </div>

@@ -10,8 +10,8 @@ interface RevealProps {
     delay?: number
     direction?: "up" | "left" | "right" | "fade"
     duration?: number
-    once?: boolean // Trigger only once (default: true)
-    priority?: boolean // Force instant reveal on mobile (default: false)
+    once?: boolean
+    width?: "fit-content" | "100%"
 }
 
 export function Reveal({
@@ -21,7 +21,7 @@ export function Reveal({
     direction = "up",
     duration = 0.8,
     once = true,
-    priority = false
+    width = "100%"
 }: RevealProps) {
     const ref = useRef(null)
     const [isMobile, setIsMobile] = useState(false)
@@ -36,18 +36,14 @@ export function Reveal({
         return () => window.removeEventListener("resize", checkMobile)
     }, [])
 
-    // Mobile optimization: trigger earlier (amount 0) and with a margin offset
-    // With whileInView, we pass these directly to the viewport prop.
+    // Mobile: force 0 delay. Desktop: use provided delay.
+    const activeDelay = isMobile ? 0 : delay
 
-    // On mobile with priority, force 0 delay. Otherwise use standard delay.
-    const activeDelay = (isMobile && priority) ? 0 : delay
-
-    // Define variants for different directions
     const variants = {
         hidden: {
             opacity: 0,
-            y: isMobile ? 0 : (direction === "up" ? 30 : 0), // Mobile: Disable Y offset
-            x: isMobile ? 0 : (direction === "left" ? -30 : direction === "right" ? 30 : 0), // Mobile: Disable X offset
+            y: isMobile ? 0 : (direction === "up" ? 30 : 0),
+            x: isMobile ? 0 : (direction === "left" ? -30 : direction === "right" ? 30 : 0),
         },
         visible: {
             opacity: 1,
@@ -56,21 +52,23 @@ export function Reveal({
             transition: {
                 duration,
                 delay: activeDelay,
-                ease: [0.4, 0, 0.2, 1] as const, // cubic-bezier from your CSS
+                ease: [0.4, 0, 0.2, 1] as const,
             },
         },
     }
 
     return (
-        <motion.div
-            ref={ref}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0 }}
-            variants={variants}
-            className={cn("w-full relative", className)}
-        >
-            {children}
-        </motion.div>
+        <div style={{ width, position: "relative" }} className={className}>
+            <motion.div
+                ref={ref}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0 }}
+                variants={variants}
+                className="w-full"
+            >
+                {children}
+            </motion.div>
+        </div>
     )
 }
