@@ -1,7 +1,7 @@
 "use client"
 
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
 interface RevealProps {
@@ -11,6 +11,7 @@ interface RevealProps {
     direction?: "up" | "left" | "right" | "fade"
     duration?: number
     once?: boolean // Trigger only once (default: true)
+    priority?: boolean // Force instant reveal on mobile (default: false)
 }
 
 export function Reveal({
@@ -19,11 +20,31 @@ export function Reveal({
     delay = 0,
     direction = "up",
     duration = 0.8,
-    once = true
+    once = true,
+    priority = false
 }: RevealProps) {
     const ref = useRef(null)
-    // useInView hook handles the intersection observer logic
-    const isInView = useInView(ref, { once })
+    const [isMobile, setIsMobile] = useState(false)
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth < 768)
+        }
+
+        checkMobile()
+        window.addEventListener("resize", checkMobile)
+        return () => window.removeEventListener("resize", checkMobile)
+    }, [])
+
+    // Mobile optimization: trigger earlier (amount 0) and with a margin offset
+    const inViewOptions = isMobile
+        ? { once, amount: 0, margin: "0px 0px -50px 0px" as any }
+        : { once, amount: 0.2 } // Standard desktop triggers at 20% visibility
+
+    const isInView = useInView(ref, inViewOptions)
+
+    // On mobile with priority, force 0 delay. Otherwise use standard delay.
+    const activeDelay = (isMobile && priority) ? 0 : delay
 
     // Define variants for different directions
     const variants = {
@@ -38,7 +59,7 @@ export function Reveal({
             x: 0,
             transition: {
                 duration,
-                delay,
+                delay: activeDelay,
                 ease: [0.4, 0, 0.2, 1] as const, // cubic-bezier from your CSS
             },
         },

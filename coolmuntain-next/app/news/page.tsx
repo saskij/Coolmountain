@@ -19,9 +19,11 @@ export default function NewsPage() {
 
             <section className="py-20 bg-slate-50">
                 <Container>
-                    <Reveal direction="up">
-                        <SectionTitle title="Latest News" className="mb-12" />
-                    </Reveal>
+                    <div className="mb-12">
+                        <Reveal direction="up" priority>
+                            <SectionTitle title="Latest News" />
+                        </Reveal>
+                    </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {NEWS_ITEMS.map((item, index) => (
