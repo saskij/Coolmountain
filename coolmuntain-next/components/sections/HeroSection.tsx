@@ -57,16 +57,6 @@ export function HeroSection({
             <Container className="relative z-10 w-full">
                 <div className={cn("max-w-[800px]", align === "center" && "mx-auto text-center")}>
                     <Reveal delay={0.1} direction="up" className="reveal-immediately">
-                        {/* Added reveal-immediately class logic via className if needed, 
-                though framer motion handles it differently. 
-                For 'immediately', we'd just remove the Reveal wrapper or set delay 0. 
-                Using "reveal-immediately" class for backwards compat if CSS used, 
-                but here Framer is active. We want it visible immediately on mobile? 
-                The user issue was about delayed scroll observer. 
-                Framer Motion useInView also waits. 
-                To fix the user's original issue in React:
-                Use 'priority' loading or 'initial="visible"' if it's above the fold.
-            */}
                         <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-7xl leading-[1.1]">
                             {title}
                         </h1>
