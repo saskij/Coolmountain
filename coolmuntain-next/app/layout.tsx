@@ -5,6 +5,8 @@ import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/ui/BackToTop";
 import "./globals.css";
 
+import { BASE_PATH } from "@/lib/constants";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/assets/images/home-intro-truck.png", // Fallback image
+        url: `${BASE_PATH}/assets/images/home-intro-truck.png`, // Fallback image
         width: 1200,
         height: 630,
         alt: "Cool Mountain Transport Truck",
@@ -34,10 +36,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cool Mountain Transport",
     description: "Reliable, safe, and on-time freight services.",
-    images: ["/assets/images/home-intro-truck.png"],
+    images: [`${BASE_PATH}/assets/images/home-intro-truck.png`],
   },
   icons: {
-    icon: "/favicon.png",
+    icon: `${BASE_PATH}/favicon.png`,
   },
 };
 

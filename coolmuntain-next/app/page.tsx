@@ -188,7 +188,10 @@ export default function Home() {
 
       {/* Call to Action Bar */}
       <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 bg-[url('/assets/images/header-bg-final.png')] bg-cover bg-center mix-blend-overlay"></div>
+        <div
+          className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay"
+          style={{ backgroundImage: `url('${BASE_PATH}/assets/images/header-bg-final.png')` }}
+        ></div>
         <Container className="relative z-10 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to move your freight?</h2>
           <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
