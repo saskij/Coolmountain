@@ -56,9 +56,11 @@ export function Header() {
                     <div className="flex items-center gap-3">
                         <Link href="/" className="relative z-50 group">
                             <div className="w-[110px] sm:w-[130px] lg:w-[160px] h-1" /> {/* Spacer to reserve width */}
-                            <img
+                            <NextImage
                                 src="/assets/images/logo-transparent.png"
                                 alt={COMPANY.name}
+                                width={180}
+                                height={180}
                                 className={cn(
                                     "absolute top-[-20px] left-0 w-auto max-w-none transition-all duration-300 drop-shadow-md group-hover:scale-105",
                                     scrolled

@@ -38,7 +38,13 @@ export default function AboutPage() {
                     <div className="flex items-center gap-2">
                         {/* Using standard img to avoid sizing issues with small logos if needed, or NextImage */}
                         <div className="h-12 w-auto relative">
-                            <img src="/assets/images/smartway-logo.png" alt="SmartWay Partner" className="h-full w-auto object-contain" />
+                            <NextImage
+                                src="/assets/images/smartway-logo.png"
+                                alt="SmartWay Partner"
+                                width={150}
+                                height={80}
+                                className="h-full w-auto object-contain"
+                            />
                         </div>
                         <span>SmartWay Partner</span>
                     </div>

@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/sections/HeroSection"
 import { Button } from "@/components/ui/Button"
 import { COMPANY } from "@/lib/constants"
 import { ContactFormSection } from "@/components/contact/ContactFormSection"
+import NextImage from "next/image"
 
 import { Metadata } from "next"
 
@@ -35,7 +36,13 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="h-12 w-auto relative">
-                            <img src="/assets/images/smartway-logo.png" alt="SmartWay Partner" className="h-full w-auto object-contain" />
+                            <NextImage
+                                src="/assets/images/smartway-logo.png"
+                                alt="SmartWay Partner"
+                                width={150}
+                                height={80}
+                                className="h-full w-auto object-contain"
+                            />
                         </div>
                         <span>SmartWay Partner</span>
                     </div>
