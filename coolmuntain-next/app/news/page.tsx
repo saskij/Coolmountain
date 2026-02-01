@@ -2,8 +2,9 @@ import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
 import { Button } from "@/components/ui/Button"
-import { COMPANY } from "@/lib/constants"
+import { COMPANY, BASE_PATH } from "@/lib/constants"
 import Link from "next/link"
+import NextImage from "next/image"
 
 const NEWS_items = [
     {
@@ -13,7 +14,7 @@ const NEWS_items = [
         categoryColor: "text-red-600 bg-red-100",
         description: "Richard Coyle appointed as the new Chief Executive Officer, bringing extensive leadership experience to guide the company's growth.",
         link: "https://www.coolmountaintransport.com/wp-content/uploads/2021/12/Cool-Mountain-Transport-Announces-Richard-Coyle-as-New-CEO.pdf",
-        image: "/assets/images/logo-transparent.png",
+        image: `${BASE_PATH}/assets/images/logo-transparent.png`,
         imageClass: "opacity-80",
         bgClass: "bg-slate-100"
     },
@@ -24,7 +25,7 @@ const NEWS_items = [
         categoryColor: "text-green-600 bg-green-100",
         description: "Cool Mountain Transport joins EPA’s SmartWay Program, demonstrating a strong commitment to environmental sustainability and freight efficiency.",
         link: "https://www.coolmountaintransport.com/wp-content/uploads/2021/09/Cool-Mountain-Transport-Newest-Member-of-SmartWay.pdf",
-        image: "/assets/images/smartway-logo.png",
+        image: `${BASE_PATH}/assets/images/smartway-logo.png`,
         imageClass: "filter brightness-0 invert",
         bgClass: "bg-slate-800"
     },
@@ -35,7 +36,7 @@ const NEWS_items = [
         categoryColor: "text-blue-600 bg-blue-100",
         description: "Celebrating our dedicated drivers through a company-wide photo contest. See the winners and their views from the road.",
         link: "https://www.coolmountaintransport.com/driver-photo-contest/",
-        image: "/assets/images/logo-transparent.png",
+        image: `${BASE_PATH}/assets/images/logo-transparent.png`,
         imageClass: "opacity-80",
         bgClass: "bg-slate-100"
     },
@@ -46,7 +47,7 @@ const NEWS_items = [
         categoryColor: "text-red-600 bg-red-100",
         description: "A fresh start with a new name that reflects our focus on employees and expanded market presence across the US.",
         link: "https://www.coolmountaintransport.com/wp-content/uploads/2020/07/Press-Release-Cool-Mountain-Transport-Delivers-for-America.pdf",
-        image: "/assets/images/logo-transparent.png",
+        image: `${BASE_PATH}/assets/images/logo-transparent.png`,
         imageClass: "opacity-80",
         bgClass: "bg-slate-100"
     },
@@ -57,7 +58,7 @@ const NEWS_items = [
         categoryColor: "text-amber-600 bg-amber-100",
         description: "Common Value for the Future (CVF) Capital Partners announces a significant investment to support company growth.",
         link: "http://cvfcapitalpartners.com/blog/cvf-invests-in-off-spec-solutions/",
-        image: "/assets/images/logo-transparent.png",
+        image: `${BASE_PATH}/assets/images/logo-transparent.png`,
         imageClass: "opacity-80",
         bgClass: "bg-slate-100"
     },
@@ -68,7 +69,7 @@ const NEWS_items = [
         categoryColor: "text-amber-600 bg-amber-100",
         description: "Sacramento Business Journal reports on the major investment deal that helps fuel our fleet expansion.",
         link: "https://www.bizjournals.com/sacramento/news/2018/09/21/davis-based-cvf-capital-invests-6-million-in-idaho.html",
-        image: "/assets/images/logo-transparent.png",
+        image: `${BASE_PATH}/assets/images/logo-transparent.png`,
         imageClass: "opacity-80",
         bgClass: "bg-slate-100"
     },
@@ -79,7 +80,7 @@ const NEWS_items = [
         categoryColor: "text-amber-600 bg-amber-100",
         description: "New senior credit facility secured to support ongoing operations and future expansion plans.",
         link: "http://links.mail1.spopessentials1.com/servlet/MailView?ms=MjQ5NzgyNDkS1&r=ODY0NDMwOTk5ODkS1&j=MTQwMzY2ODQ0MAS2&mt=1&rt=0",
-        image: "/assets/images/logo-transparent.png",
+        image: `${BASE_PATH}/assets/images/logo-transparent.png`,
         imageClass: "opacity-80",
         bgClass: "bg-slate-100"
     }
@@ -110,7 +111,13 @@ export default function NewsPage() {
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="h-12 w-auto relative">
-                            <img src="/assets/images/smartway-logo.png" alt="SmartWay Partner" className="h-full w-auto object-contain" />
+                            <NextImage
+                                src={`${BASE_PATH}/assets/images/smartway-logo.png`}
+                                alt="SmartWay Partner"
+                                width={150}
+                                height={80}
+                                className="h-full w-auto object-contain"
+                            />
                         </div>
                         <span>SmartWay Partner</span>
                     </div>

@@ -2,7 +2,8 @@ import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
 import { Button } from "@/components/ui/Button"
-import { COMPANY } from "@/lib/constants"
+import { COMPANY, BASE_PATH } from "@/lib/constants"
+import NextImage from "next/image"
 
 import { Metadata } from "next"
 
@@ -36,7 +37,13 @@ export default function ExpeditedPage() {
                     </div>
                     <div className="flex items-center gap-2">
                         <div className="h-12 w-auto relative">
-                            <img src="/assets/images/smartway-logo.png" alt="SmartWay Partner" className="h-full w-auto object-contain" />
+                            <NextImage
+                                src={`${BASE_PATH}/assets/images/smartway-logo.png`}
+                                alt="SmartWay Partner"
+                                width={150}
+                                height={80}
+                                className="h-full w-auto object-contain"
+                            />
                         </div>
                         <span>SmartWay Partner</span>
                     </div>
