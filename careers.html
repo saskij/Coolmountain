@@ -56,20 +56,25 @@
               </a>
             </div>
             <nav class="nav-shell hidden items-center gap-4 px-1 py-1 text-[13px] font-medium text-slate-700 xl:flex">
-              <a class="nav-link" href="index.html">Home</a>
-              <a class="nav-link text-slate-900 font-semibold" href="about.html">About</a>
-              <a class="nav-link active" href="join-our-team.html">Join Our Team</a>
+              <a class="nav-link active" href="index.html">Home</a>
+              <a class="nav-link" href="about.html">About</a>
+              <div class="nav-item-wrapper">
+                <a class="nav-link" style="cursor: pointer;">Services</a>
+                <div class="dropdown-menu">
+                  <a href="over-the-road.html">Dry Van</a>
+                  <a href="dedicated.html">Refrigerated</a>
+                  <a href="expedited.html">Expedited</a>
+                </div>
+              </div>
+              <a class="nav-link" href="join-our-team.html">Join Our Team</a>
               <a class="nav-link" href="equipment.html">Equipment</a>
               <a class="nav-link" href="news.html">News</a>
               <a class="nav-link" href="contact.html">Contact</a>
             </nav>
             <div class="flex items-center gap-2 md:gap-4">
-              <button id="menu-toggle"
-                class="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs font-bold uppercase tracking-widest text-slate-900 shadow-sm transition hover:bg-slate-50 xl:hidden"
-                type="button">
+              <button id="menu-toggle" class="xl:hidden" type="button">
                 <span>Menu</span>
-                <svg class="h-4 w-4 text-slate-900" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
                   <line x1="4" y1="12" x2="20" y2="12"></line>
                   <line x1="4" y1="6" x2="20" y2="6"></line>
                   <line x1="4" y1="18" x2="20" y2="18"></line>
@@ -234,32 +239,43 @@
     <div class="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-8 py-16 lg:grid-cols-2 lg:px-[7vw]">
       <div class="grid grid-cols-1 gap-8 text-sm text-slate-600 sm:grid-cols-2 sm:text-left text-center">
         <div class="space-y-3">
-          <a class="block hover:text-slate-800 transition" href="index.html">
+          <a class="block hover:text-red-700 transition duration-300" href="index.html">
             Homepage
           </a>
-          <a class="block hover:text-slate-800 transition" href="about.html">
+          <a class="block hover:text-red-700 transition duration-300" href="about.html">
             About
           </a>
-          <a class="block hover:text-slate-800 transition" href="join-our-team.html">
+          <a class="block hover:text-red-700 transition duration-300" href="join-our-team.html">
             Join Our Team
           </a>
-          <a class="block hover:text-slate-800 transition" href="#">
+          <a class="block hover:text-red-700 transition duration-300" href="#">
             Customers
           </a>
         </div>
         <div class="space-y-3">
-          <a class="block hover:text-slate-800 transition" href="equipment.html">
+          <a class="block hover:text-red-700 transition duration-300" href="equipment.html">
             Equipment
           </a>
-          <a class="block hover:text-slate-800 transition" href="join-our-team.html">
+          <a class="block hover:text-red-700 transition duration-300" href="join-our-team.html">
             Careers
           </a>
-          <a class="block hover:text-slate-800 transition" href="news.html">
+          <a class="block hover:text-red-700 transition duration-300" href="news.html">
             News
           </a>
-          <a class="block hover:text-slate-800 transition" href="contact.html">
+          <a class="block hover:text-red-700 transition duration-300" href="contact.html">
             Contact
           </a>
+          <div class="pt-4 border-t border-slate-200 mt-4">
+            <a class="block hover:text-red-700 transition duration-300 py-1" href="privacy.html">
+              Privacy Policy
+            </a>
+            <a class="block hover:text-red-700 transition duration-300 py-1" href="terms.html">
+              Terms of Use
+            </a>
+            <a class="block hover:text-red-700 transition duration-300 py-1" href="applicant-privacy.html">
+              Applicant Privacy
+            </a>
+          </div>
         </div>
       </div>
 
