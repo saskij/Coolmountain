@@ -1,0 +1,94 @@
+import { Container } from "@/components/ui/Container"
+import NextImage from "next/image"
+import { Reveal } from "@/components/ui/Reveal"
+import { cn } from "@/lib/utils"
+
+interface HeroSectionProps {
+    title: string
+    subtitle?: string
+    backgroundImage?: string
+    overlay?: boolean
+    className?: string
+    children?: React.ReactNode // For Grid layout or specific content
+    align?: "left" | "center"
+    height?: "full" | "large" | "medium" | "small"
+}
+
+export function HeroSection({
+    title,
+    subtitle,
+    backgroundImage = "/assets/images/header-bg-final-v2.jpg",
+    overlay = true,
+    className,
+    children,
+    align = "left",
+    height = "large"
+}: HeroSectionProps) {
+
+    const heightClasses = {
+        full: "min-h-screen",
+        large: "min-h-[80vh] lg:min-h-[90vh]", // Homepage style
+        medium: "min-h-[50vh] lg:min-h-[60vh]", // Inner page style?
+        small: "min-h-[30vh] lg:min-h-[40vh]", // Standard Inner page
+    }
+
+    return (
+        <section
+            className={cn(
+                "relative flex flex-col justify-end overflow-hidden pb-16 pt-32",
+                heightClasses[height],
+                className
+            )}
+        >
+            {/* Background Image */}
+            <NextImage
+                src={backgroundImage}
+                alt={title}
+                fill
+                priority
+                className="object-cover -z-10"
+                quality={90}
+            />
+            {/* Overlay */}
+            {overlay && (
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/20 to-slate-900/80" />
+            )}
+
+            <Container className="relative z-10 w-full">
+                <div className={cn("max-w-[800px]", align === "center" && "mx-auto text-center")}>
+                    <Reveal delay={0.1} direction="up" className="reveal-immediately">
+                        {/* Added reveal-immediately class logic via className if needed, 
+                though framer motion handles it differently. 
+                For 'immediately', we'd just remove the Reveal wrapper or set delay 0. 
+                Using "reveal-immediately" class for backwards compat if CSS used, 
+                but here Framer is active. We want it visible immediately on mobile? 
+                The user issue was about delayed scroll observer. 
+                Framer Motion useInView also waits. 
+                To fix the user's original issue in React:
+                Use 'priority' loading or 'initial="visible"' if it's above the fold.
+            */}
+                        <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-7xl leading-[1.1]">
+                            {title}
+                        </h1>
+                    </Reveal>
+
+                    {subtitle && (
+                        <Reveal delay={0.2} direction="up">
+                            <p className="mt-6 text-lg font-medium leading-relaxed text-slate-200 sm:text-xl lg:text-2xl max-w-2xl">
+                                {subtitle}
+                            </p>
+                        </Reveal>
+                    )}
+
+                    {children && (
+                        <Reveal delay={0.3} direction="up">
+                            <div className="mt-10">
+                                {children}
+                            </div>
+                        </Reveal>
+                    )}
+                </div>
+            </Container>
+        </section>
+    )
+}
