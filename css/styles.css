@@ -377,7 +377,7 @@ button {
   /* Tablet logo size */
   header#site-header img {
     height: 92px !important;
-    transform: translateY(14px);
+    transform: translateY(28px);
   }
 
   /* Brand Text */
@@ -452,8 +452,8 @@ button {
     display: block !important;
     object-fit: contain !important;
     position: relative !important;
-    transform: translateY(12px);
-    /* Align flush to top (84-60)/2 = 12px needed */
+    transform: translateY(26px);
+    /* Align flush to top (84-60)/2 = 12px needed + extra for hang */
   }
 
   /* Brand Text - Allow truncation on very small screens */
