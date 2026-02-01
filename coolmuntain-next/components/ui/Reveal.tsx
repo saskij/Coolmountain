@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
+import { motion } from "framer-motion"
 import { useRef, useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
 
@@ -37,11 +37,7 @@ export function Reveal({
     }, [])
 
     // Mobile optimization: trigger earlier (amount 0) and with a margin offset
-    const inViewOptions = isMobile
-        ? { once, amount: 0, margin: "0px 0px -50px 0px" as any }
-        : { once, amount: 0.2 } // Standard desktop triggers at 20% visibility
-
-    const isInView = useInView(ref, inViewOptions)
+    // With whileInView, we pass these directly to the viewport prop.
 
     // On mobile with priority, force 0 delay. Otherwise use standard delay.
     const activeDelay = (isMobile && priority) ? 0 : delay
@@ -50,8 +46,8 @@ export function Reveal({
     const variants = {
         hidden: {
             opacity: 0,
-            y: direction === "up" ? 30 : 0,
-            x: direction === "left" ? -30 : direction === "right" ? 30 : 0,
+            y: isMobile ? 0 : (direction === "up" ? 30 : 0), // Mobile: Disable Y offset
+            x: isMobile ? 0 : (direction === "left" ? -30 : direction === "right" ? 30 : 0), // Mobile: Disable X offset
         },
         visible: {
             opacity: 1,
@@ -69,7 +65,8 @@ export function Reveal({
         <motion.div
             ref={ref}
             initial="hidden"
-            animate={isInView ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0 }}
             variants={variants}
             className={cn("w-full relative", className)}
         >
