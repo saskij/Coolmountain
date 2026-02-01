@@ -36,6 +36,7 @@ export default function NewsPage() {
                                             src={item.image}
                                             alt={item.title}
                                             fill
+                                            priority={index < 6}
                                             className={cn("object-contain opacity-80", item.invertImage && "filter brightness-0 invert opacity-100")}
                                             sizes="(max-width: 768px) 100vw, 33vw"
                                         />

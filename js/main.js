@@ -125,7 +125,14 @@ const revealObserver = new IntersectionObserver(revealCallback, {
 
 const initReveals = () => {
   const revealElements = document.querySelectorAll(".reveal");
-  revealElements.forEach((el) => revealObserver.observe(el));
+
+  if (window.innerWidth < 1024) {
+    // Mobile/Tablet: Show immediately without animation
+    revealElements.forEach(el => el.classList.add("active"));
+  } else {
+    // Desktop: Use IntersectionObserver for scroll animations
+    revealElements.forEach((el) => revealObserver.observe(el));
+  }
 };
 
 if (backToTop) {
