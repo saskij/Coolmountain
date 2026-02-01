@@ -84,3 +84,35 @@ body {
 .img-zoom-container:hover .img-zoom {
   transform: scale(1.08);
 }
+
+@keyframes twitch {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(-3deg);
+  }
+
+  20% {
+    transform: rotate(5deg);
+  }
+
+  30% {
+    transform: rotate(-5deg);
+  }
+
+  40% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-twitch {
+  animation: twitch 3s infinite;
+}

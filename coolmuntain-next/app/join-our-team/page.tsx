@@ -1,128 +1,232 @@
 import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
-import { SectionTitle } from "@/components/ui/SectionTitle"
 import { Reveal } from "@/components/ui/Reveal"
 import { Button } from "@/components/ui/Button"
 import { COMPANY } from "@/lib/constants"
-import { ShieldCheck, Map, DollarSign, Phone } from "lucide-react"
+import { CheckCircle2 } from "lucide-react"
+
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Careers & Truck Driving Jobs | Cool Mountain Transport",
+    description: "Join our team of professional drivers. Competitive pay, great benefits, and a family-oriented atmosphere. Apply to move with Cool Mountain.",
+}
 
 export default function JoinTeamPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <HeroSection
                 title="Join Our Team"
-                subtitle="Explore opportunities for company drivers and owner operators."
+                subtitle="Explore opportunities for company drivers and owner operators, plus the benefits of working with a team that prioritizes safety and professionalism."
                 height="medium"
                 backgroundImage="/assets/images/header-bg-final-v2.jpg"
             >
-                <Button href={COMPANY.externalLinks.driverApp} external size="lg" className="mt-8">
-                    Apply Now
-                </Button>
+                <div className="flex flex-col sm:flex-row gap-4 mt-8">
+                    <Button href={COMPANY.externalLinks.driverApp} size="lg" external>
+                        Apply as a Driver
+                    </Button>
+                    <Button href="/contact" size="lg" variant="outline" className="border-white/80 bg-black/40 text-white hover:bg-white hover:text-slate-900">
+                        Request a Freight Quote
+                    </Button>
+                </div>
+                <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                        <span>USDOT #28965</span>
+                        <span className="opacity-60">•</span>
+                        <span>MC #654322</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <div className="h-12 w-auto relative">
+                            <img src="/assets/images/smartway-logo.png" alt="SmartWay Partner" className="h-full w-auto object-contain" />
+                        </div>
+                        <span>SmartWay Partner</span>
+                    </div>
+                </div>
             </HeroSection>
 
-            {/* Company Drivers */}
-            <section className="py-20 bg-white">
+            {/* Company Drivers Section */}
+            <section className="bg-white py-20">
                 <Container>
-                    <div className="grid lg:grid-cols-2 gap-16 items-center">
+                    <div className="space-y-10">
                         <Reveal direction="up">
-                            <div className="space-y-6">
-                                <SectionTitle title="Company Drivers" subtitle="Drive with passion. Drive with us." />
-                                <div className="space-y-4 text-slate-700 leading-relaxed text-lg">
-                                    <p>
-                                        at Cool Mountain Transport, working as a family-oriented team is our standard.
-                                        We value each employee and have built a strong culture of loyal and successful truck drivers.
-                                    </p>
-                                    <p>
-                                        Our drivers develop one-on-one relationships with managers and staff.
-                                        We know each other by name, are there when needed, and provide support for long-term success.
-                                    </p>
-                                </div>
-                                <Button href={COMPANY.externalLinks.driverApp} external>
-                                    Start Application
-                                </Button>
-                            </div>
-                        </Reveal>
-
-                        <Reveal direction="left" delay={0.2}>
-                            <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                                <div className="flex items-center gap-4 mb-6">
-                                    <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600">
-                                        <ShieldCheck className="w-6 h-6" />
-                                    </div>
-                                    <h3 className="text-xl font-bold text-slate-900">Safety Commitment</h3>
-                                </div>
-                                <ul className="space-y-3 text-slate-700">
-                                    <li>Collision-avoidance technology installed</li>
-                                    <li>Tire pressure warning systems</li>
-                                    <li>Newest fleet with updated safety tech</li>
-                                    <li>Strict maintenance schedules</li>
-                                </ul>
-                            </div>
-                        </Reveal>
-                    </div>
-                </Container>
-            </section>
-
-            {/* Owner Operators */}
-            <section className="py-20 bg-slate-50">
-                <Container>
-                    <div className="mb-12">
-                        <Reveal direction="up">
-                            <SectionTitle title="Owner Operators" subtitle="Great partnerships for qualified operators." />
-                        </Reveal>
-                    </div>
-
-                    <div className="grid md:grid-cols-3 gap-6">
-                        <Reveal delay={0.1} direction="up">
-                            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 h-full">
-                                <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
-                                    <Map className="w-5 h-5" />
-                                </div>
-                                <h4 className="text-sm font-bold uppercase text-slate-400 tracking-wider mb-2">Regions</h4>
-                                <p className="text-xl font-bold text-slate-900">ID, OR, WA, MT, ND, CA</p>
-                            </div>
-                        </Reveal>
-
-                        <Reveal delay={0.2} direction="up">
-                            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 h-full">
-                                <div className="w-10 h-10 rounded-full bg-green-50 text-green-600 flex items-center justify-center mb-4">
-                                    <DollarSign className="w-5 h-5" />
-                                </div>
-                                <h4 className="text-sm font-bold uppercase text-slate-400 tracking-wider mb-2">Compensation</h4>
-                                <p className="text-xl font-bold text-slate-900">Up to 85% of Gross</p>
-                            </div>
-                        </Reveal>
-
-                        <Reveal delay={0.3} direction="up">
-                            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 h-full">
-                                <div className="w-10 h-10 rounded-full bg-orange-50 text-orange-600 flex items-center justify-center mb-4">
-                                    <Phone className="w-5 h-5" />
-                                </div>
-                                <h4 className="text-sm font-bold uppercase text-slate-400 tracking-wider mb-2">Contact</h4>
-                                <p className="text-xl font-bold text-slate-900">
-                                    Call {COMPANY.contact.careersContactName}<br />
-                                    <span className="text-base font-normal text-slate-600">{COMPANY.contact.careersPhone}</span>
+                            <div>
+                                <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+                                    Company Drivers
+                                </h2>
+                                <p className="mt-3 text-base leading-relaxed text-slate-700">
+                                    If you’re a professional driver looking for opportunities that work
+                                    for YOU, with a purpose to change the transportation environment,
+                                    you’ve come to the right place.
                                 </p>
                             </div>
                         </Reveal>
+
+                        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr]">
+                            <Reveal direction="up" delay={0.1}>
+                                <div className="space-y-4 text-slate-700 leading-relaxed text-base">
+                                    <p>
+                                        At Cool Mountain Transport, we work as a family-oriented team,
+                                        demonstrating the most professional attitude in the industry. Team
+                                        members hold each other to higher standards than our competitors
+                                        and strive to help each other improve every aspect of our
+                                        workplace; we encourage each other daily, hold each other
+                                        accountable at all times, and always treat our customers with
+                                        dignity and respect.
+                                    </p>
+                                    <p>
+                                        At Cool Mountain Transport, driving isn’t just a job – it’s our
+                                        passion. It’s a chance to make a difference in every person we
+                                        meet.
+                                    </p>
+                                    <p>
+                                        Cool Mountain Transport is a known leader in the industry. Its
+                                        Driving Associates develop one-on-one relationships with managers,
+                                        trainers, and staff. They know each other by name, are there when
+                                        they’re needed, and provide support for long-term success. Cool
+                                        Mountain Transport offers employees the financial stability needed
+                                        for continued professional growth. But driving with Cool Mountain
+                                        Transport isn’t merely about steady income; it’s about enjoying
+                                        your work. Cool Mountain Transport values each employee and has
+                                        built a strong culture of loyal and successful truck drivers. With
+                                        Cool Mountain Transport, you are part of a winning, growing team.
+                                    </p>
+                                    <div className="pt-4">
+                                        <Button href={COMPANY.externalLinks.driverApp} external size="lg">
+                                            Apply Now
+                                        </Button>
+                                    </div>
+                                </div>
+                            </Reveal>
+
+                            <Reveal direction="left" delay={0.2}>
+                                <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-100">
+                                            <CheckCircle2 className="w-5 h-5 text-slate-700" />
+                                        </div>
+                                        <h3 className="text-lg font-semibold text-slate-900">
+                                            Safety Commitment
+                                        </h3>
+                                    </div>
+                                    <p className="text-sm leading-relaxed text-slate-600 mb-4">
+                                        At Cool Mountain Transport safety comes first. Safety means
+                                        customers’ freight is delivered undamaged and each driving
+                                        associate goes home to their family uninjured.
+                                    </p>
+                                    <p className="text-sm font-semibold text-slate-900 mb-2">
+                                        Safety initiatives include:
+                                    </p>
+                                    <ul className="space-y-2 text-sm text-slate-600 list-disc pl-4">
+                                        <li>Collision-avoidance technology installed on the fleet.</li>
+                                        <li>Tire pressure warning system with temperature readings.</li>
+                                        <li>The newest fleet around with updated safety technology.</li>
+                                    </ul>
+                                    <p className="mt-4 text-sm text-slate-600">
+                                        Our commitment to safety starts with all of us working as a team to
+                                        keep improving.
+                                    </p>
+                                </div>
+                            </Reveal>
+                        </div>
                     </div>
                 </Container>
             </section>
 
-            {/* Benefits / Conclusion */}
-            <section className="py-24 bg-white">
+            {/* Owner Operators Section */}
+            <section className="bg-slate-50 py-20">
                 <Container>
-                    <Reveal direction="up">
-                        <div className="bg-slate-900 text-white rounded-3xl p-8 md:p-16 text-center">
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Drive with the Best?</h2>
-                            <p className="text-lg text-slate-300 max-w-2xl mx-auto mb-10">
-                                If you are honest, dedicated, and have passion for the job, come work at Cool Mountain Transport and help us grow.
-                            </p>
-                            <Button href={COMPANY.externalLinks.driverApp} external size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
-                                Apply Today
-                            </Button>
+                    <div className="max-w-7xl space-y-8">
+                        <Reveal direction="up">
+                            <div>
+                                <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+                                    Owner Operators
+                                </h2>
+                                <p className="mt-3 text-base leading-relaxed text-slate-700">
+                                    Great company, great clientele, and regular runs for qualified owner
+                                    operators.
+                                </p>
+                            </div>
+                        </Reveal>
+
+                        <Reveal direction="up" delay={0.1}>
+                            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+                                        Regions
+                                    </p>
+                                    <p className="mt-3 text-base font-semibold text-slate-900">
+                                        ID, OR, WA, MT, ND, CA
+                                    </p>
+                                </div>
+                                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+                                        Compensation
+                                    </p>
+                                    <p className="mt-3 text-base font-semibold text-slate-900">
+                                        Up to 85% of gross revenue
+                                    </p>
+                                </div>
+                                <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <p className="text-sm font-semibold uppercase tracking-widest text-slate-500">
+                                        Contact
+                                    </p>
+                                    <p className="mt-3 text-base font-semibold text-slate-900">
+                                        Call Joan at {COMPANY.contact.careersPhone}
+                                    </p>
+                                </div>
+                            </div>
+                        </Reveal>
+                    </div>
+                </Container>
+            </section>
+
+            {/* Benefits Section */}
+            <section className="bg-white py-20">
+                <Container>
+                    <div className="space-y-8">
+                        <Reveal direction="up">
+                            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
+                                Benefits of Working With Us
+                            </h2>
+                        </Reveal>
+
+                        <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr]">
+                            <Reveal direction="up" delay={0.1}>
+                                <div className="space-y-4 text-slate-700 leading-relaxed text-base">
+                                    <p>
+                                        Cool Mountain Transport is looking for qualified individuals to
+                                        join its growing team. Talented individuals who strive to improve,
+                                        work with passion, are dedicated to doing a great job, and perform
+                                        each task to the best of their ability are ideal for our company.
+                                    </p>
+                                    <p>
+                                        Cool Mountain Transport is expanding and is committed to becoming
+                                        the best trucking company in America. Drivers receive consistent
+                                        support from a dedicated staff while earning a compensation package
+                                        that recognizes their value and contribution.
+                                    </p>
+                                    <p>
+                                        If you are honest, dedicated, and have passion for the job, come
+                                        work at Cool Mountain Transport and help us grow!
+                                    </p>
+                                </div>
+                            </Reveal>
+
+                            <Reveal direction="right" delay={0.2}>
+                                <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <p className="text-base leading-relaxed text-slate-700 italic font-light">
+                                        "If you are honest, dedicated, and have passion for the job, come
+                                        work at Cool Mountain Transport and help us grow."
+                                    </p>
+                                    <div className="mt-8">
+                                        <Button href={COMPANY.externalLinks.driverApp} external size="lg">
+                                            Apply Today
+                                        </Button>
+                                    </div>
+                                </div>
+                            </Reveal>
                         </div>
-                    </Reveal>
+                    </div>
                 </Container>
             </section>
         </div>

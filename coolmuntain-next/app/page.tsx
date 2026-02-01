@@ -8,6 +8,13 @@ import { SERVICES, COMPANY } from "@/lib/constants"
 import Link from "next/link"
 import NextImage from "next/image"
 
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Cool Mountain Transport | Reliable Freight & Professional Drivers",
+  description: "Solving complex logistics problems with modern fleet and safety commitment. Dry van, refrigerated, and expedited freight services across the US.",
+}
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -19,13 +26,26 @@ export default function Home() {
 
         backgroundImage="/assets/images/header-bg-final-v2.jpg"
       >
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col items-start sm:flex-row gap-4 mt-8">
           <Button href={COMPANY.externalLinks.driverApp} size="lg" external>
             Apply as a Driver
           </Button>
-          <Button href="/contact" size="lg" variant="outline">
+          <Button href="/contact" size="lg" variant="outline" className="border-white/80 bg-black/40 text-white hover:bg-white hover:text-slate-900">
             Request a Freight Quote
           </Button>
+        </div>
+        <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <span>USDOT #28965</span>
+            <span className="opacity-60">•</span>
+            <span>MC #654322</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <div className="h-12 w-auto relative">
+              <img src="/assets/images/smartway-logo.png" alt="SmartWay Partner" className="h-full w-auto object-contain" />
+            </div>
+            <span>SmartWay Partner</span>
+          </div>
         </div>
       </HeroSection>
 
@@ -42,7 +62,7 @@ export default function Home() {
             {SERVICES.map((service, index) => (
               <Reveal key={service.id} delay={index * 0.1} direction="up">
                 <ServiceCard
-                  title={service.title}
+                  title={service.shortTitle}
                   description={service.description}
                   href={service.href}
                   iconName={service.icon as any}
@@ -53,53 +73,106 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* About / CTA Section */}
-      <section className="py-24 bg-white">
-        <Container>
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <Reveal direction="left">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] group img-zoom-container">
-                {/* Using standard img for now, migrate to Next/Image later */}
-                <NextImage
-                  src="/assets/images/home-intro-truck.png"
-                  alt="Cool Mountain Truck"
-                  fill
-                  className="img-zoom object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                <div className="absolute bottom-8 left-8 text-white">
-                  <p className="font-bold text-lg">Safety First</p>
-                  <p className="opacity-90">Our top priority, every mile.</p>
-                </div>
-              </div>
-            </Reveal>
+      {/* About / Mission Section */}
+      <section className="relative overflow-hidden bg-white pt-20 pb-20">
+        <div className="pointer-events-none absolute inset-0 opacity-5">
+          <div className="absolute -right-24 top-10 h-64 w-64 rotate-12 rounded-full bg-slate-900"></div>
+          <div className="absolute left-12 top-24 h-32 w-32 rotate-12 border border-slate-900"></div>
+        </div>
 
+        <Container>
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            {/* Text Column */}
             <div className="space-y-6">
-              <Reveal direction="right" delay={0.2}>
-                <SectionTitle title="Why Cool Mountain?" />
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  We are more than just a trucking company; we are your partners in logistics.
-                  With a fleet of modern equipment and a team of dedicated professionals,
-                  we ensure your freight arrives safely and on time, every time.
+              <Reveal direction="up">
+                <div>
+                  <h2 className="text-3xl font-black uppercase text-slate-900">
+                    COOL MOUNTAIN
+                    <span className="font-light text-slate-700 block sm:inline sm:ml-2">TRANSPORT</span>
+                  </h2>
+                  <div className="mt-2 h-1 w-40 bg-gradient-to-r from-slate-900 to-transparent"></div>
+                </div>
+              </Reveal>
+
+              <Reveal direction="up" delay={0.1}>
+                <p className="text-base leading-relaxed text-slate-700">
+                  Cool Mountain Transport offers competitive and innovative national
+                  freight services, specialized freight, expedited freight, and
+                  dedicated services.
                 </p>
-                <ul className="space-y-4 pt-4">
-                  {[
-                    "24/7 Dispatch & Support",
-                    "Late-model Equipment (Avg 2.5 years)",
-                    "Real-time Freight Tracking",
-                    "Safety-focused Culture"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xs font-bold">✓</span>
-                      <span className="text-slate-700 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-6">
-                  <Button href="/about" variant="ghost" size="lg" className="pl-0 hover:pl-4">
-                    Learn More About Us →
+
+                <div className="grid gap-4 sm:grid-cols-3 pt-4">
+                  <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                    <div className="flex items-center gap-2 text-slate-700">
+                      <span className="text-sm font-semibold">Nampa, Idaho</span>
+                    </div>
+                  </div>
+                  <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                    <div className="flex items-center gap-2 text-slate-700">
+                      <span className="text-sm font-semibold">MC#879475</span>
+                    </div>
+                  </div>
+                  <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                    <div className="flex items-center gap-2 text-slate-700">
+                      <span className="text-sm font-semibold">USDOT 2414797</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+
+              <Reveal direction="up" delay={0.2}>
+                <p className="text-base leading-relaxed text-slate-700">
+                  Cool Mountain Transport values customer relationships and seeks
+                  every opportunity to provide professional, well planned and worry-free
+                  service. We provide exceptional, consistent and reliable
+                  transportation services that meet complex and evolving business
+                  needs. Local runs, long distance or even in caves, your unique
+                  requirements are our priority. An extensive network of leasing
+                  partners provides exceptional flexibility and quick expansion,
+                  allowing Cool Mountain Transport to meet demanding schedules and
+                  every customer’s high expectations. Devoted, well-trained Cool
+                  Mountain Transport drivers are prepared to undertake the most
+                  difficult loads. Find out today how Cool Mountain Transport can be a
+                  strategic partner in your success!
+                </p>
+              </Reveal>
+
+              <Reveal direction="up" delay={0.3}>
+                <div className="pt-2">
+                  <Button href="/contact" variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-50">
+                    Contact Us for More Information
                   </Button>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* Image & Mission Column */}
+            <div className="flex flex-col justify-center lg:justify-end space-y-6 lg:-translate-y-6">
+              <Reveal direction="left" delay={0.2}>
+                <div className="relative rounded-2xl border-l-4 border-red-500 bg-slate-50 p-6">
+                  <div className="absolute left-6 top-2 text-5xl text-slate-200">“</div>
+                  <p className="text-sm font-semibold text-orange-600">
+                    Mission Statement:
+                  </p>
+                  <p className="mt-2 text-slate-600 leading-relaxed italic font-light">
+                    to deliver outstanding transportation services, provide
+                    exceptional customer service, improve technology, and create
+                    business efficiencies that promote long-term customer stability,
+                    longevity and prosperity.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal direction="right" delay={0.4}>
+                <div className="relative rounded-2xl shadow-lg overflow-hidden group">
+                  <div className="absolute -right-4 -top-4 h-full w-full rounded-3xl border border-slate-200 bg-slate-50 -z-10"></div>
+                  <NextImage
+                    src="/assets/images/home-intro-truck.png"
+                    alt="Cool Mountain truck"
+                    width={600}
+                    height={400}
+                    className="relative w-full rounded-2xl transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
               </Reveal>
             </div>

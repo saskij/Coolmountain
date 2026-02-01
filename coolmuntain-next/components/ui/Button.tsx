@@ -25,7 +25,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         const sizes = {
             sm: "h-10 px-4 text-[11px]",
             md: "h-12 px-6 text-[12px]",
-            lg: "h-14 px-8 text-[13px]",
+            lg: "h-10 px-5 text-[11px] md:h-14 md:px-8 md:text-[13px]",
         }
 
         // Override size for link variant

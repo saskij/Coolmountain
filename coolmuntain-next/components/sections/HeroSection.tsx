@@ -57,14 +57,14 @@ export function HeroSection({
             <Container className="relative z-10 w-full">
                 <div className={cn("max-w-[800px]", align === "center" && "mx-auto text-center")}>
                     <Reveal delay={0.1} direction="up" className="reveal-immediately">
-                        <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-7xl leading-[1.1]">
+                        <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-[1.1]">
                             {title}
                         </h1>
                     </Reveal>
 
                     {subtitle && (
                         <Reveal delay={0.2} direction="up">
-                            <p className="mt-6 text-lg font-medium leading-relaxed text-slate-200 sm:text-xl lg:text-2xl max-w-2xl">
+                            <p className="mt-6 text-lg font-medium leading-relaxed text-slate-200 sm:text-xl max-w-2xl">
                                 {subtitle}
                             </p>
                         </Reveal>
