@@ -33,21 +33,18 @@ export default function Home() {
       <section className="py-20 bg-slate-50">
         <Container>
           <div className="mb-12">
-            <Reveal direction="up">
-              <SectionTitle title="Our Services" subtitle="Comprehensive shipping solutions." />
-            </Reveal>
+            <SectionTitle title="Our Services" subtitle="Comprehensive shipping solutions." />
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
             {SERVICES.map((service, index) => (
-              <Reveal key={service.id} delay={index * 0.1} direction="up">
-                <ServiceCard
-                  title={service.title}
-                  description={service.description}
-                  href={service.href}
-                  iconName={service.icon as any}
-                />
-              </Reveal>
+              <ServiceCard
+                key={service.id}
+                title={service.title}
+                description={service.description}
+                href={service.href}
+                iconName={service.icon as any}
+              />
             ))}
           </div>
         </Container>
@@ -57,51 +54,47 @@ export default function Home() {
       <section className="py-24 bg-white">
         <Container>
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <Reveal direction="left">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] group img-zoom-container">
-                {/* Using standard img for now, migrate to Next/Image later */}
-                <NextImage
-                  src="/assets/images/home-intro-truck.png"
-                  alt="Cool Mountain Truck"
-                  fill
-                  className="img-zoom object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                <div className="absolute bottom-8 left-8 text-white">
-                  <p className="font-bold text-lg">Safety First</p>
-                  <p className="opacity-90">Our top priority, every mile.</p>
-                </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] group img-zoom-container">
+              {/* Using standard img for now, migrate to Next/Image later */}
+              <NextImage
+                src="/assets/images/home-intro-truck.png"
+                alt="Cool Mountain Truck"
+                fill
+                className="img-zoom object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+              <div className="absolute bottom-8 left-8 text-white">
+                <p className="font-bold text-lg">Safety First</p>
+                <p className="opacity-90">Our top priority, every mile.</p>
               </div>
-            </Reveal>
+            </div>
 
             <div className="space-y-6">
-              <Reveal direction="right" delay={0.2}>
-                <SectionTitle title="Why Cool Mountain?" />
-                <p className="text-lg text-slate-700 leading-relaxed">
-                  We are more than just a trucking company; we are your partners in logistics.
-                  With a fleet of modern equipment and a team of dedicated professionals,
-                  we ensure your freight arrives safely and on time, every time.
-                </p>
-                <ul className="space-y-4 pt-4">
-                  {[
-                    "24/7 Dispatch & Support",
-                    "Late-model Equipment (Avg 2.5 years)",
-                    "Real-time Freight Tracking",
-                    "Safety-focused Culture"
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-3">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xs font-bold">✓</span>
-                      <span className="text-slate-700 font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="pt-6">
-                  <Button href="/about" variant="ghost" size="lg" className="pl-0 hover:pl-4">
-                    Learn More About Us →
-                  </Button>
-                </div>
-              </Reveal>
+              <SectionTitle title="Why Cool Mountain?" />
+              <p className="text-lg text-slate-700 leading-relaxed">
+                We are more than just a trucking company; we are your partners in logistics.
+                With a fleet of modern equipment and a team of dedicated professionals,
+                we ensure your freight arrives safely and on time, every time.
+              </p>
+              <ul className="space-y-4 pt-4">
+                {[
+                  "24/7 Dispatch & Support",
+                  "Late-model Equipment (Avg 2.5 years)",
+                  "Real-time Freight Tracking",
+                  "Safety-focused Culture"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-700 flex items-center justify-center text-xs font-bold">✓</span>
+                    <span className="text-slate-700 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="pt-6">
+                <Button href="/about" variant="ghost" size="lg" className="pl-0 hover:pl-4">
+                  Learn More About Us →
+                </Button>
+              </div>
             </div>
           </div>
         </Container>
@@ -111,20 +104,18 @@ export default function Home() {
       <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('/assets/images/header-bg-final.png')] bg-cover bg-center mix-blend-overlay"></div>
         <Container className="relative z-10 text-center">
-          <Reveal direction="up">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to move your freight?</h2>
-            <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-              Contact our dispatch team today for a competitive quote and detailed logistics plan.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button href="/contact" size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
-                Get a Quote
-              </Button>
-              <Button href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
-                Call Dispatch: {COMPANY.contact.dispatchPhoneDisplay}
-              </Button>
-            </div>
-          </Reveal>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to move your freight?</h2>
+          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
+            Contact our dispatch team today for a competitive quote and detailed logistics plan.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button href="/contact" size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
+              Get a Quote
+            </Button>
+            <Button href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
+              Call Dispatch: {COMPANY.contact.dispatchPhoneDisplay}
+            </Button>
+          </div>
         </Container>
       </section>
     </div>
