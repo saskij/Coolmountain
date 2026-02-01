@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/Reveal"
 import { Button } from "@/components/ui/Button"
 import { COMPANY } from "@/lib/constants"
 import NextImage from "next/image"
+import { BASE_PATH } from "@/lib/constants"
 
 import { Metadata } from "next"
 
@@ -39,7 +40,7 @@ export default function AboutPage() {
                         {/* Using standard img to avoid sizing issues with small logos if needed, or NextImage */}
                         <div className="h-12 w-auto relative">
                             <NextImage
-                                src="/assets/images/smartway-logo.png"
+                                src={`${BASE_PATH}/assets/images/smartway-logo.png`}
                                 alt="SmartWay Partner"
                                 width={150}
                                 height={80}

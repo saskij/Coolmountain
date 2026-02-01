@@ -1,6 +1,6 @@
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Button } from "@/components/ui/Button"
-import { COMPANY } from "@/lib/constants"
+import { COMPANY, BASE_PATH } from "@/lib/constants"
 import { ContactFormSection } from "@/components/contact/ContactFormSection"
 import NextImage from "next/image"
 
@@ -37,7 +37,7 @@ export default function ContactPage() {
                     <div className="flex items-center gap-2">
                         <div className="h-12 w-auto relative">
                             <NextImage
-                                src="/assets/images/smartway-logo.png"
+                                src={`${BASE_PATH}/assets/images/smartway-logo.png`}
                                 alt="SmartWay Partner"
                                 width={150}
                                 height={80}

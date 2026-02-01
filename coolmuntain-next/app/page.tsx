@@ -4,7 +4,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle"
 import { Reveal } from "@/components/ui/Reveal"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { ServiceCard } from "@/components/sections/ServiceCard"
-import { SERVICES, COMPANY } from "@/lib/constants"
+import { SERVICES, COMPANY, BASE_PATH } from "@/lib/constants"
 import Link from "next/link"
 import NextImage from "next/image"
 
@@ -43,7 +43,7 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <div className="h-12 w-auto relative">
               <NextImage
-                src="/assets/images/smartway-logo.png"
+                src={`${BASE_PATH}/assets/images/smartway-logo.png`}
                 alt="SmartWay Partner"
                 width={150}
                 height={80}
@@ -173,7 +173,7 @@ export default function Home() {
                 <div className="relative rounded-2xl shadow-lg overflow-hidden group">
                   <div className="absolute -right-4 -top-4 h-full w-full rounded-3xl border border-slate-200 bg-slate-50 -z-10"></div>
                   <NextImage
-                    src="/assets/images/home-intro-truck.png"
+                    src={`${BASE_PATH}/assets/images/home-intro-truck.png`}
                     alt="Cool Mountain truck"
                     width={600}
                     height={400}

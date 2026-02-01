@@ -1,5 +1,6 @@
 import Link from "next/link";
 import NextImage from "next/image";
+import { BASE_PATH } from "@/lib/constants";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -41,7 +42,7 @@ export function Footer() {
                     <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10 sm:items-center">
                         <Link href="/" className="transition-transform duration-300 hover:scale-105 inline-block">
                             <NextImage
-                                src="/assets/images/logo-transparent.png"
+                                src={`${BASE_PATH}/assets/images/logo-transparent.png`}
                                 alt="Cool Mountain"
                                 width={180}
                                 height={96}
@@ -49,7 +50,7 @@ export function Footer() {
                             />
                         </Link>
                         <NextImage
-                            src="/assets/images/smartway-logo.png"
+                            src={`${BASE_PATH}/assets/images/smartway-logo.png`}
                             alt="SmartWay Transport Partner"
                             width={150}
                             height={80}

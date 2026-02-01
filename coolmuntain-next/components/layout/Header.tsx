@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/Button"
-import { NAV_LINKS, COMPANY } from "@/lib/constants"
+import { NAV_LINKS, COMPANY, BASE_PATH } from "@/lib/constants"
 
 export function Header() {
     const [isOpen, setIsOpen] = useState(false)
@@ -57,7 +57,7 @@ export function Header() {
                         <Link href="/" className="relative z-50 group">
                             <div className="w-[110px] sm:w-[130px] lg:w-[160px] h-1" /> {/* Spacer to reserve width */}
                             <NextImage
-                                src="/assets/images/logo-transparent.png"
+                                src={`${BASE_PATH}/assets/images/logo-transparent.png`}
                                 alt={COMPANY.name}
                                 width={180}
                                 height={180}

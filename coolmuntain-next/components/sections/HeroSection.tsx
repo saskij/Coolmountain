@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container"
 import NextImage from "next/image"
 import { Reveal } from "@/components/ui/Reveal"
+import { BASE_PATH } from "@/lib/constants"
 import { cn } from "@/lib/utils"
 
 interface HeroSectionProps {
@@ -32,6 +33,11 @@ export function HeroSection({
         small: "min-h-[30vh] lg:min-h-[40vh]", // Standard Inner page
     }
 
+    // Fix path for GitHub Pages if it's a relative asset path
+    const bgImage = backgroundImage.startsWith("/")
+        ? `${BASE_PATH}${backgroundImage}`
+        : backgroundImage
+
     return (
         <section
             className={cn(
@@ -40,9 +46,9 @@ export function HeroSection({
                 className
             )}
         >
-            {/* Background Image */}
+            {/* Background Image using Next/Image */}
             <NextImage
-                src={backgroundImage}
+                src={bgImage}
                 alt={title}
                 fill
                 priority
