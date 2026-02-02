@@ -216,8 +216,8 @@ export default function JoinTeamPage() {
                             <Reveal direction="right" delay={0.2}>
                                 <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
                                     <p className="text-base leading-relaxed text-slate-700 italic font-light">
-                                        "If you are honest, dedicated, and have passion for the job, come
-                                        work at Cool Mountain Transport and help us grow."
+                                        &quot;If you are honest, dedicated, and have passion for the job, come
+                                        work at Cool Mountain Transport and help us grow.&quot;
                                     </p>
                                     <div className="mt-8">
                                         <Button href={COMPANY.externalLinks.driverApp} external size="lg">

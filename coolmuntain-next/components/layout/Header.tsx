@@ -30,8 +30,10 @@ export function Header() {
 
     // Close mobile menu on route change
     useEffect(() => {
-        setIsOpen(false)
-        setMobileServicesOpen(false)
+        setTimeout(() => {
+            setIsOpen(false)
+            setMobileServicesOpen(false)
+        }, 0)
     }, [pathname])
 
     // Lock body scroll when mobile menu is open

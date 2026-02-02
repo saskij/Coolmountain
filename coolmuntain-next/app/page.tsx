@@ -65,6 +65,7 @@ export default function Home() {
                   title={service.shortTitle}
                   description={service.description}
                   href={service.href}
+                  // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   iconName={service.icon as any}
                 />
               </Reveal>

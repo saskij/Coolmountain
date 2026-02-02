@@ -25,7 +25,7 @@ export function Reveal({
     const [isMounted, setIsMounted] = useState(false)
 
     useEffect(() => {
-        setIsMounted(true)
+        setTimeout(() => setIsMounted(true), 0)
         const checkMobile = () => {
             // User requested static for mobile AND tablet. 1024px is a safe bet for tablets (iPad Pro portrait is 1024, standard iPad 768).
             setIsMobileOrTablet(window.innerWidth < 1024)
