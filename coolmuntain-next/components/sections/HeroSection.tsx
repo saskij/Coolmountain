@@ -57,11 +57,19 @@ export function HeroSection({
             />
             {/* Overlay */}
             {overlay && (
-                <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/20 to-slate-900/80" />
+                <div
+                    className="absolute inset-0 pointer-events-none"
+                    style={{
+                        background: 'linear-gradient(to top, rgba(5,15,30,0.5), rgba(5,15,30,0.25), rgba(5,15,30,0))'
+                    }}
+                />
             )}
 
             <Container className="relative z-10 w-full">
-                <div className={cn("max-w-[800px]", align === "center" && "mx-auto text-center")}>
+                <div
+                    className={cn("max-w-[800px]", align === "center" && "mx-auto text-center")}
+                    style={{ textShadow: '0 2px 10px rgba(0,0,0,0.55)' }}
+                >
                     <Reveal delay={0.1} direction="up" className="reveal-immediately">
                         <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-[1.1]">
                             {title}
@@ -70,7 +78,7 @@ export function HeroSection({
 
                     {subtitle && (
                         <Reveal delay={0.2} direction="up">
-                            <p className="mt-6 text-lg font-medium leading-relaxed text-slate-200 sm:text-xl max-w-2xl">
+                            <p className="mt-6 text-lg font-medium leading-relaxed text-white/90 sm:text-xl max-w-2xl">
                                 {subtitle}
                             </p>
                         </Reveal>
