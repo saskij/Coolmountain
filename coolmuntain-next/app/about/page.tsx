@@ -130,18 +130,7 @@ export default function AboutPage() {
                                 </div>
                             </Reveal>
 
-                            <Reveal direction="right" delay={0.4}>
-                                <div className="relative rounded-2xl shadow-lg overflow-hidden group">
-                                    <div className="absolute -right-4 -top-4 h-full w-full rounded-3xl border border-slate-200 bg-white -z-10"></div>
-                                    <NextImage
-                                        src={`${BASE_PATH}/assets/images/home-intro-truck.png?v=2`}
-                                        alt="Cool Mountain truck"
-                                        width={600}
-                                        height={400}
-                                        className="relative w-full rounded-2xl transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                </div>
-                            </Reveal>
+
                         </div>
                     </div>
                 </Container>
