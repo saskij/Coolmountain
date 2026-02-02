@@ -134,7 +134,7 @@ export default function AboutPage() {
                                 <div className="relative rounded-2xl shadow-lg overflow-hidden group">
                                     <div className="absolute -right-4 -top-4 h-full w-full rounded-3xl border border-slate-200 bg-white -z-10"></div>
                                     <NextImage
-                                        src={`${BASE_PATH}/assets/images/home-intro-truck.png`}
+                                        src={`${BASE_PATH}/assets/images/home-intro-truck.png?v=2`}
                                         alt="Cool Mountain truck"
                                         width={600}
                                         height={400}
