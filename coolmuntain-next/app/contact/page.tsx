@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Button } from "@/components/ui/Button"
 import { COMPANY, BASE_PATH } from "@/lib/constants"
+import { HeroButtons } from "@/components/sections/HeroButtons"
 import { ContactFormSection } from "@/components/contact/ContactFormSection"
 import NextImage from "next/image"
 
@@ -20,14 +21,7 @@ export default function ContactPage() {
                 height="medium"
                 backgroundImage="/assets/images/header-bg-final-v2.jpg"
             >
-                <div className="flex flex-col sm:flex-row gap-4 mt-8">
-                    <Button href={COMPANY.externalLinks.driverApp} size="lg" external>
-                        Apply as a Driver
-                    </Button>
-                    <Button href="/contact" size="lg" variant="outline" className="border-white/80 bg-black/40 text-white hover:bg-white hover:text-slate-900">
-                        Request a Freight Quote
-                    </Button>
-                </div>
+                <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
                     <div className="flex flex-wrap items-center gap-2">
                         <span>USDOT #28965</span>
