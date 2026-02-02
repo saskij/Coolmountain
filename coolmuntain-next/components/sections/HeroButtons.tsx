@@ -8,11 +8,12 @@ interface HeroButtonsProps {
 
 export function HeroButtons({ className }: HeroButtonsProps) {
     return (
-        <div className={cn("flex flex-col sm:flex-row gap-4", className)}>
+        <div className={cn("flex flex-col sm:flex-row gap-4 items-start", className)}>
             <Button
                 href={COMPANY.externalLinks.driverApp}
                 size="lg"
                 external
+                className="w-[280px] sm:w-auto"
             >
                 Apply as a Driver
             </Button>
@@ -20,7 +21,7 @@ export function HeroButtons({ className }: HeroButtonsProps) {
                 href="/contact"
                 size="lg"
                 variant="outline"
-                className="border-white/80 bg-black/40 text-white hover:bg-white hover:text-slate-900"
+                className="w-[280px] sm:w-auto border-white/80 bg-black/40 text-white hover:bg-white hover:text-slate-900"
             >
                 Request a Freight Quote
             </Button>

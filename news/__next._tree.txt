@@ -1,5 +1,5 @@
-:HL["/Coolmountain/_next/static/chunks/35af75f90f3b2d77.css","style"]
+:HL["/Coolmountain/_next/static/chunks/ab29b4327d60c10b.css","style"]
 :HL["/Coolmountain/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/Coolmountain/assets/images/logo-transparent.png","image"]
 :HL["/Coolmountain/assets/images/smartway-logo.png","image"]
-0:{"buildId":"Zx0J9dtaTiuGgLnW00eeU","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"news","paramType":null,"paramKey":"news","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"JXNnaruEfzZlGvNXIiYfd","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"news","paramType":null,"paramKey":"news","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
