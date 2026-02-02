@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
 import { Button } from "@/components/ui/Button"
 import { COMPANY, BASE_PATH } from "@/lib/constants"
-import NextImage from "next/image"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 
 import { Metadata } from "next"
@@ -32,7 +31,7 @@ export default function AboutPage() {
                     <div className="flex items-center gap-2">
                         {/* Using standard img to avoid sizing issues with small logos if needed, or NextImage */}
                         <div className="h-12 w-auto relative">
-                            <NextImage
+                            <img
                                 src={`${BASE_PATH}/assets/images/smartway-logo.png`}
                                 alt="SmartWay Partner"
                                 width={150}
@@ -121,7 +120,7 @@ export default function AboutPage() {
                             <Reveal direction="left" delay={0.3}>
                                 <div className="relative rounded-2xl border-l-4 border-red-500 bg-white p-8 shadow-sm">
                                     <div className="absolute left-6 top-4 text-5xl text-slate-100 font-serif">“</div>
-                                    <p className="text-sm font-semibold text-orange-600 relative z-10">Mission Statement</p>
+                                    <p className="text-sm font-semibold text-orange-600 relative z-10">Our Mission Statement</p>
                                     <p className="mt-4 text-slate-600 leading-relaxed italic font-light relative z-10">
                                         We move freight with integrity, building long-term partnerships
                                         through safe operations, reliable delivery, and respect for every
