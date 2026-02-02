@@ -141,10 +141,10 @@ export default function NewsPage() {
                             {NEWS_items.map((item, index) => (
                                 <Reveal key={index} direction="up" delay={index * 0.1}>
                                     <div className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl h-full flex flex-col">
-                                        <div className={`aspect-video flex items-center justify-center p-8 ${item.bgClass}`}>
+                                        <div className={`aspect-video w-full flex items-center justify-center p-8 ${item.bgClass}`}>
                                             <img
                                                 src={item.image}
-                                                className={`max-h-full object-contain ${item.imageClass}`}
+                                                className={`max-h-full mx-auto object-contain ${item.imageClass}`}
                                                 alt={item.title}
                                             />
                                         </div>
