@@ -1,7 +1,5 @@
-name: Deploy to GitHub Pages
-
-# Trigger new build
-on:
+name: Deployment
+on: [push, workflow_dispatch]
   push:
     branches: ["main"]
   workflow_dispatch:
