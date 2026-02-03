@@ -4,6 +4,7 @@ import { Reveal } from "@/components/ui/Reveal"
 import { Button } from "@/components/ui/Button"
 import { COMPANY, BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
+import NextImage from "next/image"
 
 import { Metadata } from "next"
 
@@ -120,16 +121,28 @@ export default function AboutPage() {
                             <Reveal direction="left" delay={0.3}>
                                 <div className="relative rounded-2xl border-l-4 border-red-500 bg-white p-8 shadow-sm">
                                     <div className="absolute left-6 top-4 text-5xl text-slate-100 font-serif">“</div>
-                                    <p className="text-sm font-semibold text-orange-600 relative z-10">Привет мир</p>
+                                    <p className="text-sm font-semibold text-orange-600 relative z-10">Mission Statement</p>
                                     <p className="mt-4 text-slate-600 leading-relaxed italic font-light relative z-10">
-                                        We move freight with integrity, building long-term partnerships
-                                        through safe operations, reliable delivery, and respect for every
-                                        shipper we serve.
+                                        to deliver outstanding transportation services, provide
+                                        exceptional customer service, improve technology, and create
+                                        business efficiencies that promote long-term customer stability,
+                                        longevity and prosperity.
                                     </p>
                                 </div>
                             </Reveal>
 
-
+                            <Reveal direction="right" delay={0.4}>
+                                <div className="relative rounded-2xl shadow-lg overflow-hidden group">
+                                    <div className="absolute -right-4 -top-4 h-full w-full rounded-3xl border border-slate-200 bg-slate-50 -z-10"></div>
+                                    <NextImage
+                                        src={`${BASE_PATH}/assets/images/home-intro-truck.png`}
+                                        alt="Cool Mountain truck"
+                                        width={600}
+                                        height={400}
+                                        className="relative w-full rounded-2xl transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                </div>
+                            </Reveal>
                         </div>
                     </div>
                 </Container>
@@ -137,3 +150,4 @@ export default function AboutPage() {
         </div>
     )
 }
+
