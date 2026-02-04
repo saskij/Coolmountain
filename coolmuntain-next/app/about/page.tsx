@@ -144,18 +144,7 @@ export default function AboutPage() {
                                 </div>
                             </Reveal>
 
-                            <Reveal direction="left" delay={0.5}>
-                                <div className="relative rounded-2xl border-l-4 border-red-500 bg-white p-8 shadow-sm">
-                                    <div className="absolute left-6 top-4 text-5xl text-slate-100 font-serif">“</div>
-                                    <p className="text-sm font-semibold text-orange-600 relative z-10">Mission Statement</p>
-                                    <p className="mt-4 text-slate-600 leading-relaxed italic font-light relative z-10">
-                                        to deliver outstanding transportation services, provide
-                                        exceptional customer service, improve technology, and create
-                                        business efficiencies that promote long-term customer stability,
-                                        longevity and prosperity.
-                                    </p>
-                                </div>
-                            </Reveal>
+
                         </div>
                     </div>
                 </Container>
