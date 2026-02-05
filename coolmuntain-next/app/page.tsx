@@ -82,9 +82,9 @@ export default function Home() {
         </div>
 
         <Container>
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Text Column */}
-            <div className="space-y-6">
+          <div className="grid xl:grid-cols-12 gap-10 items-start">
+            {/* Text Column: col-span-5 */}
+            <div className="xl:col-span-5 space-y-6">
               <Reveal direction="up">
                 <div>
                   <h2 className="text-3xl font-black uppercase text-slate-900">
@@ -147,8 +147,8 @@ export default function Home() {
               </Reveal>
             </div>
 
-            {/* Image & Mission Column */}
-            <div className="flex flex-col justify-center lg:justify-end space-y-6 lg:-translate-y-6">
+            {/* Image & Mission Column: col-span-7 */}
+            <div className="xl:col-span-7 flex flex-col justify-center lg:justify-end space-y-6 lg:-translate-y-6">
               <Reveal direction="left" delay={0.2}>
                 <div className="relative rounded-2xl border-l-4 border-red-500 bg-slate-50 p-6">
                   <div className="absolute left-6 top-2 text-5xl text-slate-200">“</div>

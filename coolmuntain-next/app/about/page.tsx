@@ -17,6 +17,7 @@ export default function AboutPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <HeroSection
+                // Force Update
                 title="About Us"
                 subtitle="A team built on safety, trust, and long-term partnerships."
                 height="medium"
@@ -53,8 +54,9 @@ export default function AboutPage() {
                 </div>
 
                 <Container>
-                    <div className="grid lg:grid-cols-2 gap-16 items-start">
-                        <div className="space-y-8">
+                    <div className="grid xl:grid-cols-12 gap-10 items-start">
+                        {/* Content Column: col-span-5 */}
+                        <div className="xl:col-span-5 space-y-8">
                             <Reveal direction="up">
                                 <div>
                                     <h2 className="text-3xl font-black uppercase text-slate-900">
@@ -117,7 +119,8 @@ export default function AboutPage() {
                             </Reveal>
                         </div>
 
-                        <div className="space-y-6 lg:translate-y-8">
+                        {/* Visual Column: col-span-7 */}
+                        <div className="xl:col-span-7 space-y-6 lg:translate-y-8">
                             <Reveal direction="left" delay={0.3}>
                                 <div className="relative rounded-2xl border-l-4 border-red-500 bg-white p-8 shadow-sm">
                                     <div className="absolute left-6 top-4 text-5xl text-slate-100 font-serif">“</div>
@@ -143,8 +146,6 @@ export default function AboutPage() {
                                     />
                                 </div>
                             </Reveal>
-
-
                         </div>
                     </div>
                 </Container>

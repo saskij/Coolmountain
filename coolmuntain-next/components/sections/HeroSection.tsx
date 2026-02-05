@@ -22,14 +22,14 @@ export function HeroSection({
     overlay = true,
     className,
     children,
-    align = "left",
+    align = "left", // Force left align visually even if passed center, but keeping prop for compatibility
     height = "large"
 }: HeroSectionProps) {
 
     const heightClasses = {
         full: "min-h-screen",
         large: "min-h-[80vh] lg:min-h-[90vh]", // Homepage style
-        medium: "min-h-[50vh] lg:min-h-[60vh]", // Inner page style?
+        medium: "min-h-[50vh] lg:min-h-[60vh]", // Inner page style
         small: "min-h-[30vh] lg:min-h-[40vh]", // Standard Inner page
     }
 
@@ -41,56 +41,65 @@ export function HeroSection({
     return (
         <section
             className={cn(
-                "relative flex flex-col justify-end overflow-hidden pb-16 pt-32",
+                "relative flex flex-col overflow-hidden isolate",
+                "justify-center pb-16", // Vertically center content
+                // Home (large) gets standard pt-32. Inner pages get pt-48 to push content down from logo.
+                height === 'large' ? "pt-32" : "pt-48",
                 heightClasses[height],
                 className
             )}
         >
             {/* Background Image using Next/Image */}
-            <NextImage
-                src={bgImage}
-                alt={title}
-                fill
-                priority
-                className="object-cover -z-10 object-[65%_center] sm:object-center"
-                quality={90}
-            />
-            {/* Overlay */}
-            {overlay && (
-                <div
-                    className="absolute inset-0 pointer-events-none"
-                    style={{
-                        background: 'linear-gradient(to top, rgba(5,15,30,0.5), rgba(5,15,30,0.25), rgba(5,15,30,0))'
-                    }}
+            <div className="absolute inset-0 w-full h-full -z-10">
+                <NextImage
+                    src={bgImage}
+                    alt={title}
+                    fill
+                    priority
+                    className="object-cover object-[65%_center] xl:object-center"
+                    quality={90}
                 />
-            )}
+                {/* Overlay - Variant A uses bg-black/40 */}
+                {overlay && (
+                    <div className="absolute inset-0 bg-black/40" />
+                )}
+            </div>
 
-            <Container className="relative z-10 w-full">
-                <div
-                    className={cn("max-w-[800px]", align === "center" && "mx-auto text-center")}
-                    style={{ textShadow: '0 2px 10px rgba(0,0,0,0.55)' }}
-                >
-                    <Reveal delay={0.1} direction="up" className="reveal-immediately">
-                        <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-[1.1]">
-                            {title}
-                        </h1>
-                    </Reveal>
+            <Container className="relative z-10 w-full flex flex-col justify-center h-full">
+                {/* 
+                   Variant A Grid Architecture:
+                   - Mobile/Tablet: Single column (flex col)
+                   - Desktop (xl+): 12-column grid
+                */}
+                <div className="xl:grid xl:grid-cols-12 xl:gap-10 items-center w-full">
 
-                    {subtitle && (
-                        <Reveal delay={0.2} direction="up">
-                            <p className="mt-6 text-lg font-medium leading-relaxed text-white/90 sm:text-xl max-w-2xl">
-                                {subtitle}
-                            </p>
+                    {/* Left Content: col-span-5 */}
+                    <div className="xl:col-span-5 flex flex-col items-start text-left w-full max-w-[520px]">
+                        <Reveal delay={0.1} direction="up" className="reveal-immediately w-full">
+                            <h1 className="text-[clamp(36px,3.5vw,72px)] font-extrabold text-white leading-[1.05] tracking-tight">
+                                {title}
+                            </h1>
                         </Reveal>
-                    )}
 
-                    {children && (
-                        <Reveal delay={0.3} direction="up">
-                            <div className="mt-10">
-                                {children}
-                            </div>
-                        </Reveal>
-                    )}
+                        {subtitle && (
+                            <Reveal delay={0.2} direction="up" className="w-full">
+                                <p className="mt-6 text-[clamp(15px,1.1vw,18px)] font-medium leading-relaxed text-white/85 max-w-[42ch]">
+                                    {subtitle}
+                                </p>
+                            </Reveal>
+                        )}
+
+                        {children && (
+                            <Reveal delay={0.3} direction="up" className="w-full">
+                                <div className="mt-8">
+                                    {children}
+                                </div>
+                            </Reveal>
+                        )}
+                    </div>
+
+                    {/* Right Side / Visual Zone: col-span-7 */}
+                    <div className="hidden xl:block xl:col-span-7 pointer-events-none" />
                 </div>
             </Container>
         </section>

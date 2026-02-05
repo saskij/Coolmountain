@@ -1,14 +1,14 @@
 import Link from "next/link";
+import { HeroSection } from "@/components/sections/HeroSection";
 
 export default function TermsPage() {
     return (
         <div className="bg-white">
-            <section className="relative min-h-[30vh] lg:min-h-[35vh] overflow-hidden flex flex-col pt-24 lg:pt-36 bg-slate-900">
-                <div className="absolute inset-0 bg-black/40"></div>
-                <div className="relative z-10 px-[7vw] max-w-[800px] flex flex-col gap-6 pt-12">
-                    <h1 className="text-4xl font-bold text-white">Terms of Use</h1>
-                </div>
-            </section>
+            <HeroSection
+                title="Terms of Use"
+                subtitle="Last Updated: February 1, 2026"
+                height="small"
+            />
 
             <section className="py-20 px-[7vw]">
                 <div className="max-w-4xl mx-auto space-y-6 text-slate-700">
