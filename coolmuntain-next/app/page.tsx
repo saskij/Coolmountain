@@ -25,7 +25,7 @@ export default function Home() {
         subtitle="Solving complex logistics problems with a modern fleet and a commitment to safety."
         height="large"
 
-        backgroundImage="/assets/images/header-bg-final-v2.jpg"
+
       >
         <HeroButtons className="mt-8" />
         <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">

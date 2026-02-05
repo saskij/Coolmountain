@@ -18,7 +18,7 @@ interface HeroSectionProps {
 export function HeroSection({
     title,
     subtitle,
-    backgroundImage = "/assets/images/header-bg-final-v2.jpg",
+    backgroundImage = "/assets/images/new-hero.png",
     overlay = true,
     className,
     children,
@@ -52,7 +52,7 @@ export function HeroSection({
                 alt={title}
                 fill
                 priority
-                className="object-cover -z-10"
+                className="object-cover -z-10 object-[65%_center] sm:object-center"
                 quality={90}
             />
             {/* Overlay */}

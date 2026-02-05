@@ -57,7 +57,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 subtitle={service.description}
                 height="medium"
 
-                backgroundImage="/assets/images/header-bg-final-v2.jpg" // Could make this dynamic per service if images available
+
             />
 
             <section className="py-20 bg-slate-50 overflow-hidden relative">

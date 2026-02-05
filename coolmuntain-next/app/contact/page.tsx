@@ -19,7 +19,7 @@ export default function ContactPage() {
                 title="Contact"
                 subtitle="Let us know how we can support your freight needs."
                 height="medium"
-                backgroundImage="/assets/images/header-bg-final-v2.jpg"
+
             >
                 <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
