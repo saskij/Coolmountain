@@ -48,11 +48,27 @@ export function HeroSection({
     const videoRef = useRef<HTMLVideoElement>(null)
 
     useEffect(() => {
+        const video = videoRef.current
+        if (!video) return
+
+        const handleTimeUpdate = () => {
+            // Seamless loop: Jump back to start slightly before the end
+            // Adjust buffer (0.5s) if needed to skip bad frames at the end
+            if (video.duration > 0 && video.currentTime >= video.duration - 0.5) {
+                video.currentTime = 0
+                video.play().catch(() => { }) // Ignore play errors during seek
+            }
+        }
+
+        video.addEventListener('timeupdate', handleTimeUpdate)
+
         // Ensure video plays when component mounts/updates
-        if (videoRef.current) {
-            videoRef.current.play().catch(error => {
-                console.log("Video autoplay failed:", error)
-            })
+        video.play().catch(error => {
+            console.log("Video autoplay failed:", error)
+        })
+
+        return () => {
+            video.removeEventListener('timeupdate', handleTimeUpdate)
         }
     }, [backgroundVideo])
 
@@ -83,7 +99,6 @@ export function HeroSection({
                     <video
                         ref={videoRef}
                         autoPlay
-                        loop
                         muted
                         playsInline
                         preload="auto"
