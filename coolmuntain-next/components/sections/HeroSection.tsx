@@ -1,4 +1,5 @@
 import { Container } from "@/components/ui/Container"
+import { useEffect, useRef } from "react"
 import NextImage from "next/image"
 import { Reveal } from "@/components/ui/Reveal"
 import { BASE_PATH } from "@/lib/constants"
@@ -44,6 +45,17 @@ export function HeroSection({
         ? `${BASE_PATH}${backgroundVideo}`
         : backgroundVideo
 
+    const videoRef = useRef<HTMLVideoElement>(null)
+
+    useEffect(() => {
+        // Ensure video plays when component mounts/updates
+        if (videoRef.current) {
+            videoRef.current.play().catch(error => {
+                console.log("Video autoplay failed:", error)
+            })
+        }
+    }, [backgroundVideo])
+
     return (
         <section
             className={cn(
@@ -59,6 +71,7 @@ export function HeroSection({
             <div className="absolute inset-0 w-full h-full -z-10">
                 {bgVideo ? (
                     <video
+                        ref={videoRef}
                         autoPlay
                         loop
                         muted
