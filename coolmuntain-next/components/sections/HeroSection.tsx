@@ -69,77 +69,75 @@ export function HeroSection({
         >
             {/* Background Assets */}
             <div className="absolute inset-0 w-full h-full -z-10">
-                {/* Background Assets */}
-                <div className="absolute inset-0 w-full h-full -z-10">
-                    {/* Always render the static image as a base layer to prevent flashes during video loop */}
-                    <NextImage
-                        src={bgImage}
-                        alt={title}
-                        fill
-                        priority
-                        className="object-cover object-[65%_center] xl:object-center"
-                        quality={90}
-                    />
+                {/* Always render the static image as a base layer to prevent flashes during video loop */}
+                <NextImage
+                    src={bgImage}
+                    alt={title}
+                    fill
+                    priority
+                    className="object-cover object-[65%_center] xl:object-center"
+                    quality={90}
+                />
 
-                    {bgVideo && (
-                        <video
-                            ref={videoRef}
-                            autoPlay
-                            loop
-                            muted
-                            playsInline
-                            preload="auto"
-                            className="absolute inset-0 w-full h-full object-cover"
-                            // poster is redundant if we have the image behind, but kept for compatibility
-                            poster={bgImage}
-                        >
-                            <source src={bgVideo} type="video/mp4" />
-                        </video>
-                    )}
+                {bgVideo && (
+                    <video
+                        ref={videoRef}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="auto"
+                        className="absolute inset-0 w-full h-full object-cover"
+                        // poster is redundant if we have the image behind, but kept for compatibility
+                        poster={bgImage}
+                    >
+                        <source src={bgVideo} type="video/mp4" />
+                    </video>
+                )}
 
-                    {/* Overlay - Variant A uses bg-black/40 */}
-                    {overlay && (
-                        <div className="absolute inset-0 bg-black/40" />
-                    )}
-                </div>
+                {/* Overlay - Variant A uses bg-black/40 */}
+                {overlay && (
+                    <div className="absolute inset-0 bg-black/40" />
+                )}
+            </div>
 
-                <Container className="relative z-10 w-full flex flex-col justify-center h-full">
-                    {/* 
+            <Container className="relative z-10 w-full flex flex-col justify-center h-full">
+                {/* 
                    Variant A Grid Architecture:
                    - Mobile/Tablet: Single column (flex col)
                    - Desktop (xl+): 12-column grid
                 */}
-                    <div className="xl:grid xl:grid-cols-12 xl:gap-10 items-center w-full">
+                <div className="xl:grid xl:grid-cols-12 xl:gap-10 items-center w-full">
 
-                        {/* Left Content: col-span-5 */}
-                        <div className="xl:col-span-5 flex flex-col items-start text-left w-full max-w-[520px]">
-                            <Reveal delay={0.1} direction="up" className="reveal-immediately w-full">
-                                <h1 className="text-[clamp(36px,3.5vw,72px)] font-extrabold text-white leading-[1.05] tracking-tight">
-                                    {title}
-                                </h1>
+                    {/* Left Content: col-span-5 */}
+                    <div className="xl:col-span-5 flex flex-col items-start text-left w-full max-w-[520px]">
+                        <Reveal delay={0.1} direction="up" className="reveal-immediately w-full">
+                            <h1 className="text-[clamp(36px,3.5vw,72px)] font-extrabold text-white leading-[1.05] tracking-tight">
+                                {title}
+                            </h1>
+                        </Reveal>
+
+                        {subtitle && (
+                            <Reveal delay={0.2} direction="up" className="w-full">
+                                <p className="mt-6 text-[clamp(15px,1.1vw,18px)] font-medium leading-relaxed text-white/85 max-w-[42ch]">
+                                    {subtitle}
+                                </p>
                             </Reveal>
+                        )}
 
-                            {subtitle && (
-                                <Reveal delay={0.2} direction="up" className="w-full">
-                                    <p className="mt-6 text-[clamp(15px,1.1vw,18px)] font-medium leading-relaxed text-white/85 max-w-[42ch]">
-                                        {subtitle}
-                                    </p>
-                                </Reveal>
-                            )}
-
-                            {children && (
-                                <Reveal delay={0.3} direction="up" className="w-full">
-                                    <div className="mt-8">
-                                        {children}
-                                    </div>
-                                </Reveal>
-                            )}
-                        </div>
-
-                        {/* Right Side / Visual Zone: col-span-7 */}
-                        <div className="hidden xl:block xl:col-span-7 pointer-events-none" />
+                        {children && (
+                            <Reveal delay={0.3} direction="up" className="w-full">
+                                <div className="mt-8">
+                                    {children}
+                                </div>
+                            </Reveal>
+                        )}
                     </div>
-                </Container>
+
+                    {/* Right Side / Visual Zone: col-span-7 */}
+                    <div className="hidden xl:block xl:col-span-7 pointer-events-none" />
+                </div>
+            </Container>
         </section>
     )
 }
