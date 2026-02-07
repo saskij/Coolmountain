@@ -8,6 +8,7 @@ interface HeroSectionProps {
     title: string
     subtitle?: string
     backgroundImage?: string
+    backgroundVideo?: string
     overlay?: boolean
     className?: string
     children?: React.ReactNode // For Grid layout or specific content
@@ -19,6 +20,7 @@ export function HeroSection({
     title,
     subtitle,
     backgroundImage = "/assets/images/new-hero1.png",
+    backgroundVideo = "/assets/videos/hero-video.mp4",
     overlay = true,
     className,
     children,
@@ -38,6 +40,10 @@ export function HeroSection({
         ? `${BASE_PATH}${backgroundImage}`
         : backgroundImage
 
+    const bgVideo = backgroundVideo && backgroundVideo.startsWith("/")
+        ? `${BASE_PATH}${backgroundVideo}`
+        : backgroundVideo
+
     return (
         <section
             className={cn(
@@ -49,16 +55,32 @@ export function HeroSection({
                 className
             )}
         >
-            {/* Background Image using Next/Image */}
+            {/* Background Assets */}
             <div className="absolute inset-0 w-full h-full -z-10">
-                <NextImage
-                    src={bgImage}
-                    alt={title}
-                    fill
-                    priority
-                    className="object-cover object-[65%_center] xl:object-center"
-                    quality={90}
-                />
+                {bgVideo ? (
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover"
+                        poster={bgImage}
+                    >
+                        <source src={bgVideo} type="video/mp4" />
+                        {/* Fallback to image if video fails or not supported */}
+                        <img src={bgImage} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+                    </video>
+                ) : (
+                    <NextImage
+                        src={bgImage}
+                        alt={title}
+                        fill
+                        priority
+                        className="object-cover object-[65%_center] xl:object-center"
+                        quality={90}
+                    />
+                )}
+
                 {/* Overlay - Variant A uses bg-black/40 */}
                 {overlay && (
                     <div className="absolute inset-0 bg-black/40" />
