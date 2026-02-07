@@ -18,7 +18,7 @@ interface HeroSectionProps {
 export function HeroSection({
     title,
     subtitle,
-    backgroundImage = "/assets/images/new-hero.png",
+    backgroundImage = "/assets/images/new-hero1.png",
     overlay = true,
     className,
     children,
