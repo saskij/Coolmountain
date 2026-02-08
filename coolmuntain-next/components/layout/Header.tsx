@@ -104,15 +104,18 @@ export function Header() {
                                     return (
                                         <div key={link.label} className="relative group">
                                             <button className={cn(
-                                                "px-2 py-2 transition-colors hover:text-red-700 flex items-center gap-1",
-                                                pathname?.startsWith(link.href) && "text-red-700 font-bold"
+                                                "px-2 py-2 transition-colors hover:text-red-700 flex items-center gap-1 relative",
+                                                pathname?.startsWith(link.href) && "text-red-700 font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-red-700 after:rounded-full"
                                             )}>
                                                 {link.label}
                                             </button>
                                             {/* Dropdown */}
                                             <div className="absolute top-full left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-200 bg-white shadow-xl rounded-xl p-2 border border-slate-100 min-w-[200px] z-[1000]">
                                                 {link.children.map(child => (
-                                                    <Link key={child.href} href={child.href} className="block px-4 py-3 hover:bg-slate-50 rounded-lg hover:text-red-700 transition font-semibold text-[13px] text-slate-600 border-l-4 border-transparent hover:border-red-700 hover:pl-6">
+                                                    <Link key={child.href} href={child.href} className={cn(
+                                                        "block px-4 py-3 hover:bg-slate-50 rounded-lg hover:text-red-700 transition font-semibold text-[13px] border-l-4 hover:border-red-700 hover:pl-6",
+                                                        pathname === child.href ? "text-red-700 bg-red-50 border-red-700 pl-6" : "text-slate-600 border-transparent"
+                                                    )}>
                                                         {child.label}
                                                     </Link>
                                                 ))}
@@ -203,7 +206,12 @@ export function Header() {
                                                                             key={child.href}
                                                                             href={child.href}
                                                                             onClick={() => setIsOpen(false)}
-                                                                            className="block text-lg font-semibold text-slate-600 hover:text-red-700 py-2 border-l-2 border-slate-200 pl-4 hover:border-red-600 transition"
+                                                                            className={cn(
+                                                                                "block text-lg font-semibold py-2 border-l-2 pl-4 transition",
+                                                                                pathname === child.href
+                                                                                    ? "text-red-700 border-red-700 bg-red-50"
+                                                                                    : "text-slate-600 border-slate-200 hover:text-red-700 hover:border-red-600"
+                                                                            )}
                                                                         >
                                                                             {child.label}
                                                                         </Link>
@@ -219,7 +227,12 @@ export function Header() {
                                             <Link
                                                 key={link.href}
                                                 href={link.href}
-                                                className="text-xl font-bold text-slate-800 hover:text-red-700 transition py-3 border-b border-slate-50 block"
+                                                className={cn(
+                                                    "text-xl font-bold transition py-3 border-b border-slate-50 block",
+                                                    pathname === link.href
+                                                        ? "text-red-700 bg-red-50 pl-2"
+                                                        : "text-slate-800 hover:text-red-700"
+                                                )}
                                                 onClick={() => setIsOpen(false)}
                                             >
                                                 {link.label}
