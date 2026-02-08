@@ -17,10 +17,17 @@ export function Header() {
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
     const pathname = usePathname()
 
-    // Normalize pathname by removing BASE_PATH prefix if present
-    const normalizedPathname = pathname?.startsWith(BASE_PATH)
-        ? pathname.slice(BASE_PATH.length) || "/"
-        : pathname
+    // Normalize pathname by removing BASE_PATH prefix and trailing slashes
+    const normalizedPathname = (() => {
+        let path = pathname?.startsWith(BASE_PATH)
+            ? pathname.slice(BASE_PATH.length)
+            : pathname
+        // Remove trailing slash unless it's the root path
+        if (path && path !== "/" && path.endsWith("/")) {
+            path = path.slice(0, -1)
+        }
+        return path || "/"
+    })()
 
     // Helper function to check if a page is active
     const isActivePage = (href: string) => {
