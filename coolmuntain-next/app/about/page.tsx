@@ -21,7 +21,8 @@ export default function AboutPage() {
                 title="About Us"
                 subtitle="A team built on safety, trust, and long-term partnerships."
                 height="medium"
-
+                backgroundImage="/assets/images/about-hero.jpg"
+                backgroundVideo="" // Disable video for this page
             >
                 <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
