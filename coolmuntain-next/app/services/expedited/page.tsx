@@ -17,10 +17,11 @@ export default function ExpeditedPage() {
     return (
         <div className="flex flex-col min-h-screen">
             <HeroSection
-                title="Expedited & Team Service"
-                subtitle="When 'on time' isn't enough, and you need it there yesterday."
+                title="Expedited Services"
+                subtitle="When time is critical, count on us for fast, reliable delivery."
                 height="medium"
-
+                backgroundImage="/assets/images/services-hero.jpg"
+                backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">

@@ -18,9 +18,10 @@ export default function DryVanPage() {
         <div className="flex flex-col min-h-screen">
             <HeroSection
                 title="Dry Van & General Freight"
-                subtitle="Reliable nationwide capacity for your standard shipping needs."
+                subtitle="Reliable, nationwide transport for all your general freight needs."
                 height="medium"
-
+                backgroundImage="/assets/images/services-hero.jpg"
+                backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">

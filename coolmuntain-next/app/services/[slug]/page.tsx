@@ -56,8 +56,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 title={service.title}
                 subtitle={service.description}
                 height="medium"
-
-
+                backgroundImage="/assets/images/services-hero.jpg"
+                backgroundVideo=""
             />
 
             <section className="py-20 bg-slate-50 overflow-hidden relative">
