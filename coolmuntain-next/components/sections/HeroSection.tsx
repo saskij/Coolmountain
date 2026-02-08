@@ -72,7 +72,7 @@ export function HeroSection({
                   Visible after video ends (if it ends on a transparent frame, though usually video stays on last frame)
                 */}
                 <NextImage
-                    src={bgImageForNext}
+                    src={bgImageAbs}
                     alt={title}
                     fill
                     priority
