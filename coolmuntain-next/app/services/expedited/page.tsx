@@ -11,11 +11,33 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Expedited Freight Services | Cool Mountain Transport",
     description: "Time-critical shipping solutions with team drivers and 24/7 tracking. Get your urgent freight delivered faster and safer.",
+    openGraph: {
+        title: "Expedited Team Service",
+        description: "Non-stop transit with team drivers for your most time-critical shipments.",
+        url: "https://coolmountaintransport.com/services/expedited",
+    },
 }
 
 export default function ExpeditedPage() {
     return (
         <div className="flex flex-col min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        name: "Expedited Freight Service",
+                        provider: {
+                            "@type": "Organization",
+                            name: "Cool Mountain Transport",
+                        },
+                        areaServed: "US",
+                        serviceType: "Expedited Shipping",
+                        description: "Non-stop team driver service for time-critical freight.",
+                    }),
+                }}
+            />
             <HeroSection
                 title="Expedited Services"
                 subtitle="When time is critical, count on us for fast, reliable delivery."

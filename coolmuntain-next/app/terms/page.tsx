@@ -1,5 +1,11 @@
 import Link from "next/link";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Terms of Use | Cool Mountain Transport",
+    description: "Terms and conditions governing the use of the Cool Mountain Transport website.",
+}
 
 export default function TermsPage() {
     return (

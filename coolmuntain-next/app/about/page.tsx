@@ -11,6 +11,11 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "About Us | Cool Mountain Transport",
     description: "Learn about Cool Mountain Transport's history, mission, and commitment to safety. We build long-term partnerships through integrity and reliable service.",
+    openGraph: {
+        title: "About Cool Mountain Transport",
+        description: "A team built on safety, trust, and long-term partnerships. Discover our story and values.",
+        url: "https://coolmountaintransport.com/about",
+    },
 }
 
 export default function AboutPage() {

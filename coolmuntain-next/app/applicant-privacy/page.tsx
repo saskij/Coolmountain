@@ -1,5 +1,11 @@
 import Link from "next/link";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Applicant Privacy Notice | Cool Mountain Transport",
+    description: "Information on how we collect, use, and share personal data for job applicants and driver candidates.",
+}
 
 export default function ApplicantPrivacyPage() {
     return (

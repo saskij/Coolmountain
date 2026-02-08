@@ -11,11 +11,52 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Refrigerated Transport & Temperature Controlled | Cool Mountain",
     description: "Expert refrigerated transport services for temperature-sensitive cargo. Modern reefers, strict temperature monitoring, and on-time delivery.",
+    openGraph: {
+        title: "Refrigerated & Frozen Transport",
+        description: "FSMA compliant temperature-controlled shipping for produce, frozen goods, and pharmaceuticals.",
+        url: "https://coolmountaintransport.com/services/refrigerated",
+    },
 }
 
 export default function RefrigeratedPage() {
     return (
         <div className="flex flex-col min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        name: "Refrigerated Transport Service",
+                        provider: {
+                            "@type": "Organization",
+                            name: "Cool Mountain Transport",
+                        },
+                        areaServed: "US",
+                        description: "Temperature-controlled shipping from -20°F to +70°F.",
+                        hasOfferCatalog: {
+                            "@type": "OfferCatalog",
+                            name: "Cold Chain Services",
+                            itemListElement: [
+                                {
+                                    "@type": "Offer",
+                                    itemOffered: {
+                                        "@type": "Service",
+                                        name: "Produce Shipping",
+                                    },
+                                },
+                                {
+                                    "@type": "Offer",
+                                    itemOffered: {
+                                        "@type": "Service",
+                                        name: "Frozen Goods Transport",
+                                    },
+                                },
+                            ],
+                        },
+                    }),
+                }}
+            />
             <HeroSection
                 title="Temperature-Controlled Logistics"
                 subtitle="Maintaining the perfect environment for your sensitive cargo."

@@ -11,11 +11,51 @@ import { Metadata } from "next"
 export const metadata: Metadata = {
     title: "Dry Van & General Freight Services | Cool Mountain Transport",
     description: "Reliable nationwide dry van capacity for your standard shipping needs. Modern fleet, real-time tracking, and 48-state coverage.",
+    openGraph: {
+        title: "Dry Van Shipping Services",
+        description: "Secure, weather-proof transportation for general freight. Drop-trailer and live loading options available.",
+        url: "https://coolmountaintransport.com/services/dry-van",
+    },
 }
 
 export default function DryVanPage() {
     return (
         <div className="flex flex-col min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Service",
+                        name: "Dry Van Freight Service",
+                        provider: {
+                            "@type": "Organization",
+                            name: "Cool Mountain Transport",
+                        },
+                        areaServed: "US",
+                        hasOfferCatalog: {
+                            "@type": "OfferCatalog",
+                            name: "Freight Services",
+                            itemListElement: [
+                                {
+                                    "@type": "Offer",
+                                    itemOffered: {
+                                        "@type": "Service",
+                                        name: "General Freight Transport",
+                                    },
+                                },
+                                {
+                                    "@type": "Offer",
+                                    itemOffered: {
+                                        "@type": "Service",
+                                        name: "Drop Trailer Programs",
+                                    },
+                                },
+                            ],
+                        },
+                    }),
+                }}
+            />
             <HeroSection
                 title="Dry Van & General Freight"
                 subtitle="Reliable, nationwide transport for all your general freight needs."

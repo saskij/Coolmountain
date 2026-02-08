@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { BackToTop } from "@/components/ui/BackToTop";
@@ -7,7 +7,17 @@ import "./globals.css";
 
 import { BASE_PATH } from "@/lib/constants";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const oswald = Oswald({
+  variable: "--font-oswald",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://coolmountaintransport.com"),
@@ -56,7 +66,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} flex flex-col min-h-screen`}>
+      <body className={`${inter.variable} ${oswald.variable} antialiased font-sans flex flex-col min-h-screen`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Cool Mountain Transport",
+              url: "https://coolmountaintransport.com",
+              logo: "https://coolmountaintransport.com/Coolmountain/assets/images/logo-transparent.png",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+1-208-475-2500",
+                contactType: "customer service",
+                areaServed: "US",
+                availableLanguage: "en",
+              },
+              sameAs: [
+                "https://www.facebook.com/coolmtntransport",
+                "https://www.linkedin.com/company/cool-mountain-transport/",
+              ],
+            }),
+          }}
+        />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />

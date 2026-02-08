@@ -1,5 +1,11 @@
 import Link from "next/link";
 import { HeroSection } from "@/components/sections/HeroSection";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Privacy Policy | Cool Mountain Transport",
+    description: "Our commitment to protecting your privacy. Learn how we collect, use, and safeguard your personal information.",
+}
 
 export default function PrivacyPage() {
     return (

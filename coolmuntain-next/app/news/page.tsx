@@ -6,6 +6,7 @@ import { COMPANY, BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import Link from "next/link"
 import NextImage from "next/image"
+import { Metadata } from "next"
 
 const NEWS_items = [
     {
@@ -86,6 +87,16 @@ const NEWS_items = [
         bgClass: "bg-slate-100"
     }
 ]
+
+export const metadata: Metadata = {
+    title: "News & Updates | Cool Mountain Transport",
+    description: "Stay updated with the latest news, press releases, and announcements from Cool Mountain Transport.",
+    openGraph: {
+        title: "Cool Mountain Transport News",
+        description: "Latest updates, community events, and industry news from Cool Mountain Transport.",
+        url: "https://coolmountaintransport.com/news",
+    },
+}
 
 export default function NewsPage() {
     return (
