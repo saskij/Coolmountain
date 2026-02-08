@@ -19,7 +19,7 @@ interface HeroSectionProps {
 export function HeroSection({
     title,
     subtitle,
-    backgroundImage = "/assets/images/new-hero1.png",
+    backgroundImage = "/assets/images/new-hero1.jpg",
     backgroundVideo = "/assets/videos/hero-video.mp4",
     overlay = true,
     className,
