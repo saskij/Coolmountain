@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/Container"
-import { useEffect, useRef } from "react"
 import NextImage from "next/image"
 import { Reveal } from "@/components/ui/Reveal"
 import { BASE_PATH } from "@/lib/constants"
@@ -45,32 +44,8 @@ export function HeroSection({
         ? `${BASE_PATH}${backgroundVideo}`
         : backgroundVideo
 
-    const videoRef = useRef<HTMLVideoElement>(null)
-
-    useEffect(() => {
-        const video = videoRef.current
-        if (!video) return
-
-        const handleTimeUpdate = () => {
-            // Seamless loop: Jump back to start slightly before the end
-            // Adjust buffer (0.5s) if needed to skip bad frames at the end
-            if (video.duration > 0 && video.currentTime >= video.duration - 0.5) {
-                video.currentTime = 0
-                video.play().catch(() => { }) // Ignore play errors during seek
-            }
-        }
-
-        video.addEventListener('timeupdate', handleTimeUpdate)
-
-        // Ensure video plays when component mounts/updates
-        video.play().catch(error => {
-            console.log("Video autoplay failed:", error)
-        })
-
-        return () => {
-            video.removeEventListener('timeupdate', handleTimeUpdate)
-        }
-    }, [backgroundVideo])
+    // Video is disabled on mobile (hidden) and only plays once (no loop)
+    // We remove the JS loop logic entirely as requested.
 
     return (
         <section
@@ -85,7 +60,12 @@ export function HeroSection({
         >
             {/* Background Assets */}
             <div className="absolute inset-0 w-full h-full -z-10">
-                {/* Always render the static image as a base layer to prevent flashes during video loop */}
+                {/* 
+                  1. Static Image (Poster/Fallback) 
+                  Visible on Mobile (because video is hidden) 
+                  Visible while video loads 
+                  Visible after video ends (if it ends on a transparent frame, though usually video stays on last frame)
+                */}
                 <NextImage
                     src={bgImage}
                     alt={title}
@@ -97,13 +77,11 @@ export function HeroSection({
 
                 {bgVideo && (
                     <video
-                        ref={videoRef}
                         autoPlay
                         muted
                         playsInline
-                        preload="auto"
-                        className="absolute inset-0 w-full h-full object-cover"
-                        // poster is redundant if we have the image behind, but kept for compatibility
+                        preload="none"
+                        className="absolute inset-0 w-full h-full object-cover hidden md:block" // Hidden on mobile (<768px)
                         poster={bgImage}
                     >
                         <source src={bgVideo} type="video/mp4" />
