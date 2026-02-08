@@ -17,6 +17,19 @@ export function Header() {
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
     const pathname = usePathname()
 
+    // Normalize pathname by removing BASE_PATH prefix if present
+    const normalizedPathname = pathname?.startsWith(BASE_PATH)
+        ? pathname.slice(BASE_PATH.length) || "/"
+        : pathname
+
+    // Helper function to check if a page is active
+    const isActivePage = (href: string) => {
+        if (href === "/") {
+            return normalizedPathname === "/"
+        }
+        return normalizedPathname === href
+    }
+
     // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
@@ -105,7 +118,7 @@ export function Header() {
                                         <div key={link.label} className="relative group">
                                             <button className={cn(
                                                 "px-2 py-2 transition-colors hover:text-red-700 flex items-center gap-1 relative",
-                                                pathname?.startsWith(link.href) && "text-red-700 font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-red-700 after:rounded-full"
+                                                normalizedPathname?.startsWith(link.href) && "text-red-700 font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-red-700 after:rounded-full"
                                             )}>
                                                 {link.label}
                                             </button>
@@ -114,7 +127,7 @@ export function Header() {
                                                 {link.children.map(child => (
                                                     <Link key={child.href} href={child.href} className={cn(
                                                         "block px-4 py-3 hover:bg-slate-50 rounded-lg hover:text-red-700 transition font-semibold text-[13px] border-l-4 hover:border-red-700 hover:pl-6",
-                                                        pathname === child.href ? "text-red-700 bg-red-50 border-red-700 pl-6" : "text-slate-600 border-transparent"
+                                                        isActivePage(child.href) ? "text-red-700 bg-red-50 border-red-700 pl-6" : "text-slate-600 border-transparent"
                                                     )}>
                                                         {child.label}
                                                     </Link>
@@ -129,7 +142,7 @@ export function Header() {
                                         href={link.href}
                                         className={cn(
                                             "transition-colors hover:text-red-700 relative py-2 px-2",
-                                            pathname === link.href && "text-red-700 font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-red-700 after:rounded-full"
+                                            isActivePage(link.href) && "text-red-700 font-bold after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-red-700 after:rounded-full"
                                         )}
                                     >
                                         {link.label}
@@ -189,7 +202,7 @@ export function Header() {
                                                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                                                         className={cn(
                                                             "flex items-center justify-between w-full text-xl font-bold py-3 hover:text-red-700 transition",
-                                                            pathname?.startsWith(link.href) ? "text-red-700 bg-red-50 pl-2" : "text-slate-800"
+                                                            normalizedPathname?.startsWith(link.href) ? "text-red-700 bg-red-50 pl-2" : "text-slate-800"
                                                         )}
                                                     >
                                                         <span>{link.label}</span>
@@ -211,7 +224,7 @@ export function Header() {
                                                                             onClick={() => setIsOpen(false)}
                                                                             className={cn(
                                                                                 "block text-lg font-semibold py-2 border-l-2 pl-4 transition",
-                                                                                pathname === child.href
+                                                                                isActivePage(child.href)
                                                                                     ? "text-red-700 border-red-700 bg-red-50"
                                                                                     : "text-slate-600 border-slate-200 hover:text-red-700 hover:border-red-600"
                                                                             )}
@@ -232,7 +245,7 @@ export function Header() {
                                                 href={link.href}
                                                 className={cn(
                                                     "text-xl font-bold transition py-3 border-b border-slate-50 block",
-                                                    pathname === link.href
+                                                    isActivePage(link.href)
                                                         ? "text-red-700 bg-red-50 pl-2"
                                                         : "text-slate-800 hover:text-red-700"
                                                 )}
