@@ -187,7 +187,10 @@ export function Header() {
                                                 <div key={link.label} className="border-b border-slate-50">
                                                     <button
                                                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                                                        className="flex items-center justify-between w-full text-xl font-bold text-slate-800 py-3 hover:text-red-700 transition"
+                                                        className={cn(
+                                                            "flex items-center justify-between w-full text-xl font-bold py-3 hover:text-red-700 transition",
+                                                            pathname?.startsWith(link.href) ? "text-red-700 bg-red-50 pl-2" : "text-slate-800"
+                                                        )}
                                                     >
                                                         <span>{link.label}</span>
                                                         <ChevronDown className={cn("w-5 h-5 transition-transform", mobileServicesOpen && "rotate-180")} />
