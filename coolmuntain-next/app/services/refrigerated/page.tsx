@@ -20,7 +20,8 @@ export default function RefrigeratedPage() {
                 title="Temperature-Controlled Logistics"
                 subtitle="Maintaining the perfect environment for your sensitive cargo."
                 height="medium"
-
+                backgroundImage="/assets/images/services-hero.jpg"
+                backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
