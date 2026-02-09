@@ -1,10 +1,10 @@
 import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
-import { Button } from "@/components/ui/Button"
-import { COMPANY, BASE_PATH } from "@/lib/constants"
+import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import NextImage from "next/image"
+import { Check } from "lucide-react"
 
 import { Metadata } from "next"
 
@@ -112,9 +112,7 @@ export default function AboutPage() {
                                             { title: "Care & Precision:", text: "Each load is handled with great care to ensure it arrives safely, on time, and per specifications." }
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-start gap-3">
-                                                <svg className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                                                </svg>
+                                                <Check className="w-5 h-5 text-red-600 mt-1 flex-shrink-0" strokeWidth={2} />
                                                 <span className="text-slate-700 leading-relaxed">
                                                     <strong>{item.title}</strong> {item.text}
                                                 </span>

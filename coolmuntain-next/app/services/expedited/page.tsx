@@ -1,10 +1,10 @@
 import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
-import { Button } from "@/components/ui/Button"
-import { COMPANY, BASE_PATH } from "@/lib/constants"
+import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import NextImage from "next/image"
+import { Check } from "lucide-react"
 
 import { Metadata } from "next"
 
@@ -98,7 +98,7 @@ export default function ExpeditedPage() {
 
                         <div className="space-y-8">
                             <Reveal direction="up" delay={0.2}>
-                                <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+                                <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md hover:shadow-2xl hover:shadow-slate-200/50 transition-shadow duration-300">
                                     <h3 className="text-xl font-semibold text-slate-900 mb-4">
                                         Key Features
                                     </h3>

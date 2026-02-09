@@ -24,7 +24,7 @@ export function HeroSection({
     overlay = true,
     className,
     children,
-    align = "left", // Force left align visually even if passed center, but keeping prop for compatibility
+    // align = "left", // Force left align visually even if passed center, but keeping prop for compatibility
     height = "large"
 }: HeroSectionProps) {
 
@@ -37,7 +37,7 @@ export function HeroSection({
 
     // For NextImage, we pass the raw path (without BASE_PATH) because Next.js handles basePath automatically
     // when configured in next.config.js
-    const bgImageForNext = backgroundImage
+    // const bgImageForNext = backgroundImage
 
     // For standard HTML tags (video poster, manual img), we MUST manually prepend BASE_PATH
     // because they don't know about next.config.js configuration

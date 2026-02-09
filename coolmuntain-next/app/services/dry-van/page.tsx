@@ -1,10 +1,10 @@
 import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
-import { Button } from "@/components/ui/Button"
-import { COMPANY, BASE_PATH } from "@/lib/constants"
+import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import NextImage from "next/image"
+import { Check } from "lucide-react"
 
 import { Metadata } from "next"
 
@@ -116,7 +116,7 @@ export default function DryVanPage() {
 
                         <div className="space-y-8">
                             <Reveal direction="up" delay={0.2}>
-                                <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+                                <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-md hover:shadow-2xl hover:shadow-slate-200/50 transition-shadow duration-300">
                                     <h3 className="text-xl font-semibold text-slate-900 mb-4">
                                         Key Features
                                     </h3>
@@ -127,9 +127,7 @@ export default function DryVanPage() {
                                             "Nationwide coverage (48 states)"
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-start gap-3">
-                                                <svg className="h-6 w-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                                                </svg>
+                                                <Check className="h-6 w-6 text-red-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                                                 <span className="text-base text-slate-700">{item}</span>
                                             </li>
                                         ))}

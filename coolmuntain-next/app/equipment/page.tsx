@@ -1,8 +1,7 @@
 import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
-import { Button } from "@/components/ui/Button"
-import { COMPANY, BASE_PATH } from "@/lib/constants"
+import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import NextImage from "next/image"
 

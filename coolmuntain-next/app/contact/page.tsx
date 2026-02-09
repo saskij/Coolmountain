@@ -1,6 +1,5 @@
 import { HeroSection } from "@/components/sections/HeroSection"
-import { Button } from "@/components/ui/Button"
-import { COMPANY, BASE_PATH } from "@/lib/constants"
+import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import { ContactFormSection } from "@/components/contact/ContactFormSection"
 import NextImage from "next/image"

@@ -1,8 +1,7 @@
 import { Container } from "@/components/ui/Container"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Reveal } from "@/components/ui/Reveal"
-import { Button } from "@/components/ui/Button"
-import { COMPANY, BASE_PATH } from "@/lib/constants"
+import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import Link from "next/link"
 import NextImage from "next/image"
@@ -152,7 +151,7 @@ export default function NewsPage() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {NEWS_items.map((item, index) => (
                                 <Reveal key={index} direction="up" delay={index * 0.1}>
-                                    <div className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl h-full flex flex-col">
+                                    <article className="flex flex-col h-full rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-md hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-300 hover:-translate-y-1">
                                         <div className={`aspect-video w-full flex items-center justify-center p-8 ${item.bgClass}`}>
                                             <img
                                                 src={item.image}
@@ -187,7 +186,7 @@ export default function NewsPage() {
                                                 </Link>
                                             </div>
                                         </div>
-                                    </div>
+                                    </article>
                                 </Reveal>
                             ))}
                         </div>
