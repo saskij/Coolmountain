@@ -51,6 +51,7 @@ export const metadata: Metadata = {
   icons: {
     icon: `${BASE_PATH}/favicon.png`,
   },
+  manifest: `${BASE_PATH}/manifest.json`,
 };
 
 export const viewport: Viewport = {
