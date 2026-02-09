@@ -77,7 +77,7 @@ export function HeroSection({
                     fill
                     priority
                     className="object-cover object-[65%_center] xl:object-center"
-                    quality={90}
+                    quality={80}
                 />
 
                 {bgVideo && (

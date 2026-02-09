@@ -158,6 +158,7 @@ export default function NewsPage() {
                                                 src={item.image}
                                                 className={`max-h-full mx-auto object-contain ${item.imageClass}`}
                                                 alt={item.title}
+                                                loading="lazy"
                                             />
                                         </div>
                                         <div className="p-6 flex flex-col flex-grow">
