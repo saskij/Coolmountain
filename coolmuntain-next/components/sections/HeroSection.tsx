@@ -88,6 +88,7 @@ export function HeroSection({
                         preload="none"
                         className="absolute inset-0 w-full h-full object-cover hidden md:block" // Hidden on mobile (<768px)
                         poster={bgImageAbs}
+                        aria-label={`Background video: ${title}`}
                     >
                         <source src={bgVideo} type="video/mp4" />
                     </video>
