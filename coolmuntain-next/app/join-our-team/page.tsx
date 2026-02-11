@@ -220,13 +220,27 @@ export default function JoinTeamPage() {
                             </Reveal>
 
                             <Reveal direction="right" delay={0.2}>
-                                <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                                    <p className="text-base leading-relaxed text-slate-700 italic font-light">
-                                        &quot;If you are honest, dedicated, and have passion for the job, come
-                                        work at Cool Mountain Transport and help us grow.&quot;
-                                    </p>
-                                    <div className="mt-8">
-                                        <Button href={COMPANY.externalLinks.driverApp} external size="lg">
+                                <div className="rounded-2xl border border-blue-100 bg-slate-50 p-8 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
+                                    <h3 className="text-xl font-bold text-slate-900 mb-6">
+                                        Why Drive for Cool Mountain?
+                                    </h3>
+                                    <ul className="space-y-4 mb-8">
+                                        {[
+                                            "Competitive Pay & Sign-on Bonuses",
+                                            "New Equipment (2023-2025 models)",
+                                            "Flexible Home Time",
+                                            "Comprehensive Health & Dental Insurance"
+                                        ].map((benefit, i) => (
+                                            <li key={i} className="flex items-start gap-3">
+                                                <div className="flex-shrink-0 mt-1">
+                                                    <CheckCircle2 className="w-5 h-5 text-blue-600" />
+                                                </div>
+                                                <span className="text-slate-700 font-medium">{benefit}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-8 pt-6 border-t border-slate-200">
+                                        <Button href={COMPANY.externalLinks.driverApp} external size="lg" fullWidth className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg hover:shadow-blue-500/25">
                                             Apply Today
                                         </Button>
                                     </div>
