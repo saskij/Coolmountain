@@ -113,12 +113,12 @@ export function Header() {
                     <div className="ml-auto flex items-center gap-2 md:gap-4">
                         {/* Social Icons - Hidden on small screens, visible on XL */}
                         <div className="hidden xl:flex items-center gap-3 mr-6">
-                            <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-red-700 transition">
+                            <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-red-700 transition" aria-label="Visit our Facebook page">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
                                     <path d="M13.5 9H15V6.5c0-.7.1-1 .9-1H18V3h-2.5C12.9 3 12 4.5 12 6.7V9H10v2.5h2V21h2.5v-9.5H17L17.5 9h-3z" />
                                 </svg>
                             </a>
-                            <a href={COMPANY.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-red-700 transition">
+                            <a href={COMPANY.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-red-700 transition" aria-label="Visit our LinkedIn page">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
                                     <path d="M20.5 3h-17A1.5 1.5 0 0 0 2 4.5v15A1.5 1.5 0 0 0 3.5 21h17a1.5 1.5 0 0 0 1.5-1.5v-15A1.5 1.5 0 0 0 20.5 3zM8.3 18H5.7V9.7h2.6V18zm-1.3-9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18.5 18h-2.6v-4.1c0-1-.3-1.6-1.2-1.6-.7 0-1 .5-1.2 1-.1.2-.1.5-.1.8V18h-2.6s.1-6.9 0-8.3h2.6v1.2c.3-.5.9-1.3 2.3-1.3 1.7 0 3 1.1 3 3.5V18z" />
                                 </svg>

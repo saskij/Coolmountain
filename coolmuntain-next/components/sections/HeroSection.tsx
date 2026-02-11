@@ -73,9 +73,10 @@ export function HeroSection({
                 */}
                 <NextImage
                     src={bgImageAbs}
-                    alt={title}
+                    alt="Cool Mountain Transport modern fleet truck on the road"
                     fill
                     priority
+                    fetchPriority="high"
                     className="object-cover object-[65%_center] xl:object-center"
                     quality={80}
                 />

@@ -61,7 +61,7 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
     return (
         <>
             <div
-                className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 will-change-transform will-change-opacity translate-z-0 ${className}`}
+                className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 will-change-transform will-change-opacity transform-gpu backface-hidden ${className}`}
                 style={{ transformStyle: 'preserve-3d' }}
             >
                 {features.map((feature, index) => (
@@ -125,7 +125,7 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 onClick={() => setSelectedFeature(null)}
-                                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity translate-z-0 perspective-1000 will-change-transform will-change-opacity"
+                                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity transform-gpu backface-hidden perspective-1000 will-change-transform will-change-opacity"
                             />
 
                             {/* Modal Content */}
