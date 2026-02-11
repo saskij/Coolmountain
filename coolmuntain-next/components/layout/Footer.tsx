@@ -171,7 +171,7 @@ export function Footer() {
             <div className="border-t border-slate-900 bg-slate-950 py-8">
                 <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 lg:px-8 text-xs text-slate-500">
                     <p className="text-center">
-                        &copy; {currentYear} {COMPANY.name}. All Rights Reserved. Used under license.
+                        &copy; {currentYear} {COMPANY.name}. All Rights Reserved.
                     </p>
                     <p className="text-slate-600 font-mono tracking-wider">
                         USDOT #{COMPANY.meta.usdot} | MC #{COMPANY.meta.mc}

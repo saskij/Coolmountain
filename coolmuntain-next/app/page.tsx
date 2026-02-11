@@ -122,7 +122,7 @@ export default function Home() {
                   every opportunity to provide professional, well planned and worry-free
                   service. We provide exceptional, consistent and reliable
                   transportation services that meet complex and evolving business
-                  needs. Local runs, long distance or even in caves, your unique
+                  needs. Local runs, long distance, your unique
                   requirements are our priority. An extensive network of leasing
                   partners provides exceptional flexibility and quick expansion,
                   allowing Cool Mountain Transport to meet demanding schedules and
