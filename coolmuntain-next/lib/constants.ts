@@ -84,7 +84,7 @@ export const SERVICES = [
             "24/7 dispatch support for time-sensitive deliveries"
         ],
         icon: "Thermometer",
-        backgroundImage: "/assets/images/Refrigerated-card.jpg",
+        backgroundImage: "/assets/images/refrigerated-service-card.jpg",
         overlayOpacity: 90
     },
     {
@@ -100,7 +100,7 @@ export const SERVICES = [
             "Real-time satellite tracking and updates"
         ],
         icon: "Zap",
-        backgroundImage: "/assets/images/expedited-card.jpg"
+        backgroundImage: "/assets/images/expedited-service-card.jpg"
     }
 ]
 

@@ -19,7 +19,7 @@ export default function EquipmentPage() {
                 title="Equipment"
                 subtitle="Modern, reliable equipment built for performance and safety."
                 height="medium"
-                backgroundImage="/assets/images/Equipment-hero.jpg"
+                backgroundImage="/assets/images/equipment-hero.jpg"
                 backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />

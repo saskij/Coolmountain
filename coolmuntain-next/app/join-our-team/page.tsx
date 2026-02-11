@@ -26,7 +26,7 @@ export default function JoinTeamPage() {
                 title="Join Our Team"
                 subtitle="Explore opportunities for company drivers and owner operators, plus the benefits of working with a team that prioritizes safety and professionalism."
                 height="medium"
-                backgroundImage="/assets/images/Join-Our-Team.jpg"
+                backgroundImage="/assets/images/join-our-team-hero.jpg"
                 backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />
