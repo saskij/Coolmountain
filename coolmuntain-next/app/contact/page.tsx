@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/sections/HeroSection"
 import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import { ContactFormSection } from "@/components/contact/ContactFormSection"
+import { FindUs } from "@/components/sections/FindUs"
 import NextImage from "next/image"
 
 import { Metadata } from "next"
@@ -119,6 +120,7 @@ export default function ContactPage() {
             </HeroSection>
 
             <ContactFormSection />
+            <FindUs />
         </div>
     )
 }
