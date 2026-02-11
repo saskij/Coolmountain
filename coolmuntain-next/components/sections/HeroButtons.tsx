@@ -13,7 +13,7 @@ export function HeroButtons({ className }: HeroButtonsProps) {
                 href={COMPANY.externalLinks.driverApp}
                 size="lg"
                 external
-                className="w-fit sm:w-auto px-8 bg-[#003366] hover:bg-[#002244] text-white border-none shadow-lg hover:shadow-blue-900/40"
+                className="w-fit sm:w-auto px-8 bg-brand-red hover:bg-brand-red-hover text-white border-none shadow-lg hover:shadow-blue-900/40"
             >
                 Apply as a Driver
             </Button>

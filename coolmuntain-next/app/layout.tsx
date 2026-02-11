@@ -98,14 +98,14 @@ export default function RootLayout({
         <BackToTop />
         <a
           href="tel:2084752500"
-          className="fixed bottom-0 left-0 right-0 z-[60] flex md:hidden items-center justify-center gap-3 bg-[#b91c1c] py-4 text-white shadow-[0_-4px_20px_rgba(0,0,0,0.2)] transition-colors hover:bg-[#991b1b] active:bg-[#7f1d1d]"
+          className="fixed bottom-0 left-0 right-0 z-[60] flex md:hidden items-center justify-center gap-3 bg-brand-red py-4 text-white shadow-[0_-4px_20px_rgba(0,0,0,0.2)] transition-colors hover:bg-brand-red-hover active:bg-[#7f1d1d]"
         >
           <Phone className="h-6 w-6" strokeWidth={2.5} />
           <span className="font-bold text-lg tracking-wide uppercase">Call Dispatch</span>
         </a>
         <a
           href="tel:2084752500"
-          className="hidden md:flex fixed bottom-8 right-8 z-[60] items-center gap-2 rounded-full bg-[#b91c1c] px-6 py-3 text-white shadow-2xl transition hover:bg-[#991b1b] hover:scale-105 active:scale-95"
+          className="hidden md:flex fixed bottom-8 right-8 z-[60] items-center gap-2 rounded-full bg-brand-red px-6 py-3 text-white shadow-2xl transition hover:bg-brand-red-hover hover:scale-105 active:scale-95"
         >
           <Phone className="h-5 w-5" strokeWidth={2} />
           <span className="font-bold text-sm uppercase tracking-wide">Call Us</span>

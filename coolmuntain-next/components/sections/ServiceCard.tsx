@@ -56,13 +56,13 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
             {/* Content Container */}
             <div className="flex flex-col flex-grow p-6">
                 <div className="mb-4">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
                         <Icon className="h-6 w-6" strokeWidth={2} />
                     </div>
                 </div>
 
                 <div className="space-y-3 flex-grow">
-                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-brand-blue transition-colors">
                         {title}
                     </h3>
                     <p className="text-sm text-slate-600 leading-relaxed">
@@ -74,7 +74,7 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
                     <span className="inline-flex items-center justify-center px-6 py-3 rounded-[6px] bg-[#333333] text-white text-[12px] font-bold uppercase tracking-[0.5px] shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px]">
                         Explore Service
                     </span>
-                    <div className="h-8 w-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                    <div className="h-8 w-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
                         <ArrowRight className="h-4 w-4" />
                     </div>
                 </div>
