@@ -11,7 +11,7 @@ export function ContactForm() {
                         Full Name
                     </label>
                     <input
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition"
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue transition"
                         id="name"
                         name="name"
                         type="text"
@@ -24,7 +24,7 @@ export function ContactForm() {
                         Email Address
                     </label>
                     <input
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition"
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue transition"
                         id="email"
                         name="email"
                         type="email"
@@ -37,7 +37,7 @@ export function ContactForm() {
                         Phone
                     </label>
                     <input
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition"
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue transition"
                         id="phone"
                         name="phone"
                         type="tel"
@@ -49,7 +49,7 @@ export function ContactForm() {
                         Message
                     </label>
                     <textarea
-                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-red-500 focus:outline-none focus:ring-1 focus:ring-red-500 transition min-h-[120px]"
+                        className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm focus:border-brand-blue focus:outline-none focus:ring-1 focus:ring-brand-blue transition min-h-[120px]"
                         id="message"
                         name="message"
                         rows={5}
@@ -57,9 +57,11 @@ export function ContactForm() {
                         required
                     ></textarea>
                 </div>
-                <Button fullWidth size="lg" type="submit">
-                    Submit Request
-                </Button>
+                <div className="flex justify-center">
+                    <Button size="lg" type="submit" className="max-w-[250px] w-full">
+                        Submit Request
+                    </Button>
+                </div>
             </div>
         </form>
     )
