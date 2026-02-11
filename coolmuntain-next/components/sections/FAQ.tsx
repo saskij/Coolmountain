@@ -95,12 +95,13 @@ export function FAQ({ className }: FAQProps) {
                             onClick={() => setOpenIndex(openIndex === index ? null : index)}
                             className="w-full flex items-center justify-between p-6 text-left hover:bg-slate-50 transition-colors"
                         >
-                            <span className="font-semibold text-slate-900 text-lg pr-4">
+                            <span className="font-semibold text-brand-blue text-lg pr-4">
                                 {item.question}
                             </span>
-                            <ChevronDown
-                                className={`w-5 h-5 text-brand-blue flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''
+                            <Plus
+                                className={`w-6 h-6 text-brand-red flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''
                                     }`}
+                                strokeWidth={2.5}
                             />
                         </button>
                         <AnimatePresence>
@@ -109,10 +110,10 @@ export function FAQ({ className }: FAQProps) {
                                     initial={{ height: 0, opacity: 0 }}
                                     animate={{ height: 'auto', opacity: 1 }}
                                     exit={{ height: 0, opacity: 0 }}
-                                    transition={{ duration: 0.3 }}
+                                    transition={{ duration: 0.3, ease: "easeInOut" }}
                                     className="overflow-hidden"
                                 >
-                                    <div className="px-6 pb-6 pt-2 text-slate-700 leading-relaxed">
+                                    <div className="px-6 pb-6 pt-2 text-slate-600" style={{ lineHeight: '1.6' }}>
                                         {item.answer}
                                     </div>
                                 </motion.div>
