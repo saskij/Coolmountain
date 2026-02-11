@@ -45,7 +45,7 @@ export default function Home() {
       <PartnersSection />
 
       {/* Services Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-28 bg-slate-50">
         <Container>
           <div className="mb-12">
             <Reveal direction="up">
@@ -72,12 +72,12 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-28 bg-white">
         <Container>
           <div className="mb-12">
             <Reveal direction="up">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-wide">
+                <h2 className="text-3xl font-bold text-slate-900">
                   Why Choose Cool Mountain
                 </h2>
                 <div className="mt-2 h-1 w-20 bg-brand-blue rounded-full" />
@@ -92,7 +92,7 @@ export default function Home() {
       </section>
 
       {/* About / Mission Section */}
-      <section className="relative overflow-hidden bg-white pt-20 pb-20">
+      <section className="relative overflow-hidden bg-white pt-28 pb-28">
         <div className="pointer-events-none absolute inset-0 opacity-5">
           <div className="absolute -right-24 top-10 h-64 w-64 rotate-12 rounded-full bg-slate-900"></div>
           <div className="absolute left-12 top-24 h-32 w-32 rotate-12 border border-slate-900"></div>
