@@ -13,7 +13,7 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant = "primary", size = "md", fullWidth, href, external, children, ...props }, ref) => {
-        const baseStyles = "inline-flex items-center justify-center rounded-full font-bold uppercase tracking-widest transition-all duration-300 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
+        const baseStyles = "inline-flex items-center justify-center rounded-[6px] font-bold uppercase tracking-[0.5px] transition-all duration-300 ease-in-out focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
 
         const variants = {
             primary: "bg-[#b91c1c] text-white hover:bg-[#991b1b] shadow-lg hover:-translate-y-0.5",
