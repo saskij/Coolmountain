@@ -17,6 +17,17 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
         setMounted(true)
     }, [])
 
+    useEffect(() => {
+        if (selectedFeature !== null) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "unset"
+        }
+        return () => {
+            document.body.style.overflow = "unset"
+        }
+    }, [selectedFeature])
+
     const features = [
         {
             icon: Clock,
