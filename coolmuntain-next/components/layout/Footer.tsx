@@ -25,8 +25,8 @@ export function Footer() {
         <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 font-sans">
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-                    {/* Column 1: Brand & Contact */}
-                    <div className="space-y-6 lg:col-span-2">
+                    {/* Column 1: Brand */}
+                    <div className="space-y-6">
                         <Link href="/" onClick={handleLogoClick} className="block w-fit transition-transform hover:scale-105">
                             <NextImage
                                 src={`${BASE_PATH}/assets/images/logo-transparent.png`}
@@ -41,52 +41,6 @@ export function Footer() {
                             <br />
                             Solving complex logistics problems with a modern fleet and safety commitment.
                         </p>
-
-                        <div className="space-y-4 pt-2">
-                            <div className="flex items-start gap-3">
-                                <a
-                                    href={COMPANY.contact.googleMaps}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="mt-1 flex-none text-red-500 hover:text-white transition-colors p-1 hover:bg-slate-800 rounded"
-                                    aria-label="View on Google Maps"
-                                >
-                                    <MapPin className="h-5 w-5" />
-                                </a>
-                                <a
-                                    href={COMPANY.contact.googleMaps}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm leading-6 hover:text-white transition-colors"
-                                >
-                                    {COMPANY.contact.address.street}<br />
-                                    {COMPANY.contact.address.city}, {COMPANY.contact.address.state} {COMPANY.contact.address.zip}
-                                </a>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Phone className="h-5 w-5 flex-none text-red-500" />
-                                <a href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} className="text-sm leading-6 hover:text-white transition">
-                                    {COMPANY.contact.dispatchPhoneDisplay}
-                                </a>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Mail className="h-5 w-5 flex-none text-red-500" />
-                                <a href={`mailto:${COMPANY.contact.email}`} className="text-sm leading-6 hover:text-white transition">
-                                    {COMPANY.contact.email}
-                                </a>
-                            </div>
-                        </div>
-
-                        <div className="flex gap-4 pt-2">
-                            <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
-                                <Facebook className="h-5 w-5" />
-                                <span className="sr-only">Facebook</span>
-                            </a>
-                            <a href={COMPANY.socials.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
-                                <Linkedin className="h-5 w-5" />
-                                <span className="sr-only">LinkedIn</span>
-                            </a>
-                        </div>
                     </div>
 
                     {/* Column 2: Explore */}
@@ -143,6 +97,56 @@ export function Footer() {
                                 </Link>
                             </li>
                         </ul>
+                    </div>
+
+                    {/* Column 4: Contact */}
+                    <div className="mt-2 text-slate-400">
+                        <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider mb-6">Contact</h3>
+                        <div className="space-y-4">
+                            <div className="flex items-start gap-3">
+                                <a
+                                    href={COMPANY.contact.googleMaps}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-1 flex-none text-red-500 hover:text-white transition-colors p-1 hover:bg-slate-800 rounded"
+                                    aria-label="View on Google Maps"
+                                >
+                                    <MapPin className="h-5 w-5" />
+                                </a>
+                                <a
+                                    href={COMPANY.contact.googleMaps}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm leading-6 hover:text-white transition-colors"
+                                >
+                                    {COMPANY.contact.address.street}<br />
+                                    {COMPANY.contact.address.city}, {COMPANY.contact.address.state} {COMPANY.contact.address.zip}
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <Phone className="h-5 w-5 flex-none text-red-500" />
+                                <a href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} className="text-sm leading-6 hover:text-white transition">
+                                    {COMPANY.contact.dispatchPhoneDisplay}
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <Mail className="h-5 w-5 flex-none text-red-500" />
+                                <a href={`mailto:${COMPANY.contact.email}`} className="text-sm leading-6 hover:text-white transition">
+                                    {COMPANY.contact.email}
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-4 pt-6">
+                            <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                                <Facebook className="h-5 w-5" />
+                                <span className="sr-only">Facebook</span>
+                            </a>
+                            <a href={COMPANY.socials.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                                <Linkedin className="h-5 w-5" />
+                                <span className="sr-only">LinkedIn</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
