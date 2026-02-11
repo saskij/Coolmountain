@@ -55,7 +55,7 @@ export function HeroSection({
     return (
         <section
             className={cn(
-                "relative flex flex-col overflow-hidden isolate",
+                "relative flex flex-col overflow-hidden isolate transform-gpu backface-hidden",
                 "justify-center pb-16", // Vertically center content
                 // Home (large) gets standard pt-32. Inner pages get pt-48 to push content down from logo.
                 height === 'large' ? "pt-32" : "pt-48",

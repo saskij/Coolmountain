@@ -52,7 +52,7 @@ export default function Home() {
       <PartnersSection />
 
       {/* Services Section */}
-      <section className="py-16 lg:py-28 bg-slate-50">
+      <section className="py-16 lg:py-28 bg-slate-50 transform-gpu backface-hidden">
         <Container>
           <div className="mb-12">
             <Reveal direction="up">
@@ -99,7 +99,7 @@ export default function Home() {
       </section>
 
       {/* About / Mission Section */}
-      <section className="relative overflow-hidden bg-white py-16 lg:py-28">
+      <section className="relative overflow-hidden bg-white py-16 lg:py-28 transform-gpu backface-hidden">
         <div className="pointer-events-none absolute inset-0 opacity-5">
           <div className="absolute -right-24 top-10 h-64 w-64 rotate-12 rounded-full bg-slate-900"></div>
           <div className="absolute left-12 top-24 h-32 w-32 rotate-12 border border-slate-900"></div>

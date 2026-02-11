@@ -17,14 +17,25 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
         setMounted(true)
     }, [])
 
+    // Handle scroll lock (iOS/Safari fix)
     useEffect(() => {
         if (selectedFeature !== null) {
-            document.body.style.overflow = "hidden"
+            // Save current scroll position
+            const scrollY = window.scrollY
+            document.body.style.top = `-${scrollY}px`
+            document.body.classList.add("lock-bg")
         } else {
-            document.body.style.overflow = "unset"
+            // Restore scroll position
+            const scrollY = document.body.style.top
+            document.body.classList.remove("lock-bg")
+            document.body.style.top = ""
+            window.scrollTo(0, parseInt(scrollY || "0") * -1)
         }
+
+        // Cleanup on unmount
         return () => {
-            document.body.style.overflow = "unset"
+            document.body.classList.remove("lock-bg")
+            document.body.style.top = ""
         }
     }, [selectedFeature])
 
@@ -122,7 +133,7 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 onClick={() => setSelectedFeature(null)}
-                                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity"
+                                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity translate-z-0 perspective-1000"
                             />
 
                             {/* Modal Content */}
