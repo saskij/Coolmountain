@@ -4,6 +4,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle"
 import { Reveal } from "@/components/ui/Reveal"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { PartnersSection } from "@/components/sections/PartnersSection"
+import { CallToAction } from "@/components/sections/CallToAction"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import { ServiceCard } from "@/components/sections/ServiceCard"
 import { SERVICES, COMPANY, BASE_PATH } from "@/lib/constants"
@@ -175,26 +176,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action Bar */}
-      <section className="py-20 bg-slate-900 text-white relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-20 bg-cover bg-center mix-blend-overlay"
-          style={{ backgroundImage: `url('${BASE_PATH}/assets/images/header-bg-final.png')` }}
-        ></div>
-        <Container className="relative z-10 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to move your freight?</h2>
-          <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-            Contact our dispatch team today for a competitive quote and detailed logistics plan.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact" size="lg" className="bg-white text-slate-900 hover:bg-slate-100">
-              Get a Quote
-            </Button>
-            <Button href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-slate-900">
-              Call Dispatch: {COMPANY.contact.dispatchPhoneDisplay}
-            </Button>
-          </div>
-        </Container>
-      </section>
+      <CallToAction />
     </div>
   );
 }
