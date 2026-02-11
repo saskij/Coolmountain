@@ -108,7 +108,17 @@ export default function Home() {
                     COOL MOUNTAIN
                     <span className="font-light text-slate-700 block sm:inline sm:ml-2">TRANSPORT</span>
                   </h2>
-                  <div className="mt-2 h-1 w-40 bg-gradient-to-r from-slate-900 to-transparent"></div>
+
+                  {/* Trust Bar - Professional Certification Display */}
+                  <div className="mt-4 inline-flex items-center gap-3 px-4 py-2 bg-slate-100 rounded-lg">
+                    <span className="text-[0.9rem] font-medium text-slate-700">Nampa, Idaho</span>
+                    <span className="text-slate-400">|</span>
+                    <span className="text-[0.9rem] font-medium text-slate-700">MC# 879475</span>
+                    <span className="text-slate-400">|</span>
+                    <span className="text-[0.9rem] font-medium text-slate-700">USDOT 2414797</span>
+                  </div>
+
+                  <div className="mt-4 h-1 w-40 bg-gradient-to-r from-slate-900 to-transparent"></div>
                 </div>
               </Reveal>
 
@@ -117,10 +127,6 @@ export default function Home() {
                   Cool Mountain Transport offers competitive and innovative national
                   freight services, specialized freight, expedited freight, and
                   dedicated services.
-                </p>
-
-                <p className="text-sm text-slate-600 pt-2">
-                  Nampa, Idaho | MC# 879475 | USDOT 2414797
                 </p>
               </Reveal>
 
