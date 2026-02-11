@@ -119,23 +119,9 @@ export default function Home() {
                   dedicated services.
                 </p>
 
-                <div className="grid gap-4 sm:grid-cols-3 pt-4">
-                  <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                    <div className="flex items-center gap-2 text-slate-700">
-                      <span className="text-sm font-semibold">Nampa, Idaho</span>
-                    </div>
-                  </div>
-                  <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                    <div className="flex items-center gap-2 text-slate-700">
-                      <span className="text-sm font-semibold">MC#879475</span>
-                    </div>
-                  </div>
-                  <div className="rounded-2xl border border-slate-100 bg-white p-4 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg">
-                    <div className="flex items-center gap-2 text-slate-700">
-                      <span className="text-sm font-semibold">USDOT 2414797</span>
-                    </div>
-                  </div>
-                </div>
+                <p className="text-sm text-slate-600 pt-2">
+                  Nampa, Idaho | MC# 879475 | USDOT 2414797
+                </p>
               </Reveal>
 
 
@@ -151,18 +137,17 @@ export default function Home() {
             {/* Image & Mission Column: col-span-7 */}
             <div className="xl:col-span-7 flex flex-col justify-center lg:justify-end space-y-6 lg:-translate-y-6">
               <Reveal direction="left" delay={0.2}>
-                <div className="relative rounded-2xl border-l-4 border-red-500 bg-slate-50 p-6">
-                  <div className="absolute left-6 top-2 text-5xl text-slate-200">“</div>
-                  <p className="text-sm font-semibold text-orange-600">
-                    Mission Statement:
+                <blockquote className="relative rounded-lg border-l-4 border-brand-red bg-slate-50 p-6 pl-8">
+                  <p className="text-sm font-semibold text-slate-700 uppercase tracking-wide mb-3">
+                    Mission Statement
                   </p>
-                  <p className="mt-2 text-slate-600 leading-relaxed italic font-light">
-                    to deliver outstanding transportation services, provide
+                  <p className="text-slate-700 leading-relaxed italic">
+                    To deliver outstanding transportation services, provide
                     exceptional customer service, improve technology, and create
                     business efficiencies that promote long-term customer stability,
                     longevity and prosperity.
                   </p>
-                </div>
+                </blockquote>
               </Reveal>
 
               <Reveal direction="right" delay={0.4}>
