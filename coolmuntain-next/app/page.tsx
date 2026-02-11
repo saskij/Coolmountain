@@ -157,19 +157,7 @@ export default function Home() {
 
             {/* Image & Mission Column: col-span-7 */}
             <div className="xl:col-span-7 flex flex-col justify-center lg:justify-end space-y-6 lg:-translate-y-6">
-              <Reveal direction="left" delay={0.2}>
-                <blockquote className="relative rounded-lg border-l-4 border-brand-red bg-slate-50 p-6 pl-8">
-                  <p className="text-sm font-semibold text-slate-700 uppercase tracking-wide mb-3">
-                    Mission Statement
-                  </p>
-                  <p className="text-slate-700 leading-relaxed italic">
-                    To deliver outstanding transportation services, provide
-                    exceptional customer service, improve technology, and create
-                    business efficiencies that promote long-term customer stability,
-                    longevity and prosperity.
-                  </p>
-                </blockquote>
-              </Reveal>
+              {/* Mission Statement removed to align image top with text */}
 
               <Reveal direction="right" delay={0.4}>
                 <div className="relative rounded-2xl shadow-lg overflow-hidden group">
