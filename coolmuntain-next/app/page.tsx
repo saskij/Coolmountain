@@ -71,6 +71,26 @@ export default function Home() {
         </Container>
       </section>
 
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="mb-12">
+            <Reveal direction="up">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-wide">
+                  Why Choose Cool Mountain
+                </h2>
+                <div className="mt-2 h-1 w-20 bg-brand-blue rounded-full" />
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal direction="up" delay={0.1}>
+            <WhyChooseUs />
+          </Reveal>
+        </Container>
+      </section>
+
       {/* About / Mission Section */}
       <section className="relative overflow-hidden bg-white pt-20 pb-20">
         <div className="pointer-events-none absolute inset-0 opacity-5">
@@ -164,26 +184,6 @@ export default function Home() {
 
       {/* Call to Action Bar */}
       <CallToAction />
-
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-white">
-        <Container>
-          <div className="mb-12">
-            <Reveal direction="up">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-wide">
-                  Why Choose Cool Mountain
-                </h2>
-                <div className="mt-2 h-1 w-20 bg-brand-blue rounded-full" />
-              </div>
-            </Reveal>
-          </div>
-
-          <Reveal direction="up" delay={0.1}>
-            <WhyChooseUs />
-          </Reveal>
-        </Container>
-      </section>
     </div>
   );
 }
