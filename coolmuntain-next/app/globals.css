@@ -174,10 +174,7 @@ h2 {
 /* iOS Scroll Lock */
 .lock-bg {
   overflow: hidden;
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-  -webkit-overflow-scrolling: touch;
+  padding-right: var(--scrollbar-width);
 }
 
 .backface-hidden {

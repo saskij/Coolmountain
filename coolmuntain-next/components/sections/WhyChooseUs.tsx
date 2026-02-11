@@ -20,22 +20,14 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
     // Handle scroll lock (iOS/Safari fix)
     useEffect(() => {
         if (selectedFeature !== null) {
-            // Save current scroll position
-            const scrollY = window.scrollY
-            document.body.style.top = `-${scrollY}px`
             document.body.classList.add("lock-bg")
         } else {
-            // Restore scroll position
-            const scrollY = document.body.style.top
             document.body.classList.remove("lock-bg")
-            document.body.style.top = ""
-            window.scrollTo(0, parseInt(scrollY || "0") * -1)
         }
 
         // Cleanup on unmount
         return () => {
             document.body.classList.remove("lock-bg")
-            document.body.style.top = ""
         }
     }, [selectedFeature])
 

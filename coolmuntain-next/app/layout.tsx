@@ -98,6 +98,18 @@ export default function RootLayout({
             }),
           }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+                  document.documentElement.style.setProperty('--scrollbar-width', scrollbarWidth + 'px');
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
         <Header />
         <main className="flex-grow">{children}</main>
         <Footer />
