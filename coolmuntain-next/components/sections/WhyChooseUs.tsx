@@ -35,8 +35,8 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
                     key={index}
                     className="flex flex-col gap-4 bg-white rounded-xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-[5px]"
                 >
-                    <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center">
-                        <feature.icon className="w-7 h-7 text-brand-blue" />
+                    <div className="w-14 h-14 rounded-full bg-brand-blue flex items-center justify-center">
+                        <feature.icon className="w-7 h-7 text-white" strokeWidth={2.5} fill="currentColor" />
                     </div>
                     <div>
                         <h3 className="font-bold text-brand-blue text-lg mb-2">{feature.title}</h3>
