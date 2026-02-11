@@ -118,9 +118,6 @@ export default function Home() {
                 </div>
               </Reveal>
 
-              <Reveal direction="up" delay={0.2}>
-                <WhyChooseUs />
-              </Reveal>
 
               <Reveal direction="up" delay={0.3}>
                 <div className="pt-2">
@@ -167,6 +164,26 @@ export default function Home() {
 
       {/* Call to Action Bar */}
       <CallToAction />
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <Container>
+          <div className="mb-12">
+            <Reveal direction="up">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold text-slate-900 uppercase tracking-wide">
+                  Why Choose Cool Mountain
+                </h2>
+                <div className="mt-2 h-1 w-20 bg-brand-blue rounded-full" />
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal direction="up" delay={0.1}>
+            <WhyChooseUs />
+          </Reveal>
+        </Container>
+      </section>
     </div>
   );
 }
