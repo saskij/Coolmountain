@@ -77,7 +77,7 @@ export function Header() {
         <>
             <header
                 className={cn(
-                    "fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 glass-header",
+                    "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 glass-header",
                     scrolled ? "scrolled shadow-sm h-[72px]" : "h-[80px] lg:h-[92px]"
                 )}
             >

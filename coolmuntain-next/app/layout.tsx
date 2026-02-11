@@ -111,7 +111,7 @@ export default function RootLayout({
           }}
         />
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow isolate">{children}</main>
         <Footer />
         <BackToTop />
         <a
