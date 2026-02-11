@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils"
 
 // Unique source of truth for logos
 const UNIQUE_LOGOS = [
-    { name: "Franz", src: `${BASE_PATH}/assets/images/franz-logo.png`, width: 140, height: 50 },
-    { name: "Simplot", src: `${BASE_PATH}/assets/images/simplot-logo.png`, width: 110, height: 50 },
-    { name: "SmartWay", src: `${BASE_PATH}/assets/images/smartway-logo.png`, width: 100, height: 50 },
+    { name: "Franz", src: "/assets/images/franz-logo.png", width: 140, height: 50 },
+    { name: "Simplot", src: "/assets/images/simplot-logo.png", width: 110, height: 50 },
+    { name: "SmartWay", src: "/assets/images/smartway-logo.png", width: 100, height: 50 },
 ]
 
 export function PartnersSection() {

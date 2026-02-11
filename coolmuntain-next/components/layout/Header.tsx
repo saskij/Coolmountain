@@ -87,7 +87,7 @@ export function Header() {
                         <Link href="/" onClick={handleLogoClick} className="relative z-50 group">
                             <div className="w-[110px] sm:w-[130px] lg:w-[160px] h-1" /> {/* Spacer to reserve width */}
                             <NextImage
-                                src={`${BASE_PATH}/assets/images/logo-transparent.png`}
+                                src="/assets/images/logo-transparent.png"
                                 alt={COMPANY.name}
                                 width={180}
                                 height={180}

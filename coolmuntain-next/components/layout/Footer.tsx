@@ -29,7 +29,7 @@ export function Footer() {
                     <div className="space-y-6">
                         <Link href="/" onClick={handleLogoClick} className="block w-fit transition-transform hover:scale-105">
                             <NextImage
-                                src={`${BASE_PATH}/assets/images/logo-transparent.png`}
+                                src="/assets/images/logo-transparent.png"
                                 alt={COMPANY.name}
                                 width={180}
                                 height={96}

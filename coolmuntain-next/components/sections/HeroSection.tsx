@@ -35,10 +35,6 @@ export function HeroSection({
         small: "min-h-[30vh] lg:min-h-[40vh]", // Standard Inner page
     }
 
-    // For NextImage, we pass the raw path (without BASE_PATH) because Next.js handles basePath automatically
-    // when configured in next.config.js
-    // const bgImageForNext = backgroundImage
-
     // For standard HTML tags (video poster, manual img), we MUST manually prepend BASE_PATH
     // because they don't know about next.config.js configuration
     const bgImageAbs = backgroundImage.startsWith("/")
@@ -72,7 +68,7 @@ export function HeroSection({
                   Visible after video ends (if it ends on a transparent frame, though usually video stays on last frame)
                 */}
                 <NextImage
-                    src={bgImageAbs}
+                    src={backgroundImage}
                     alt="Cool Mountain Transport modern fleet truck on the road"
                     fill
                     priority

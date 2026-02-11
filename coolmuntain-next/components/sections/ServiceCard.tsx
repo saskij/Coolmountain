@@ -2,7 +2,7 @@ import Link from "next/link"
 import NextImage from "next/image"
 import { Truck, Thermometer, Zap, ArrowRight, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { BASE_PATH } from "@/lib/constants"
+
 
 // Map icon string names to Lucide components
 const IconMap = {
@@ -24,9 +24,10 @@ export interface ServiceCardProps {
 export function ServiceCard({ title, description, href, iconName = "Truck", className, backgroundImage, overlayOpacity = 80 }: ServiceCardProps) {
     const Icon = IconMap[iconName] || Truck
 
-    const bgImageAbs = backgroundImage && backgroundImage.startsWith("/")
-        ? `${BASE_PATH}${backgroundImage}`
-        : backgroundImage
+    // NextImage handles basePath automatically
+    // const bgImageAbs = backgroundImage && backgroundImage.startsWith("/")
+    //     ? `${BASE_PATH}${backgroundImage}`
+    //     : backgroundImage
 
     return (
         <Link
@@ -38,9 +39,9 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
         >
             {/* Top Image Section - 16/9 Aspect Ratio */}
             <div className="relative w-full aspect-video overflow-hidden">
-                {bgImageAbs ? (
+                {backgroundImage ? (
                     <NextImage
-                        src={bgImageAbs}
+                        src={backgroundImage || ""}
                         alt={title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
