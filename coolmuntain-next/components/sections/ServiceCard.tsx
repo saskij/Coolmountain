@@ -71,7 +71,7 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
                 </div>
 
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
-                    <span className="inline-flex items-center justify-center px-6 py-3 rounded-[6px] bg-[#333333] text-white text-[12px] font-bold uppercase tracking-[0.5px] shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px]">
+                    <span className="inline-flex items-center justify-center px-6 py-3 rounded-[6px] border-2 border-brand-blue bg-transparent text-brand-blue text-[12px] font-bold uppercase tracking-[0.5px] transition-all duration-300 hover:bg-brand-blue hover:text-white hover:border-brand-blue">
                         Explore Service
                     </span>
                     <div className="h-8 w-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
