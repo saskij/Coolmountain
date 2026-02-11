@@ -123,11 +123,19 @@ export default function Home() {
               </Reveal>
 
               <Reveal direction="up" delay={0.1}>
-                <p className="text-base leading-relaxed text-slate-700">
-                  Cool Mountain Transport offers competitive and innovative national
-                  freight services, specialized freight, expedited freight, and
-                  dedicated services.
-                </p>
+                <h3 className="text-2xl font-extrabold uppercase text-slate-900 mb-6">
+                  Strategic Logistics. Modern Fleet. Uncompromising Reliability.
+                </h3>
+
+                <div className="text-base text-slate-700 space-y-4" style={{ lineHeight: '1.8' }}>
+                  <p>
+                    Cool Mountain Transport is more than just a carrier; we are your <span className="font-semibold text-brand-blue">strategic partner</span> in the heart of the Pacific Northwest. Based in <span className="font-semibold text-brand-blue">Nampa, Idaho</span>, we combine the reach of a national logistics provider with the personalized service of a dedicated local team.
+                  </p>
+
+                  <p>
+                    Our success is built on a commitment to safety, an elite fleet of late-model equipment, and a team of professional drivers who treat every load with the care it deserves. From refrigerated logistics to standard nationwide freight, we leverage cutting-edge technology to ensure your business stays moving forward—<span className="font-semibold text-brand-blue">on time, every time</span>.
+                  </p>
+                </div>
               </Reveal>
 
 
