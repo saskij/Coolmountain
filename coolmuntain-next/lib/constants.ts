@@ -100,7 +100,7 @@ export const SERVICES = [
             "Real-time satellite tracking and updates"
         ],
         icon: "Zap",
-        backgroundImage: "/assets/images/new-hero1.jpg"
+        backgroundImage: "/assets/images/expedited-card.jpg"
     }
 ]
 
