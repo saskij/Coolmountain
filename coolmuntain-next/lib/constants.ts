@@ -1,4 +1,4 @@
-export const BASE_PATH = "/Coolmountain"
+export const BASE_PATH = process.env.NODE_ENV === "production" ? "/Coolmountain" : ""
 
 export const COMPANY = {
     name: "Cool Mountain Transport",
