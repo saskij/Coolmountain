@@ -39,7 +39,7 @@ export function PartnersSection() {
                   - When it hits -50%, it snaps back to 0% linearly (instant), creating the loop.
                 */}
                 <div className="relative w-full max-w-5xl mx-auto overflow-hidden mask-fade-sides group">
-                    <div className="flex w-max animate-marquee group-hover:[animation-play-state:paused] items-center">
+                    <div className="flex w-max animate-marquee items-center">
                         {/* First Set */}
                         <div className="flex items-center gap-16 pr-16">
                             {seamlessLogos.map((logo, i) => (
@@ -64,6 +64,9 @@ export function PartnersSection() {
                 .animate-marquee {
                     animation: marquee 80s linear infinite;
                 }
+                .animate-marquee:has(.logo-item:hover) {
+                    animation-play-state: paused;
+                }
                 .mask-fade-sides {
                     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
                 }
@@ -74,7 +77,7 @@ export function PartnersSection() {
 
 function LogoItem({ logo }: { logo: typeof UNIQUE_LOGOS[0] }) {
     return (
-        <div className="relative h-20 w-auto min-w-[120px] flex items-center justify-center grayscale opacity-50 transition-all duration-500 hover:grayscale-0 hover:opacity-100 hover:scale-110 cursor-pointer">
+        <div className="logo-item relative h-20 w-auto min-w-[120px] flex items-center justify-center grayscale opacity-50 transition-all duration-500 hover:grayscale-0 hover:opacity-100 hover:scale-110 cursor-pointer">
             <NextImage
                 src={logo.src}
                 alt={logo.name}
