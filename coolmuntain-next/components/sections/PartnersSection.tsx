@@ -62,7 +62,7 @@ export function PartnersSection() {
                     100% { transform: translateX(-50%); }
                 }
                 .animate-marquee {
-                    animation: marquee 40s linear infinite;
+                    animation: marquee 80s linear infinite;
                 }
                 .mask-fade-sides {
                     mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
