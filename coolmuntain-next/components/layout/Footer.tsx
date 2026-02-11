@@ -26,7 +26,7 @@ export function Footer() {
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
                     {/* Column 1: Brand & Contact */}
-                    <div className="space-y-6">
+                    <div className="space-y-6 lg:col-span-2">
                         <Link href="/" onClick={handleLogoClick} className="block w-fit transition-transform hover:scale-105">
                             <NextImage
                                 src={`${BASE_PATH}/assets/images/logo-transparent.png`}
@@ -36,7 +36,7 @@ export function Footer() {
                                 className="h-20 w-auto object-contain bg-white/10 rounded-lg px-2 py-1 hover:bg-white/20 transition-colors"
                             />
                         </Link>
-                        <p className="text-sm leading-6 text-slate-400 max-w-xs">
+                        <p className="text-sm leading-6 text-slate-400 max-w-sm">
                             Reliable Freight. Professional Drivers.
                             <br />
                             Solving complex logistics problems with a modern fleet and safety commitment.
@@ -53,10 +53,15 @@ export function Footer() {
                                 >
                                     <MapPin className="h-5 w-5" />
                                 </a>
-                                <span className="text-sm leading-6">
+                                <a
+                                    href={COMPANY.contact.googleMaps}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-sm leading-6 hover:text-white transition-colors"
+                                >
                                     {COMPANY.contact.address.street}<br />
                                     {COMPANY.contact.address.city}, {COMPANY.contact.address.state} {COMPANY.contact.address.zip}
-                                </span>
+                                </a>
                             </div>
                             <div className="flex items-center gap-3">
                                 <Phone className="h-5 w-5 flex-none text-red-500" />
@@ -84,9 +89,9 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* Column 2: Company */}
-                    <div className="mt-2 lg:pl-8">
-                        <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider mb-6">Company</h3>
+                    {/* Column 2: Explore */}
+                    <div className="mt-2">
+                        <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider mb-6">Explore</h3>
                         <ul role="list" className="space-y-4">
                             <li>
                                 <Link href="/about" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
@@ -95,9 +100,9 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/join-our-team" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
+                                <Link href="/equipment" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
                                     <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
-                                    Careers
+                                    Equipment
                                 </Link>
                             </li>
                             <li>
@@ -107,9 +112,9 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/equipment" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
+                                <Link href="/join-our-team" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
                                     <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
-                                    Equipment
+                                    Careers
                                 </Link>
                             </li>
                         </ul>
@@ -139,41 +144,20 @@ export function Footer() {
                             </li>
                         </ul>
                     </div>
-
-                    {/* Column 4: Legal */}
-                    <div className="mt-2">
-                        <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider mb-6">Legal</h3>
-                        <ul role="list" className="space-y-4">
-                            <li>
-                                <Link href="/privacy" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
-                                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
-                                    Privacy Policy
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/terms" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
-                                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
-                                    Terms of Use
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/applicant-privacy" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
-                                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
-                                    Applicant Privacy
-                                </Link>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
 
             {/* Bottom Bar */}
             <div className="border-t border-slate-900 bg-slate-950 py-8">
-                <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 lg:px-8 text-xs text-slate-500">
-                    <p className="text-center">
-                        &copy; {currentYear} {COMPANY.name}. All Rights Reserved.
-                    </p>
-                    <p className="text-slate-600 font-mono tracking-wider">
+                <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 lg:px-8 text-xs text-slate-500">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-center sm:text-left">
+                        <p>&copy; {currentYear} {COMPANY.name}. All Rights Reserved.</p>
+                        <div className="flex gap-4 justify-center sm:justify-start">
+                            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                            <Link href="/terms" className="hover:text-white transition-colors">Terms of Use</Link>
+                        </div>
+                    </div>
+                    <p className="text-center text-slate-700 text-[10px] font-mono tracking-widest mt-2">
                         USDOT #{COMPANY.meta.usdot} | MC #{COMPANY.meta.mc}
                     </p>
                 </div>
