@@ -81,7 +81,7 @@ export function Header() {
                     scrolled ? "scrolled shadow-sm h-[72px]" : "h-[80px] lg:h-[92px]"
                 )}
             >
-                <div className="mx-auto flex h-full items-center justify-between px-4 lg:px-[7vw]">
+                <div className="mx-auto flex h-full items-center justify-between px-6 lg:px-10">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3">
                         <Link href="/" onClick={handleLogoClick} className="relative z-50 group">
