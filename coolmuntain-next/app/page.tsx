@@ -214,10 +214,10 @@ export default function Home() {
 
           {/* Content Grid */}
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] items-stretch gap-8">
               {/* Left Column - Address & Directions */}
               <Reveal direction="up" delay={0.1}>
-                <div className="space-y-8">
+                <div className="flex flex-col justify-center space-y-8">
                   <div>
                     <h3 className="text-3xl font-bold text-slate-900 mb-6">Our Headquarters</h3>
                     <p className="text-lg text-slate-700 leading-relaxed">
@@ -241,19 +241,20 @@ export default function Home() {
                 </div>
               </Reveal>
 
-              {/* Right Column - Google Maps Embed (Full Width) */}
+              {/* Right Column - Google Maps Embed (Full Width, Height Matched) */}
               <Reveal direction="up" delay={0.2}>
-                <div className="w-full h-[300px] lg:h-[500px] rounded-2xl overflow-hidden shadow-xl border border-slate-200">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.0446!2d-116.5638!3d43.5808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae554e8b00000%3A0x0!2s1428%20Madison%20Ave%2C%20Nampa%2C%20ID%2083686!5e0!3m2!1sen!2sus!4v1234567890"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    title="Cool Mountain Transport Location"
-                  ></iframe>
+                <div className="h-full min-h-[350px] lg:min-h-0">
+                  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl border border-slate-200">
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.0446!2d-116.5638!3d43.5808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae554e8b00000%3A0x0!2s1428%20Madison%20Ave%2C%20Nampa%2C%20ID%2083686!5e0!3m2!1sen!2sus!4v1234567890"
+                      className="absolute inset-0 w-full h-full"
+                      style={{ border: 0 }}
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      title="Cool Mountain Transport Location"
+                    ></iframe>
+                  </div>
                 </div>
               </Reveal>
             </div>
