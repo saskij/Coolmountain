@@ -37,11 +37,10 @@ export function CallToAction() {
                         <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
                             <Link
                                 href="/contact"
-                                className="group relative inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-900 rounded-xl font-bold text-base transition-all duration-300 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:-translate-y-1 active:scale-95 overflow-hidden"
+                                className="group relative inline-flex items-center gap-2 px-8 py-4 bg-[#333333] text-white rounded-[6px] font-bold text-base uppercase tracking-[0.5px] shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-[3px] active:scale-95 overflow-hidden"
                             >
                                 <span className="relative z-10">Get a Quote</span>
                                 <ArrowRight className="w-5 h-5 relative z-10 transition-transform duration-300 group-hover:translate-x-1" />
-                                <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
                             </Link>
 
                             <a

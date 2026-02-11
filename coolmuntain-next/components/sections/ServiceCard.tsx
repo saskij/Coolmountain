@@ -70,9 +70,13 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
                     </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center text-blue-600 font-semibold text-sm group-hover:text-blue-700 transition-colors">
-                    <span className="mr-2">Learn More</span>
-                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+                    <span className="inline-flex items-center justify-center px-6 py-3 rounded-[6px] bg-[#333333] text-white text-[12px] font-bold uppercase tracking-[0.5px] shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-[3px]">
+                        Explore Service
+                    </span>
+                    <div className="h-8 w-8 rounded-full bg-slate-50 flex items-center justify-center text-slate-400 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                        <ArrowRight className="h-4 w-4" />
+                    </div>
                 </div>
             </div>
         </Link>
