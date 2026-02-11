@@ -33,7 +33,7 @@ export function Footer() {
                                 alt={COMPANY.name}
                                 width={180}
                                 height={96}
-                                className="h-20 w-auto object-contain brightness-0 invert opacity-90 hover:opacity-100 transition-opacity"
+                                className="h-20 w-auto object-contain bg-white/10 rounded-lg px-2 py-1 hover:bg-white/20 transition-colors"
                             />
                         </Link>
                         <p className="text-sm leading-6 text-slate-400 max-w-xs">
