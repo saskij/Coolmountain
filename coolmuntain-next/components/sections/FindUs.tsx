@@ -6,7 +6,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle"
 
 export function FindUs() {
     return (
-        <section className="py-28 bg-slate-50">
+        <section className="py-16 lg:py-28 bg-slate-50">
             <Container>
                 {/* Headers - Left Aligned */}
                 <div className="mb-16">

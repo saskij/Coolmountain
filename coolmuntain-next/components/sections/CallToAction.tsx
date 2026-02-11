@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 
 export function CallToAction() {
     return (
-        <section className="py-20 bg-slate-50">
+        <section className="py-16 lg:py-20 bg-slate-50 pb-24 lg:pb-20">
             <Container>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

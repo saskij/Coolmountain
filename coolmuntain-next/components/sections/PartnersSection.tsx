@@ -20,7 +20,7 @@ export function PartnersSection() {
     const seamlessLogos = Array(REPEAT_COUNT).fill(UNIQUE_LOGOS).flat()
 
     return (
-        <section className="py-28 bg-slate-50 border-b border-slate-100 overflow-hidden">
+        <section className="py-16 lg:py-28 bg-slate-50 border-b border-slate-100 overflow-hidden">
             <Container>
                 <div className="mb-12">
                     <SectionTitle
