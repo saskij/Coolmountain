@@ -65,13 +65,6 @@ export function Footer() {
                                 className="h-24 w-auto object-contain"
                             />
                         </Link>
-                        <NextImage
-                            src={`${BASE_PATH}/assets/images/smartway-logo.png`}
-                            alt="SmartWay Transport Partner"
-                            width={150}
-                            height={80}
-                            className="h-20 w-auto object-contain"
-                        />
                     </div>
                     <div className="flex items-center justify-center gap-4 text-slate-400 sm:justify-end">
                         <a className="transition hover:text-red-700 hover:scale-110 transform duration-300" href="https://www.facebook.com/coolmtntransport" target="_blank" rel="noopener noreferrer">

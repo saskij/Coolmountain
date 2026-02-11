@@ -12,12 +12,13 @@ import { BASE_PATH } from "@/lib/constants"
 const LOGOS = [
     { name: "Franz", src: `${BASE_PATH}/assets/images/franz-logo.png`, width: 150, height: 60 },
     { name: "Simplot", src: `${BASE_PATH}/assets/images/simplot-logo.png`, width: 120, height: 60 },
+    { name: "SmartWay", src: `${BASE_PATH}/assets/images/smartway-logo.png`, width: 100, height: 60 },
     { name: "Franz", src: `${BASE_PATH}/assets/images/franz-logo.png`, width: 150, height: 60 },
     { name: "Simplot", src: `${BASE_PATH}/assets/images/simplot-logo.png`, width: 120, height: 60 },
+    { name: "SmartWay", src: `${BASE_PATH}/assets/images/smartway-logo.png`, width: 100, height: 60 },
     { name: "Franz", src: `${BASE_PATH}/assets/images/franz-logo.png`, width: 150, height: 60 },
     { name: "Simplot", src: `${BASE_PATH}/assets/images/simplot-logo.png`, width: 120, height: 60 },
-    { name: "Franz", src: `${BASE_PATH}/assets/images/franz-logo.png`, width: 150, height: 60 },
-    { name: "Simplot", src: `${BASE_PATH}/assets/images/simplot-logo.png`, width: 120, height: 60 },
+    { name: "SmartWay", src: `${BASE_PATH}/assets/images/smartway-logo.png`, width: 100, height: 60 },
 ]
 
 export function PartnersSection() {

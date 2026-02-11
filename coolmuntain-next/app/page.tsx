@@ -35,18 +35,7 @@ export default function Home() {
             <span className="opacity-60">•</span>
             <span>MC #654322</span>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="h-12 w-auto relative">
-              <NextImage
-                src={`${BASE_PATH}/assets/images/smartway-logo.png`}
-                alt="SmartWay Partner"
-                width={150}
-                height={80}
-                className="h-full w-auto object-contain"
-              />
-            </div>
-            <span>SmartWay Partner</span>
-          </div>
+
         </div>
       </HeroSection>
 
