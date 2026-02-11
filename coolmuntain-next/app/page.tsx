@@ -123,7 +123,7 @@ export default function Home() {
 
               <Reveal direction="up" delay={0.3}>
                 <div className="pt-2">
-                  <Button href="/contact" variant="outline" className="border-blue-700 text-blue-700 hover:bg-blue-50">
+                  <Button href="/contact" variant="outline" className="border-2 border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
                     Contact Us for More Information
                   </Button>
                 </div>
