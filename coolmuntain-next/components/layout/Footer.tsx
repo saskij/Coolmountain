@@ -1,10 +1,25 @@
+"use client"
+
 import Link from "next/link";
 import NextImage from "next/image";
+import { usePathname } from "next/navigation";
 import { BASE_PATH } from "@/lib/constants";
 import { Facebook, Linkedin } from "lucide-react";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
+    const pathname = usePathname();
+
+    // Handle logo click behavior
+    const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // Check if we are on the homepage (accounting for potential BASE_PATH)
+        const isHomePage = pathname === "/" || pathname === BASE_PATH || pathname === `${BASE_PATH}/`;
+
+        if (isHomePage) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    };
 
     return (
         <footer className="bg-slate-100">
@@ -41,7 +56,7 @@ export function Footer() {
                 {/* Logo & Socials Column */}
                 <div className="flex flex-col items-center gap-6 lg:items-end">
                     <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-10 sm:items-center">
-                        <Link href="/" className="transition-transform duration-300 hover:scale-105 inline-block">
+                        <Link href="/" onClick={handleLogoClick} className="transition-transform duration-300 hover:scale-105 inline-block">
                             <NextImage
                                 src={`${BASE_PATH}/assets/images/logo-transparent.png`}
                                 alt="Cool Mountain"
