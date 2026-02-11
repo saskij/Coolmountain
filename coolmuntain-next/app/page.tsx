@@ -9,6 +9,7 @@ import { HeroButtons } from "@/components/sections/HeroButtons"
 import { ServiceCard } from "@/components/sections/ServiceCard"
 import { SERVICES, COMPANY, BASE_PATH } from "@/lib/constants"
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs"
+import { FAQ } from "@/components/sections/FAQ"
 import Link from "next/link"
 import NextImage from "next/image"
 
@@ -178,6 +179,21 @@ export default function Home() {
               </Reveal>
             </div>
           </div>
+        </Container>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-28 bg-white">
+        <Container>
+          <div className="mb-12">
+            <Reveal direction="up">
+              <SectionTitle title="Frequently Asked Questions" subtitle="Everything you need to know about working with us." />
+            </Reveal>
+          </div>
+
+          <Reveal direction="up" delay={0.1}>
+            <FAQ />
+          </Reveal>
         </Container>
       </section>
 
