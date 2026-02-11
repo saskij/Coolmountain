@@ -1,4 +1,7 @@
+"use client"
+
 import { Clock, MapPin, ShieldCheck, Truck } from "lucide-react"
+import { motion } from "framer-motion"
 
 interface WhyChooseUsProps {
     className?: string;
@@ -31,18 +34,44 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
     return (
         <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 ${className}`}>
             {features.map((feature, index) => (
-                <div
+                <motion.div
                     key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex flex-col gap-4 bg-white rounded-xl p-6 shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-[5px]"
                 >
-                    <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center">
-                        <feature.icon className="w-7 h-7 text-brand-blue" />
-                    </div>
+                    <motion.div
+                        initial={{ scale: 0.8 }}
+                        whileInView={{ scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{
+                            duration: 0.6,
+                            delay: index * 0.1 + 0.2,
+                            type: "spring",
+                            stiffness: 200
+                        }}
+                        className="relative w-16 h-16"
+                    >
+                        {/* Rotated rounded square background with soft shadow */}
+                        <div
+                            className="absolute inset-0 rounded-2xl rotate-[10deg] shadow-lg"
+                            style={{
+                                backgroundColor: 'rgba(0, 51, 102, 0.1)',
+                                boxShadow: '0 4px 12px rgba(0, 51, 102, 0.15)'
+                            }}
+                        />
+                        {/* Icon container */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <feature.icon className="w-8 h-8 text-brand-red" strokeWidth={2} />
+                        </div>
+                    </motion.div>
                     <div>
                         <h3 className="font-bold text-brand-blue text-lg mb-2">{feature.title}</h3>
                         <p className="text-[13px] text-[#666666] leading-relaxed">{feature.description}</p>
                     </div>
-                </div>
+                </motion.div>
             ))}
         </div>
     )
