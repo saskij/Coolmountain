@@ -42,47 +42,56 @@ export function Footer() {
                             Solving complex logistics problems with a modern fleet and safety commitment.
                         </p>
 
-                        <div className="space-y-4 pt-2">
-                            <div className="flex items-start gap-3">
+                        <div className="pt-4">
+                            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">Contact Us</h3>
+                            <div className="space-y-3">
                                 <a
                                     href={COMPANY.contact.googleMaps}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="mt-1 flex-none text-red-500 hover:text-white transition-colors p-1 hover:bg-slate-800 rounded"
-                                    aria-label="View on Google Maps"
+                                    className="flex items-start gap-3 group"
                                 >
-                                    <MapPin className="h-5 w-5" />
+                                    <div className="flex-none p-2 rounded-lg bg-slate-900 group-hover:bg-blue-600 transition-colors">
+                                        <MapPin className="h-4 w-4 text-slate-300 group-hover:text-white" />
+                                    </div>
+                                    <span className="text-sm leading-6 group-hover:text-white transition-colors py-1">
+                                        {COMPANY.contact.address.street}<br />
+                                        {COMPANY.contact.address.city}, {COMPANY.contact.address.state} {COMPANY.contact.address.zip}
+                                    </span>
                                 </a>
+
                                 <a
-                                    href={COMPANY.contact.googleMaps}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm leading-6 hover:text-white transition-colors"
+                                    href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`}
+                                    className="flex items-center gap-3 group w-fit"
                                 >
-                                    {COMPANY.contact.address.street}<br />
-                                    {COMPANY.contact.address.city}, {COMPANY.contact.address.state} {COMPANY.contact.address.zip}
+                                    <div className="flex-none p-2 rounded-lg bg-slate-900 group-hover:bg-blue-600 transition-colors">
+                                        <Phone className="h-4 w-4 text-slate-300 group-hover:text-white" />
+                                    </div>
+                                    <span className="text-sm leading-6 group-hover:text-white transition-colors">
+                                        {COMPANY.contact.dispatchPhoneDisplay}
+                                    </span>
                                 </a>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Phone className="h-5 w-5 flex-none text-red-500" />
-                                <a href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} className="text-sm leading-6 hover:text-white transition">
-                                    {COMPANY.contact.dispatchPhoneDisplay}
-                                </a>
-                            </div>
-                            <div className="flex items-center gap-3">
-                                <Mail className="h-5 w-5 flex-none text-red-500" />
-                                <a href={`mailto:${COMPANY.contact.email}`} className="text-sm leading-6 hover:text-white transition">
-                                    {COMPANY.contact.email}
+
+                                <a
+                                    href={`mailto:${COMPANY.contact.email}`}
+                                    className="flex items-center gap-3 group w-fit"
+                                >
+                                    <div className="flex-none p-2 rounded-lg bg-slate-900 group-hover:bg-blue-600 transition-colors">
+                                        <Mail className="h-4 w-4 text-slate-300 group-hover:text-white" />
+                                    </div>
+                                    <span className="text-sm leading-6 group-hover:text-white transition-colors">
+                                        {COMPANY.contact.email}
+                                    </span>
                                 </a>
                             </div>
                         </div>
 
-                        <div className="flex gap-4 pt-2">
-                            <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                        <div className="flex gap-3 pt-2">
+                            <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-all shadow-lg shadow-blue-900/20">
                                 <Facebook className="h-5 w-5" />
                                 <span className="sr-only">Facebook</span>
                             </a>
-                            <a href={COMPANY.socials.linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
+                            <a href={COMPANY.socials.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#0077b5] text-white hover:bg-[#006396] transition-all shadow-lg shadow-blue-900/20">
                                 <Linkedin className="h-5 w-5" />
                                 <span className="sr-only">LinkedIn</span>
                             </a>
