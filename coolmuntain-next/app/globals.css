@@ -161,3 +161,12 @@ h2 {
   background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+/* Safari Render Fix */
+.safari-fix {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+}
