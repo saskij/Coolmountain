@@ -76,7 +76,7 @@ export function Reveal({
                 initial="hidden"
                 animate="visible" // Immediate animation on mount!
                 variants={variants}
-                className="w-full"
+                className="w-full h-full"
             >
                 {children}
             </motion.div>

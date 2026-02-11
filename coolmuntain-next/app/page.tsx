@@ -106,7 +106,7 @@ export default function Home() {
         </div>
 
         <Container>
-          <div className="grid xl:grid-cols-12 gap-10 items-start">
+          <div className="grid xl:grid-cols-12 gap-10 items-stretch">
             {/* Text Column: col-span-5 */}
             <div className="xl:col-span-5 space-y-6">
               <Reveal direction="up">
@@ -156,18 +156,17 @@ export default function Home() {
             </div>
 
             {/* Image & Mission Column: col-span-7 */}
-            <div className="xl:col-span-7 flex flex-col justify-center lg:justify-end space-y-6 lg:-translate-y-6">
+            <div className="xl:col-span-7 h-full">
               {/* Mission Statement removed to align image top with text */}
 
-              <Reveal direction="right" delay={0.4}>
-                <div className="relative rounded-2xl shadow-lg overflow-hidden group">
-                  <div className="absolute -right-4 -top-4 h-full w-full rounded-3xl border border-slate-200 bg-slate-50 -z-10"></div>
+              <Reveal direction="right" delay={0.4} className="h-full">
+                <div className="relative w-full h-full rounded-2xl shadow-lg overflow-hidden group border border-slate-200 bg-slate-50">
                   <NextImage
                     src={`${BASE_PATH}/assets/images/home-intro-truck.png`}
                     alt="Cool Mountain truck"
-                    width={600}
-                    height={400}
-                    className="relative w-full rounded-2xl transition-transform duration-700 group-hover:scale-105"
+                    fill
+                    sizes="(max-width: 1280px) 100vw, 50vw"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                   />
                 </div>
               </Reveal>
