@@ -96,7 +96,7 @@ export function HeroSection({
 
                 {/* Overlay - Variant A uses bg-black/40 */}
                 {overlay && (
-                    <div className="absolute inset-0 bg-black/40" />
+                    <div className="absolute inset-0 bg-slate-950/60" />
                 )}
             </div>
 

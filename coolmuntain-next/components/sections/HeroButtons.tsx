@@ -13,7 +13,7 @@ export function HeroButtons({ className }: HeroButtonsProps) {
                 href={COMPANY.externalLinks.driverApp}
                 size="md"
                 external
-                className="w-[250px] sm:w-[260px]"
+                className="w-[250px] sm:w-[260px] bg-blue-600 hover:bg-blue-700 text-white border-none shadow-[0_0_20px_rgba(37,99,235,0.3)]"
             >
                 Apply as a Driver
             </Button>
@@ -21,7 +21,7 @@ export function HeroButtons({ className }: HeroButtonsProps) {
                 href="/contact"
                 size="md"
                 variant="outline"
-                className="w-[250px] sm:w-[260px] border-white/80 bg-black/40 text-white hover:bg-white hover:text-slate-900"
+                className="w-[250px] sm:w-[260px] border-white text-white hover:bg-white hover:text-slate-900 bg-transparent"
             >
                 Request a Freight Quote
             </Button>
