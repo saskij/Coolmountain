@@ -57,16 +57,25 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
 
     return (
         <>
-            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 ${className}`}>
+            <div
+                className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 ${className}`}
+                style={{ transformStyle: 'preserve-3d' }}
+            >
                 {features.map((feature, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeInOut' }}
                         onClick={() => setSelectedFeature(index)}
                         layout={false}
+                        style={{
+                            transformStyle: 'preserve-3d',
+                            WebkitTransformStyle: 'preserve-3d',
+                            isolation: 'isolate',
+                            imageRendering: '-webkit-optimize-contrast' as any
+                        }}
                         className="flex flex-col gap-4 bg-white rounded-xl p-6 shadow-md transition-all duration-300 lg:cursor-pointer lg:hover:shadow-2xl lg:hover:-translate-y-[5px] lg:active:scale-95 pointer-events-none lg:pointer-events-auto safari-fix will-change-transform"
                     >
                         <motion.div
@@ -77,7 +86,7 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
                                 duration: 0.6,
                                 delay: index * 0.1 + 0.2,
                                 type: "tween",
-                                ease: "easeOut"
+                                ease: "easeInOut"
                             }}
                             className="relative w-16 h-16"
                         >
