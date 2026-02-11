@@ -8,6 +8,7 @@ import { CallToAction } from "@/components/sections/CallToAction"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import { ServiceCard } from "@/components/sections/ServiceCard"
 import { SERVICES, COMPANY, BASE_PATH } from "@/lib/constants"
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs"
 import Link from "next/link"
 import NextImage from "next/image"
 
@@ -117,20 +118,7 @@ export default function Home() {
               </Reveal>
 
               <Reveal direction="up" delay={0.2}>
-                <p className="text-base leading-relaxed text-slate-700">
-                  Cool Mountain Transport values customer relationships and seeks
-                  every opportunity to provide professional, well planned and worry-free
-                  service. We provide exceptional, consistent and reliable
-                  transportation services that meet complex and evolving business
-                  needs. Local runs, long distance, your unique
-                  requirements are our priority. An extensive network of leasing
-                  partners provides exceptional flexibility and quick expansion,
-                  allowing Cool Mountain Transport to meet demanding schedules and
-                  every customer’s high expectations. Devoted, well-trained Cool
-                  Mountain Transport drivers are prepared to undertake the most
-                  difficult loads. Find out today how Cool Mountain Transport can be a
-                  strategic partner in your success!
-                </p>
+                <WhyChooseUs />
               </Reveal>
 
               <Reveal direction="up" delay={0.3}>
