@@ -67,7 +67,8 @@ export const SERVICES = [
             "Air-ride suspension to reduce cargo damage",
             "Nationwide coverage (48 states)"
         ],
-        icon: "Truck"
+        icon: "Truck",
+        backgroundImage: "/assets/images/services-hero.jpg"
     },
     {
         id: "refrigerated",
@@ -81,7 +82,8 @@ export const SERVICES = [
             "Remote temperature monitoring and downloadable logs",
             "24/7 dispatch support for time-sensitive deliveries"
         ],
-        icon: "Thermometer"
+        icon: "Thermometer",
+        backgroundImage: "/assets/images/home-intro-truck.png"
     },
     {
         id: "expedited",
@@ -95,7 +97,8 @@ export const SERVICES = [
             "Guaranteed delivery windows available",
             "Real-time satellite tracking and updates"
         ],
-        icon: "Zap"
+        icon: "Zap",
+        backgroundImage: "/assets/images/new-hero1.jpg"
     }
 ]
 
