@@ -57,8 +57,19 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
             {/* Content Container */}
             <div className="flex flex-col flex-grow p-6">
                 <div className="mb-4">
-                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-brand-blue group-hover:bg-brand-blue group-hover:text-white transition-colors duration-300">
-                        <Icon className="h-6 w-6" strokeWidth={2} />
+                    <div className="relative w-14 h-14">
+                        {/* Rotated rounded square background with soft shadow */}
+                        <div
+                            className="absolute inset-0 rounded-2xl rotate-[10deg] shadow-lg"
+                            style={{
+                                backgroundColor: 'rgba(0, 51, 102, 0.1)',
+                                boxShadow: '0 4px 12px rgba(0, 51, 102, 0.15)'
+                            }}
+                        />
+                        {/* Icon container */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <Icon className="h-7 w-7 text-brand-red" strokeWidth={2} />
+                        </div>
                     </div>
                 </div>
 
