@@ -17,17 +17,17 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
         setMounted(true)
     }, [])
 
-    // Handle scroll lock (iOS/Safari fix)
+    // Handle scroll lock (Safari fix - direct style manipulation)
     useEffect(() => {
         if (selectedFeature !== null) {
-            document.body.classList.add("lock-bg")
+            document.body.style.overflow = 'hidden'
         } else {
-            document.body.classList.remove("lock-bg")
+            document.body.style.overflow = ''
         }
 
         // Cleanup on unmount
         return () => {
-            document.body.classList.remove("lock-bg")
+            document.body.style.overflow = ''
         }
     }, [selectedFeature])
 
@@ -62,7 +62,7 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
         <>
             <div
                 className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 will-change-transform will-change-opacity transform-gpu backface-hidden ${className}`}
-                style={{ transformStyle: 'preserve-3d' }}
+                style={{ transformStyle: 'preserve-3d', isolation: 'isolate' }}
             >
                 {features.map((feature, index) => (
                     <motion.div
@@ -125,7 +125,8 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
                                 animate={{ opacity: 1 }}
                                 exit={{ opacity: 0 }}
                                 onClick={() => setSelectedFeature(null)}
-                                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 transition-opacity transform-gpu backface-hidden perspective-1000 will-change-transform will-change-opacity"
+                                className="fixed inset-0 bg-black/60 transition-opacity transform-gpu backface-hidden will-change-transform will-change-opacity"
+                                style={{ zIndex: 50 }}
                             />
 
                             {/* Modal Content */}

@@ -23,7 +23,7 @@ export function Footer() {
 
     return (
         <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 font-sans">
-            <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+            <div className="mx-auto max-w-[1440px] px-6 py-16 lg:px-8">
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
                     {/* Column 1: Brand */}
                     <div className="space-y-6">
@@ -153,7 +153,7 @@ export function Footer() {
 
             {/* Bottom Bar */}
             <div className="border-t border-slate-900 bg-slate-950 py-8">
-                <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-6 lg:px-8 text-xs text-slate-500">
+                <div className="mx-auto flex max-w-[1440px] flex-col items-center gap-4 px-6 lg:px-8 text-xs text-slate-500">
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-center sm:text-left">
                         <p>&copy; {currentYear} {COMPANY.name}. All Rights Reserved.</p>
                         <div className="flex gap-4 justify-center sm:justify-start">

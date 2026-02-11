@@ -81,9 +81,9 @@ export function Header() {
                     scrolled ? "scrolled shadow-sm h-[72px]" : "h-[80px] lg:h-[92px]"
                 )}
             >
-                <div className="mx-auto flex h-full items-center justify-between px-3 lg:px-10">
+                <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between w-full">
                     {/* Logo Section */}
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-1">
                         <Link href="/" onClick={handleLogoClick} className="relative z-50 group">
                             <div className="w-[110px] sm:w-[130px] lg:w-[160px] h-1" /> {/* Spacer to reserve width */}
                             <NextImage
@@ -91,6 +91,7 @@ export function Header() {
                                 alt={COMPANY.name}
                                 width={180}
                                 height={180}
+                                priority
                                 className={cn(
                                     "absolute top-[-20px] left-0 w-auto max-w-none transition-all duration-300 drop-shadow-md group-hover:scale-105",
                                     scrolled
@@ -99,7 +100,7 @@ export function Header() {
                                 )}
                             />
                         </Link>
-                        <Link href="/" onClick={handleLogoClick} className="flex flex-col items-start gap-[1px] group pl-2">
+                        <Link href="/" onClick={handleLogoClick} className="flex flex-col items-start gap-[1px] group">
                             <div className="text-[18px] font-extrabold text-slate-900 uppercase leading-none tracking-[0.02em] group-hover:text-red-700 transition-colors">
                                 COOL MOUNTAIN
                             </div>
@@ -111,8 +112,8 @@ export function Header() {
 
                     {/* Desktop Navigation */}
                     <div className="ml-auto flex items-center gap-2 md:gap-4">
-                        {/* Social Icons - Hidden on small screens, visible on XL */}
-                        <div className="hidden xl:flex items-center gap-3 mr-6">
+                        {/* Social Icons - Hidden on small screens, visible on LG */}
+                        <div className="hidden lg:flex items-center gap-3 mr-6">
                             <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-slate-700 hover:text-red-700 transition" aria-label="Visit our Facebook page">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
                                     <path d="M13.5 9H15V6.5c0-.7.1-1 .9-1H18V3h-2.5C12.9 3 12 4.5 12 6.7V9H10v2.5h2V21h2.5v-9.5H17L17.5 9h-3z" />
@@ -125,8 +126,8 @@ export function Header() {
                             </a>
                         </div>
 
-                        {/* Nav Links */}
-                        <nav className="hidden xl:flex items-center gap-4 px-1 py-1 text-[13px] font-medium text-slate-700">
+                        {/* Nav Links - Visible on LG */}
+                        <nav className="hidden lg:flex items-center gap-4 px-1 py-1 text-[13px] font-medium text-slate-700">
                             {NAV_LINKS.map((link) => {
                                 if (link.children) {
                                     return (
@@ -167,7 +168,7 @@ export function Header() {
                         </nav>
 
                         {/* Mobile Menu Toggle */}
-                        <div className="xl:hidden">
+                        <div className="lg:hidden">
                             <button
                                 onClick={() => setIsOpen(true)}
                                 className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-red-700 shadow-sm hover:scale-95 transition-transform"

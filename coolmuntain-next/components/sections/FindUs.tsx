@@ -16,7 +16,7 @@ export function FindUs() {
                 </div>
 
                 {/* Content Grid */}
-                <div className="max-w-7xl mx-auto px-4">
+                <div className="max-w-[1440px] mx-auto px-4">
                     <div className="grid grid-cols-1 lg:grid-cols-[350px_1fr] items-center gap-10">
                         {/* Left Column - Address & Directions */}
                         <Reveal direction="up" delay={0.1}>
