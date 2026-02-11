@@ -25,7 +25,7 @@ export function Footer() {
         <footer className="bg-slate-950 text-slate-400 border-t border-slate-900 font-sans">
             <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
                 <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-                    {/* Column 1: Brand */}
+                    {/* Column 1: Brand & Contact */}
                     <div className="space-y-6">
                         <Link href="/" onClick={handleLogoClick} className="block w-fit transition-transform hover:scale-105">
                             <NextImage
@@ -41,7 +41,38 @@ export function Footer() {
                             <br />
                             Solving complex logistics problems with a modern fleet and safety commitment.
                         </p>
-                        <div className="flex gap-4">
+
+                        <div className="space-y-4 pt-2">
+                            <div className="flex items-start gap-3">
+                                <a
+                                    href={COMPANY.contact.googleMaps}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-1 flex-none text-red-500 hover:text-white transition-colors p-1 hover:bg-slate-800 rounded"
+                                    aria-label="View on Google Maps"
+                                >
+                                    <MapPin className="h-5 w-5" />
+                                </a>
+                                <span className="text-sm leading-6">
+                                    {COMPANY.contact.address.street}<br />
+                                    {COMPANY.contact.address.city}, {COMPANY.contact.address.state} {COMPANY.contact.address.zip}
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <Phone className="h-5 w-5 flex-none text-red-500" />
+                                <a href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} className="text-sm leading-6 hover:text-white transition">
+                                    {COMPANY.contact.dispatchPhoneDisplay}
+                                </a>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <Mail className="h-5 w-5 flex-none text-red-500" />
+                                <a href={`mailto:${COMPANY.contact.email}`} className="text-sm leading-6 hover:text-white transition">
+                                    {COMPANY.contact.email}
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="flex gap-4 pt-2">
                             <a href={COMPANY.socials.facebook} target="_blank" rel="noopener noreferrer" className="rounded-full bg-slate-900 p-2 text-slate-400 hover:bg-slate-800 hover:text-white transition-all">
                                 <Facebook className="h-5 w-5" />
                                 <span className="sr-only">Facebook</span>
@@ -53,8 +84,8 @@ export function Footer() {
                         </div>
                     </div>
 
-                    {/* Column 2: Quick Links */}
-                    <div className="mt-2">
+                    {/* Column 2: Company */}
+                    <div className="mt-2 lg:pl-8">
                         <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider mb-6">Company</h3>
                         <ul role="list" className="space-y-4">
                             <li>
@@ -109,31 +140,27 @@ export function Footer() {
                         </ul>
                     </div>
 
-                    {/* Column 4: Contact */}
+                    {/* Column 4: Legal */}
                     <div className="mt-2">
-                        <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider mb-6">Contact</h3>
-                        <ul role="list" className="space-y-6">
-                            <li className="flex gap-x-3">
-                                <Phone className="mt-1 h-5 w-5 flex-none text-red-500" aria-hidden="true" />
-                                <div>
-                                    <a href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`} className="hover:text-white transition block text-lg font-semibold text-slate-200">
-                                        {COMPANY.contact.dispatchPhoneDisplay}
-                                    </a>
-                                    <span className="text-xs text-slate-500">Dispatch 24/7</span>
-                                </div>
+                        <h3 className="text-sm font-semibold leading-6 text-white uppercase tracking-wider mb-6">Legal</h3>
+                        <ul role="list" className="space-y-4">
+                            <li>
+                                <Link href="/privacy" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
+                                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
+                                    Privacy Policy
+                                </Link>
                             </li>
-                            <li className="flex gap-x-3">
-                                <Mail className="mt-1 h-5 w-5 flex-none text-red-500" aria-hidden="true" />
-                                <a href={`mailto:${COMPANY.contact.email}`} className="text-sm leading-6 hover:text-white transition">
-                                    {COMPANY.contact.email}
-                                </a>
+                            <li>
+                                <Link href="/terms" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
+                                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
+                                    Terms of Use
+                                </Link>
                             </li>
-                            <li className="flex gap-x-3">
-                                <MapPin className="mt-1 h-5 w-5 flex-none text-red-500" aria-hidden="true" />
-                                <span className="text-sm leading-6">
-                                    {COMPANY.contact.address.street}<br />
-                                    {COMPANY.contact.address.city}, {COMPANY.contact.address.state} {COMPANY.contact.address.zip}
-                                </span>
+                            <li>
+                                <Link href="/applicant-privacy" className="text-sm leading-6 hover:text-white transition-colors flex items-center gap-2 group">
+                                    <ArrowRight className="h-3 w-3 opacity-0 -ml-5 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300 text-red-500" />
+                                    Applicant Privacy
+                                </Link>
                             </li>
                         </ul>
                     </div>
@@ -142,15 +169,13 @@ export function Footer() {
 
             {/* Bottom Bar */}
             <div className="border-t border-slate-900 bg-slate-950 py-8">
-                <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 md:flex-row lg:px-8 text-xs text-slate-500">
-                    <p className="text-center md:text-left">
+                <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 lg:px-8 text-xs text-slate-500">
+                    <p className="text-center">
                         &copy; {currentYear} {COMPANY.name}. All Rights Reserved. Used under license.
                     </p>
-                    <div className="flex gap-6">
-                        <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link>
-                        <Link href="/terms" className="hover:text-white transition">Terms of Use</Link>
-                        <Link href="/applicant-privacy" className="hover:text-white transition">Applicant Privacy</Link>
-                    </div>
+                    <p className="text-slate-600 font-mono tracking-wider">
+                        USDOT #{COMPANY.meta.usdot} | MC #{COMPANY.meta.mc}
+                    </p>
                 </div>
             </div>
         </footer>

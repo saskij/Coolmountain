@@ -21,7 +21,8 @@ export const COMPANY = {
             city: "Nampa",
             state: "ID",
             zip: "83651"
-        }
+        },
+        googleMaps: "https://www.google.com/maps/search/?api=1&query=1428+Madison+Avenue+Nampa+Idaho+83687"
     },
     socials: {
         facebook: "https://www.facebook.com/coolmtntransport",
@@ -31,8 +32,8 @@ export const COMPANY = {
         driverApp: "https://intelliapp.driverapponline.com/c/coolmountaintransport?uri_b=ia_coolmountaintransport_1398127899"
     },
     meta: {
-        usdot: "28965",
-        mc: "654322"
+        usdot: "2414797",
+        mc: "879475"
     }
 }
 
