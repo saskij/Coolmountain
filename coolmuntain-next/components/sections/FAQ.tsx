@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { Plus } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 interface FAQItem {
@@ -67,8 +67,8 @@ export function FAQ({ className }: FAQProps) {
                         setOpenIndex(null)
                     }}
                     className={`px-6 py-3 font-semibold rounded-lg transition-all ${activeTab === 'drivers'
-                            ? 'bg-brand-blue text-white shadow-md'
-                            : 'bg-white text-slate-700 hover:bg-slate-100'
+                        ? 'bg-brand-blue text-white shadow-md'
+                        : 'bg-white text-slate-700 hover:bg-slate-100'
                         }`}
                 >
                     FOR DRIVERS
@@ -79,8 +79,8 @@ export function FAQ({ className }: FAQProps) {
                         setOpenIndex(null)
                     }}
                     className={`px-6 py-3 font-semibold rounded-lg transition-all ${activeTab === 'shippers'
-                            ? 'bg-brand-blue text-white shadow-md'
-                            : 'bg-white text-slate-700 hover:bg-slate-100'
+                        ? 'bg-brand-blue text-white shadow-md'
+                        : 'bg-white text-slate-700 hover:bg-slate-100'
                         }`}
                 >
                     FOR SHIPPERS
