@@ -240,7 +240,7 @@ export default function Home() {
 
             {/* Right Column - Google Maps Embed */}
             <Reveal direction="up" delay={0.2}>
-              <div className="rounded-xl overflow-hidden shadow-lg" style={{ height: '350px' }}>
+              <div className="rounded-xl overflow-hidden shadow-lg h-[400px]">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2888.0446!2d-116.5638!3d43.5808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae554e8b00000%3A0x0!2s1428%20Madison%20Ave%2C%20Nampa%2C%20ID%2083686!5e0!3m2!1sen!2sus!4v1234567890"
                   width="100%"
@@ -249,8 +249,8 @@ export default function Home() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Cool Mountain Transport Headquarters Location"
-                />
+                  title="Cool Mountain Transport Location"
+                ></iframe>
               </div>
             </Reveal>
           </div>
