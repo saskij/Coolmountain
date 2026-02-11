@@ -18,9 +18,10 @@ export interface ServiceCardProps {
     iconName?: keyof typeof IconMap
     className?: string
     backgroundImage?: string
+    overlayOpacity?: number // 0-100, default 80
 }
 
-export function ServiceCard({ title, description, href, iconName = "Truck", className, backgroundImage }: ServiceCardProps) {
+export function ServiceCard({ title, description, href, iconName = "Truck", className, backgroundImage, overlayOpacity = 80 }: ServiceCardProps) {
     const Icon = IconMap[iconName] || Truck
 
     const bgImageAbs = backgroundImage && backgroundImage.startsWith("/")
@@ -50,7 +51,7 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
                     </div>
                 )}
                 {/* Overlay gradient for better consistency */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/10 opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/10" style={{ opacity: overlayOpacity / 100 }} />
             </div>
 
             {/* Content Container */}

@@ -84,7 +84,8 @@ export const SERVICES = [
             "24/7 dispatch support for time-sensitive deliveries"
         ],
         icon: "Thermometer",
-        backgroundImage: "/assets/images/Refrigerated-card.jpg"
+        backgroundImage: "/assets/images/Refrigerated-card.jpg",
+        overlayOpacity: 90
     },
     {
         id: "expedited",

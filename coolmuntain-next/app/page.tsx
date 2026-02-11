@@ -63,6 +63,7 @@ export default function Home() {
                   backgroundImage={service.backgroundImage}
                   // eslint-disable-next-line @typescript-eslint/no-explicit-any
                   iconName={service.icon as any}
+                  overlayOpacity={service.overlayOpacity}
                 />
               </Reveal>
             ))}
