@@ -11,17 +11,17 @@ export function HeroButtons({ className }: HeroButtonsProps) {
         <div className={cn("flex flex-col sm:flex-row gap-3 items-start w-fit", className)}>
             <Button
                 href={COMPANY.externalLinks.driverApp}
-                size="md"
+                size="lg"
                 external
-                className="w-[250px] sm:w-[260px] bg-blue-600 hover:bg-blue-700 text-white border-none shadow-[0_0_20px_rgba(37,99,235,0.3)]"
+                className="w-fit sm:w-auto px-8 bg-[#004a99] hover:bg-[#003d80] text-white border-none shadow-lg hover:shadow-blue-900/40 transition-all font-bold tracking-wide"
             >
                 Apply as a Driver
             </Button>
             <Button
                 href="/contact"
-                size="md"
+                size="lg"
                 variant="outline"
-                className="w-[250px] sm:w-[260px] border-white text-white hover:bg-white hover:text-slate-900 bg-transparent"
+                className="w-fit sm:w-auto px-8 border-2 border-white text-white hover:bg-white hover:text-slate-900 bg-transparent font-bold tracking-wide transition-all"
             >
                 Request a Freight Quote
             </Button>

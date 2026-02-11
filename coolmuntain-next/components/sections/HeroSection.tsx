@@ -94,9 +94,9 @@ export function HeroSection({
                     </video>
                 )}
 
-                {/* Overlay - Variant A uses bg-black/40 */}
+                {/* Overlay - Darker gradient for better text contrast */}
                 {overlay && (
-                    <div className="absolute inset-0 bg-slate-950/60" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/80 to-slate-900/60" />
                 )}
             </div>
 
