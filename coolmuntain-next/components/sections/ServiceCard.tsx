@@ -31,48 +31,48 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
         <Link
             href={href}
             className={cn(
-                "group relative flex flex-col justify-between overflow-hidden rounded-[2rem] bg-white h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2",
+                "group relative flex flex-col overflow-hidden rounded-2xl bg-white shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full",
                 className
             )}
         >
-            {/* Background Image Overlay - Initially hidden/subtle, becomes visible/clearer on hover */}
-            <div className="absolute inset-0 z-0">
-                {bgImageAbs && (
+            {/* Top Image Section - 16/9 Aspect Ratio */}
+            <div className="relative w-full aspect-video overflow-hidden">
+                {bgImageAbs ? (
                     <NextImage
                         src={bgImageAbs}
-                        alt=""
+                        alt={title}
                         fill
-                        className="object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-10"
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
+                ) : (
+                    <div className="w-full h-full bg-slate-100 flex items-center justify-center">
+                        <Icon className="h-12 w-12 text-slate-300" />
+                    </div>
                 )}
-                {/* Gradient overlay to ensure text readability when image appears */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white via-white/95 to-white/90 group-hover:from-white/95 group-hover:via-white/90 group-hover:to-white/80 transition-all duration-500" />
+                {/* Overlay gradient for better text visibility if we put text over image, but here we separate them */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60" />
             </div>
 
-            {/* Content Container - z-10 to stay above background */}
-            <div className="relative z-10 p-8 flex flex-col h-full">
-                <div className="mb-6">
-                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-slate-100 bg-white text-slate-900 shadow-sm transition-transform duration-500 group-hover:scale-110 group-hover:text-blue-600 group-hover:border-blue-100">
-                        <Icon className="h-7 w-7" strokeWidth={1.5} />
+            {/* Content Container */}
+            <div className="flex flex-col flex-grow p-6">
+                <div className="mb-4">
+                    <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+                        <Icon className="h-6 w-6" strokeWidth={2} />
                     </div>
                 </div>
 
-                <div className="space-y-4 flex-grow">
-                    <h3 className="text-2xl font-bold text-slate-900 group-hover:text-blue-900 transition-colors">
+                <div className="space-y-3 flex-grow">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
                         {title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed font-medium transition-colors group-hover:text-slate-800">
+                    <p className="text-sm text-slate-600 leading-relaxed">
                         {description}
                     </p>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-slate-100 flex items-center justify-between group-hover:border-slate-200/50 transition-colors">
-                    <span className="inline-block text-[11px] font-bold uppercase tracking-widest text-slate-400 group-hover:text-blue-600 transition-colors">
-                        Explore Service
-                    </span>
-                    <div className="rounded-full bg-slate-50 p-2 text-slate-400 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:translate-x-1">
-                        <ArrowRight className="h-4 w-4" />
-                    </div>
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center text-blue-600 font-semibold text-sm group-hover:text-blue-700 transition-colors">
+                    <span className="mr-2">Learn More</span>
+                    <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </div>
             </div>
         </Link>
