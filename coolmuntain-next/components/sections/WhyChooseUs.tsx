@@ -66,7 +66,8 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         onClick={() => setSelectedFeature(index)}
-                        className="flex flex-col gap-4 bg-white rounded-xl p-6 shadow-md transition-all duration-300 lg:cursor-pointer lg:hover:shadow-2xl lg:hover:-translate-y-[5px] lg:active:scale-95 pointer-events-none lg:pointer-events-auto"
+                        layout={false}
+                        className="flex flex-col gap-4 bg-white rounded-xl p-6 shadow-md transition-all duration-300 lg:cursor-pointer lg:hover:shadow-2xl lg:hover:-translate-y-[5px] lg:active:scale-95 pointer-events-none lg:pointer-events-auto safari-fix will-change-transform"
                     >
                         <motion.div
                             initial={{ scale: 0.8 }}
@@ -75,8 +76,8 @@ export function WhyChooseUs({ className }: WhyChooseUsProps) {
                             transition={{
                                 duration: 0.6,
                                 delay: index * 0.1 + 0.2,
-                                type: "spring",
-                                stiffness: 200
+                                type: "tween",
+                                ease: "easeOut"
                             }}
                             className="relative w-16 h-16"
                         >
