@@ -98,10 +98,11 @@ export default function RootLayout({
         <BackToTop />
         <a
           href="tel:2084752500"
-          className="fixed bottom-0 left-0 right-0 z-[60] flex md:hidden items-center justify-center gap-3 bg-brand-red py-4 text-white shadow-[0_-4px_20px_rgba(0,0,0,0.2)] transition-colors hover:bg-brand-red-hover active:bg-[#7f1d1d]"
+          className="fixed bottom-5 right-5 z-[60] flex md:hidden items-center justify-center w-[60px] h-[60px] rounded-full bg-brand-red text-white transition-all hover:bg-brand-red-hover active:scale-95"
+          style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}
+          aria-label="Call Dispatch"
         >
           <Phone className="h-6 w-6" strokeWidth={2.5} />
-          <span className="font-bold text-lg tracking-wide uppercase">Call Dispatch</span>
         </a>
         <a
           href="tel:2084752500"
