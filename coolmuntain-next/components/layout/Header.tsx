@@ -37,6 +37,14 @@ export function Header() {
         return normalizedPathname === href
     }
 
+    // Handle logo click behavior
+    const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if (normalizedPathname === "/") {
+            e.preventDefault()
+            window.scrollTo({ top: 0, behavior: "smooth" })
+        }
+    }
+
     // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
@@ -76,7 +84,7 @@ export function Header() {
                 <div className="mx-auto flex h-full items-center justify-between px-4 lg:px-[7vw]">
                     {/* Logo Section */}
                     <div className="flex items-center gap-3">
-                        <Link href="/" className="relative z-50 group">
+                        <Link href="/" onClick={handleLogoClick} className="relative z-50 group">
                             <div className="w-[110px] sm:w-[130px] lg:w-[160px] h-1" /> {/* Spacer to reserve width */}
                             <NextImage
                                 src={`${BASE_PATH}/assets/images/logo-transparent.png`}
@@ -91,7 +99,7 @@ export function Header() {
                                 )}
                             />
                         </Link>
-                        <Link href="/" className="flex flex-col items-start gap-[1px] group pl-2">
+                        <Link href="/" onClick={handleLogoClick} className="flex flex-col items-start gap-[1px] group pl-2">
                             <div className="text-[18px] font-extrabold text-slate-900 uppercase leading-none tracking-[0.02em] group-hover:text-red-700 transition-colors">
                                 COOL MOUNTAIN
                             </div>

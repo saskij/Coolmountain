@@ -3,6 +3,7 @@ import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/SectionTitle"
 import { Reveal } from "@/components/ui/Reveal"
 import { HeroSection } from "@/components/sections/HeroSection"
+import { PartnersSection } from "@/components/sections/PartnersSection"
 import { HeroButtons } from "@/components/sections/HeroButtons"
 import { ServiceCard } from "@/components/sections/ServiceCard"
 import { SERVICES, COMPANY, BASE_PATH } from "@/lib/constants"
@@ -48,6 +49,9 @@ export default function Home() {
           </div>
         </div>
       </HeroSection>
+
+      {/* Partners Section */}
+      <PartnersSection />
 
       {/* Services Section */}
       <section className="py-20 bg-slate-50">
