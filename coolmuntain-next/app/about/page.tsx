@@ -9,12 +9,12 @@ import { Check } from "lucide-react"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "About Us | Cool Mountain Transport",
-    description: "Learn about Cool Mountain Transport's history, mission, and commitment to safety. We build long-term partnerships through integrity and reliable service.",
+    title: "About Us",
+    description: "Learn about Cool Mountain Transport - a Nampa, Idaho based trucking company providing reliable nationwide freight services. Family-owned logistics company with modern fleet and safety commitment. MC# 879475 | USDOT 2414797.",
     openGraph: {
-        title: "About Cool Mountain Transport",
-        description: "A team built on safety, trust, and long-term partnerships. Discover our story and values.",
-        url: "https://coolmountaintransport.com/about",
+        title: "About Cool Mountain Transport | Our Story",
+        description: "Family-owned logistics company based in Nampa, Idaho with modern fleet and safety commitment.",
+        images: [`${BASE_PATH}/assets/images/about-hero.jpg`],
     },
 }
 

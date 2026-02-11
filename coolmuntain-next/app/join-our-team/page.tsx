@@ -10,12 +10,12 @@ import NextImage from "next/image"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Careers & Truck Driving Jobs | Cool Mountain Transport",
-    description: "Join our team of professional drivers. Competitive pay, great benefits, and a family-oriented atmosphere. Apply to move with Cool Mountain.",
+    title: "Careers & Truck Driving Jobs",
+    description: "Join our team of professional drivers. Competitive pay, great benefits, and a family-oriented atmosphere. CDL Class A positions available. Apply today to drive with Cool Mountain Transport.",
     openGraph: {
-        title: "Join the Cool Mountain Team",
+        title: "Join the Cool Mountain Team | Truck Driving Jobs",
         description: "We are hiring professional drivers and owner-operators. Experience a family culture and great benefits.",
-        url: "https://coolmountaintransport.com/join-our-team",
+        images: [`${BASE_PATH}/assets/images/join-our-team-hero.jpg`],
     },
 }
 

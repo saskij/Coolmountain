@@ -8,8 +8,13 @@ import NextImage from "next/image"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-    title: "Our Equipment & Fleet | Cool Mountain Transport",
-    description: "Explore our modern fleet of Kenworth & Peterbilt trucks and utility trailers. We maintain high standards for safety and efficiency.",
+    title: "Our Equipment & Fleet",
+    description: "Explore our modern fleet of Freightliner trucks and premium trailers. We maintain high standards for safety, comfort, and efficiency with late-model equipment.",
+    openGraph: {
+        title: "Our Equipment & Fleet | Cool Mountain Transport",
+        description: "Modern fleet of 2020-2025 Freightliners with premium amenities for driver comfort and safety.",
+        images: [`${BASE_PATH}/assets/images/equipment-hero.jpg`],
+    },
 }
 
 export default function EquipmentPage() {

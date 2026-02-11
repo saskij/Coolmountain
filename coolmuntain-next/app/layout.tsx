@@ -50,7 +50,13 @@ export const metadata: Metadata = {
     images: [`${BASE_PATH}/assets/images/home-intro-truck.png`],
   },
   icons: {
-    icon: `${BASE_PATH}/favicon.png`,
+    icon: [
+      { url: `${BASE_PATH}/favicon.png`, sizes: "any" },
+      { url: `${BASE_PATH}/favicon.png`, type: "image/png" },
+    ],
+    apple: [
+      { url: `${BASE_PATH}/assets/images/logo-transparent.png`, sizes: "180x180", type: "image/png" },
+    ],
   },
   manifest: `${BASE_PATH}/manifest.json`,
 };

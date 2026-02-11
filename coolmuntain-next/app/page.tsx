@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Button } from "@/components/ui/Button"
 import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/SectionTitle"
@@ -13,12 +14,16 @@ import { FAQ } from "@/components/sections/FAQ"
 import Link from "next/link"
 import NextImage from "next/image"
 
-import { Metadata } from "next"
-
 export const metadata: Metadata = {
-  title: "Cool Mountain Transport | Reliable Freight & Professional Drivers",
-  description: "Solving complex logistics problems with modern fleet and safety commitment. Dry van, refrigerated, and expedited freight services across the US.",
+  title: "Home",
+  description: "Cool Mountain Transport is your strategic partner in logistics. Based in Nampa, Idaho, we provide nationwide dry van, refrigerated, and expedited freight services with modern equipment and professional drivers. MC# 879475 | USDOT 2414797.",
+  openGraph: {
+    title: "Cool Mountain Transport | Strategic Logistics Partner",
+    description: "Nationwide freight services from Nampa, Idaho. Modern fleet, professional drivers, on-time delivery.",
+    images: [`${BASE_PATH}/assets/images/homepage-hero.jpg`],
+  },
 }
+
 
 export default function Home() {
   return (
