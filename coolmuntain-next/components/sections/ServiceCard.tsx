@@ -49,8 +49,8 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
                         <Icon className="h-12 w-12 text-slate-300" />
                     </div>
                 )}
-                {/* Overlay gradient for better text visibility if we put text over image, but here we separate them */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-60" />
+                {/* Overlay gradient for better consistency */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-black/10 opacity-80" />
             </div>
 
             {/* Content Container */}
