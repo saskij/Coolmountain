@@ -82,7 +82,7 @@ export function Header() {
             <header
                 className={cn(
                     "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 glass-header",
-                    scrolled ? "scrolled shadow-sm h-[80px]" : "h-[100px] lg:h-[110px]"
+                    scrolled ? "scrolled shadow-sm h-[80px]" : "h-[100px] lg:h-[80px]"
                 )}
             >
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between w-full relative">
@@ -141,29 +141,30 @@ export function Header() {
                     </div>
 
                     {/* Center Column - Logo */}
-                    <div className="flex-none flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2 z-10 bg-transparent">
-                        <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block">
+                    <div className="flex-none flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2 bg-transparent lg:top-0 lg:pt-2 z-20 lg:z-50">
+                        <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50">
                             Visit Logistics Portal
                         </span>
                         <a
                             href={COMPANY.externalLinks.brokerPortal}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex flex-col items-center"
+                            className="group flex flex-col items-center relative"
                         >
                             <div className="relative">
                                 <NextImage
                                     src={getAssetPath("/assets/images/logo-transparent.png")}
                                     alt={COMPANY.name}
-                                    width={180}
-                                    height={180}
+                                    width={240}
+                                    height={240}
                                     priority
                                     className={cn(
-                                        "w-auto h-[50px] sm:h-[60px] lg:h-[70px] transition-all duration-300 drop-shadow-md group-hover:scale-105",
+                                        "w-auto h-[50px] sm:h-[60px] lg:w-[240px] lg:h-auto transition-all duration-300 drop-shadow-md group-hover:scale-105",
+                                        "lg:-mb-32" // Negative margin to make it hang
                                     )}
                                 />
                             </div>
-                            <div className="flex flex-col items-center mt-1">
+                            <div className="flex flex-col items-center mt-1 lg:hidden">
                                 <div className="text-[14px] lg:text-[16px] font-extrabold text-slate-900 uppercase leading-none tracking-[0.02em] group-hover:text-red-700 transition-colors whitespace-nowrap">
                                     COOL MOUNTAIN
                                 </div>
