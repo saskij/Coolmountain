@@ -48,7 +48,7 @@ export function Header() {
     // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 10)
+            setScrolled(window.scrollY > 50)
         }
         window.addEventListener("scroll", handleScroll)
         // Check initial scroll
@@ -74,15 +74,15 @@ export function Header() {
     }, [isOpen])
 
     // Filter links for split navigation
-    const leftNavLinks = NAV_LINKS.filter(link => ["Home", "About", "Services"].includes(link.label))
+    const leftNavLinks = NAV_LINKS.filter(link => ["Home", "About", "Services", "Join Our Team"].includes(link.label))
     const rightNavLinks = NAV_LINKS.filter(link => ["Equipment", "News", "Contact"].includes(link.label))
 
     return (
         <>
             <header
                 className={cn(
-                    "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 glass-header",
-                    scrolled ? "scrolled shadow-sm h-[80px]" : "h-[100px] lg:h-[80px]"
+                    "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 glass-header items-center flex",
+                    scrolled ? "scrolled shadow-sm h-16 bg-white/90 backdrop-blur-md" : "h-[100px] lg:h-20"
                 )}
             >
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between w-full relative">
@@ -100,7 +100,7 @@ export function Header() {
                             </button>
                         </div>
 
-                        <nav className="hidden lg:flex items-center gap-6">
+                        <nav className="hidden lg:flex items-center gap-x-6">
                             {leftNavLinks.map((link) => {
                                 if (link.children) {
                                     return (
@@ -141,7 +141,7 @@ export function Header() {
                     </div>
 
                     {/* Center Column - Logo */}
-                    <div className="flex-none flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2 bg-transparent lg:top-0 lg:pt-2 z-20 lg:z-50">
+                    <div className="flex-none flex flex-col items-center justify-center absolute left-1/2 transform -translate-x-1/2 bg-transparent lg:top-0 lg:z-50 lg:mt-2">
                         <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50">
                             Visit Logistics Portal
                         </span>
@@ -155,12 +155,12 @@ export function Header() {
                                 <NextImage
                                     src={getAssetPath("/assets/images/logo-transparent.png")}
                                     alt={COMPANY.name}
-                                    width={240}
-                                    height={240}
+                                    width={300}
+                                    height={300}
                                     priority
                                     className={cn(
-                                        "w-auto h-[50px] sm:h-[60px] lg:w-[240px] lg:h-auto transition-all duration-300 drop-shadow-md group-hover:scale-105",
-                                        "lg:-mb-32" // Negative margin to make it hang
+                                        "w-auto h-[50px] sm:h-[60px] lg:w-[300px] lg:h-auto transition-all duration-300 drop-shadow-md group-hover:scale-105 ease-in-out",
+                                        scrolled ? "lg:scale-75 lg:mb-0" : "lg:-mb-24" // Retract on scroll
                                     )}
                                 />
                             </div>
@@ -186,7 +186,7 @@ export function Header() {
                             </a>
                         </div>
 
-                        <nav className="hidden lg:flex items-center gap-6">
+                        <nav className="hidden lg:flex items-center gap-x-6">
                             {rightNavLinks.map((link) => (
                                 <Link
                                     key={link.href}
