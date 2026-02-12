@@ -48,7 +48,7 @@ export function Header() {
     // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 25)
+            setScrolled(window.scrollY > 20)
         }
         window.addEventListener("scroll", handleScroll)
         // Check initial scroll
@@ -81,8 +81,8 @@ export function Header() {
         <>
             <header
                 className={cn(
-                    "fixed top-0 left-0 right-0 z-40 w-full transition-all duration-300 glass-header items-center flex",
-                    scrolled ? "scrolled shadow-sm h-16 bg-white/90 backdrop-blur-md" : "h-20"
+                    "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 glass-header items-center flex h-20",
+                    scrolled ? "scrolled shadow-sm bg-white/90 backdrop-blur-md" : ""
                 )}
             >
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between w-full relative">
@@ -142,11 +142,12 @@ export function Header() {
 
                     {/* Center Column - Logo */}
                     <div className={cn(
-                        "flex-none flex flex-col items-center justify-center relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-transparent lg:top-0 lg:z-50 lg:-mt-2 transition-all duration-500 ease-in-out"
+                        "flex-none flex flex-col items-center justify-center relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-transparent lg:top-2 transition-all duration-500 ease-in-out",
+                        scrolled ? "lg:scale-75 lg:-translate-y-[30px]" : "lg:scale-100 lg:translate-y-0"
                     )}>
                         <span className={cn(
-                            "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50 transition-opacity duration-300",
-                            scrolled ? "opacity-0" : "opacity-100"
+                            "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50 transition-all duration-300",
+                            scrolled ? "opacity-0 invisible" : "opacity-100 visible"
                         )}>
                             Visit Logistics Portal
                         </span>
@@ -163,10 +164,7 @@ export function Header() {
                                     width={400}
                                     height={400}
                                     priority
-                                    className={cn(
-                                        "w-auto h-[50px] sm:h-[60px] lg:w-[400px] lg:h-auto transition-all duration-500 ease-in-out drop-shadow-md group-hover:scale-105",
-                                        scrolled ? "lg:scale-75 lg:-translate-y-[20px] lg:mb-0" : "lg:scale-100 lg:-mb-28 lg:translate-y-0"
-                                    )}
+                                    className="w-auto h-[50px] sm:h-[60px] lg:w-[400px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
                             <div className="flex flex-col items-center mt-1 lg:hidden">
