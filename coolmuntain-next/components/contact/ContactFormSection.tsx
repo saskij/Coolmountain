@@ -72,13 +72,13 @@ export function ContactFormSection() {
                                 <div className="space-y-1">
                                     <h3 className="font-bold text-slate-900 uppercase tracking-wide">Driving Careers</h3>
                                     <p className="font-medium text-slate-800">Company Drivers</p>
-                                    <p><a href={`tel:${COMPANY.contact.careersPhone.replace(/-/g, "")}`} className="hover:text-red-700 transition">{COMPANY.contact.careersPhone}</a> ({COMPANY.contact.careersContactName})</p>
+                                    <p><a href={`tel:${COMPANY.contact.careersPhone.replace(/-/g, "")}`} className="hover:text-red-700 transition">{COMPANY.contact.careersPhone}</a></p>
                                 </div>
 
                                 <div className="space-y-1">
                                     <h3 className="font-bold text-slate-900 uppercase tracking-wide">Careers</h3>
                                     <p className="font-medium text-slate-800">Company Careers</p>
-                                    <p><a href={`tel:${COMPANY.contact.careersPhone.replace(/-/g, "")}`} className="hover:text-red-700 transition">{COMPANY.contact.careersPhone}</a> ({COMPANY.contact.careersContactName})</p>
+                                    <p><a href={`tel:${COMPANY.contact.careersPhone.replace(/-/g, "")}`} className="hover:text-red-700 transition">{COMPANY.contact.careersPhone}</a></p>
                                     <a href={`mailto:${COMPANY.contact.email}`} className="text-red-700 hover:underline">{COMPANY.contact.email}</a>
                                 </div>
                             </div>
