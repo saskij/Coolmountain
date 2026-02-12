@@ -29,7 +29,8 @@ export const COMPANY = {
         linkedin: "https://www.linkedin.com/company/cool-mountain-transport/",
     },
     externalLinks: {
-        driverApp: "https://intelliapp.driverapponline.com/c/coolmountaintransport?uri_b=ia_coolmountaintransport_1398127899"
+        driverApp: "https://intelliapp.driverapponline.com/c/coolmountaintransport?uri_b=ia_coolmountaintransport_1398127899",
+        brokerPortal: "#" // TODO: Update with actual broker portal URL
     },
     meta: {
         usdot: "2414797",
