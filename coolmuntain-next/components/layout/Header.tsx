@@ -154,7 +154,7 @@ export function Header() {
                         className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-3 transition-all duration-500 ease-in-out z-50 pointer-events-none"
                         style={{
                             transform: isMobile
-                                ? (scrolled ? "translateX(-50%) scale(0.75) translateY(0)" : "translateX(-50%) scale(1) translateY(0)")
+                                ? "translateX(-50%) scale(1) translateY(0)"
                                 : (scrolled ? "translateX(-50%) scale(0.7) translateY(-48px)" : "translateX(-50%) scale(1) translateY(0)")
                         }}
                     >
@@ -177,7 +177,7 @@ export function Header() {
                                     width={240}
                                     height={240}
                                     priority
-                                    className="w-auto h-[55px] sm:h-[60px] lg:w-[240px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                                    className="w-auto h-[85px] sm:h-[100px] lg:w-[240px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
                         </a>
