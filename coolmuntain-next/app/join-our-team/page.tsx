@@ -167,7 +167,7 @@ export default function JoinTeamPage() {
                                         Contact
                                     </p>
                                     <p className="mt-3 text-base font-semibold text-slate-900">
-                                        Call Joan at {COMPANY.contact.careersPhone}
+                                        Call us at {COMPANY.contact.careersPhone}
                                     </p>
                                 </div>
                             </div>

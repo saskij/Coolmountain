@@ -7,8 +7,8 @@ export const COMPANY = {
         dispatchPhone: "208-475-2500",
         dispatchPhoneDisplay: "(208) 475-2500",
         fax: "208-906-8585",
-        careersPhone: "208-475-5773",
-        careersContactName: "Joan",
+        careersPhone: "208-475-2500",
+        careersContactName: "",
         email: "joan@coolmtntransport.com",
         address: {
             street: "1428 Madison Avenue",
