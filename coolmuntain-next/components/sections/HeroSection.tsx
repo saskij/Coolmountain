@@ -67,7 +67,7 @@ export function HeroSection({
                   Visible after video ends (if it ends on a transparent frame, though usually video stays on last frame)
                 */}
                 <NextImage
-                    src={backgroundImage}
+                    src={bgImageAbs}
                     alt="Cool Mountain Transport modern fleet truck on the road"
                     fill
                     priority
