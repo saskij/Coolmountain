@@ -12,8 +12,6 @@ const nextConfig: NextConfig = {
   },
 };
 
-console.log(`[NextConfig] base path: ${nextConfig.basePath}`);
-console.log(`[NextConfig] asset prefix: ${nextConfig.assetPrefix}`);
-console.log(`[NextConfig] isProd: ${isProd}`);
+
 
 export default nextConfig;

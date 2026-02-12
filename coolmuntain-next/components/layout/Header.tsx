@@ -172,7 +172,7 @@ export function Header() {
                         >
                             <div className="relative">
                                 <NextImage
-                                    src={getAssetPath("/assets/images/Cool Mountan Logistics.png")}
+                                    src={getAssetPath("/assets/images/Cool Mountain Logistics.png")}
                                     alt={COMPANY.name}
                                     width={240}
                                     height={240}
@@ -235,7 +235,7 @@ export function Header() {
                             className="fixed inset-0 z-[150] bg-slate-900/50 backdrop-blur-sm"
                         />
                         <motion.div
-                            initial={{ x: "-100%" }} // Slide from left as requested implicitly by "burger menu left" behavior usually implies left drawer, or just keeping it consistent. Code previously was right drawer. I'll keep right drawer but trigger is on left? Prompt said "Mobile: ... убери текстовые ссылки в 'бургер-меню' слева." It implies the hamburger is on the left.
+                            initial={{ x: "-100%" }}
                             animate={{ x: 0 }}
                             exit={{ x: "-100%" }}
                             transition={{ type: "spring", damping: 30, stiffness: 300 }}
