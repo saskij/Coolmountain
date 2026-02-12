@@ -104,7 +104,7 @@ export default function NewsPage() {
                 title="News"
                 subtitle="Updates from the Cool Mountain Transport team."
                 height="medium"
-                backgroundImage="/assets/images/news-hero.jpg"
+                backgroundImage="/assets/images/news-hero-v2.jpg"
                 backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Our Equipment & Fleet | Cool Mountain Transport",
         description: "Modern fleet of 2020-2025 Freightliners with premium amenities for driver comfort and safety.",
-        images: [`${BASE_PATH}/assets/images/equipment-hero.jpg`],
+        images: [`${BASE_PATH}/assets/images/equipment-hero-v2.jpg`],
     },
 }
 
@@ -24,7 +24,7 @@ export default function EquipmentPage() {
                 title="Equipment"
                 subtitle="Modern, reliable equipment built for performance and safety."
                 height="medium"
-                backgroundImage="/assets/images/equipment-hero.jpg"
+                backgroundImage="/assets/images/equipment-hero-v2.jpg"
                 backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Contact Cool Mountain Transport",
         description: "Reach out to our team in Nampa, Idaho for freight quotes, employment opportunities, and general inquiries.",
-        images: [`${BASE_PATH}/assets/images/contact-hero.jpg`],
+        images: [`${BASE_PATH}/assets/images/contact-hero-v2.jpg`],
     },
 }
 
@@ -105,7 +105,7 @@ export default function ContactPage() {
                 title="Contact"
                 subtitle="Let us know how we can support your freight needs."
                 height="medium"
-                backgroundImage="/assets/images/contact-hero.jpg"
+                backgroundImage="/assets/images/contact-hero-v2.jpg"
                 backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />
