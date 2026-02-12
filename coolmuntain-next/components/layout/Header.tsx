@@ -124,25 +124,27 @@ export function Header() {
                                         </div>
                                     )
                                 }
-                                <Link
-                                    key={link.href}
-                                    href={link.href}
-                                    className={cn(
-                                        "text-sm font-medium transition-all duration-300 relative py-1",
-                                        isActivePage(link.href)
-                                            ? "text-[#cc2016]"
-                                            : "text-slate-700 hover:text-[#cc2016]"
-                                    )}
-                                >
-                                    {link.label}
-                                    {isActivePage(link.href) && (
-                                        <motion.div
-                                            layoutId="activeTab"
-                                            className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#cc2016]"
-                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                        />
-                                    )}
-                                </Link>
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={cn(
+                                            "text-sm font-medium transition-all duration-300 relative py-1",
+                                            isActivePage(link.href)
+                                                ? "text-[#cc2016]"
+                                                : "text-slate-700 hover:text-[#cc2016]"
+                                        )}
+                                    >
+                                        {link.label}
+                                        {isActivePage(link.href) && (
+                                            <motion.div
+                                                layoutId="activeTab"
+                                                className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#cc2016]"
+                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                            />
+                                        )}
+                                    </Link>
+                                )
                             })}
                         </nav>
                     </div>
