@@ -159,21 +159,13 @@ export function Header() {
                         >
                             <div className="relative">
                                 <NextImage
-                                    src={getAssetPath("/assets/images/logo-logistics.v3.png")}
+                                    src={getAssetPath("/assets/images/Cool Mountan Logistics.png")}
                                     alt={COMPANY.name}
                                     width={400}
                                     height={400}
                                     priority
                                     className="w-auto h-[50px] sm:h-[60px] lg:w-[400px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
                                 />
-                            </div>
-                            <div className="flex flex-col items-center mt-1 lg:hidden">
-                                <div className="text-[14px] lg:text-[16px] font-extrabold text-slate-900 uppercase leading-none tracking-[0.02em] group-hover:text-red-700 transition-colors whitespace-nowrap">
-                                    COOL MOUNTAIN
-                                </div>
-                                <div className="text-[9px] lg:text-[10px] font-bold text-slate-500 uppercase leading-none tracking-[0.15em] group-hover:text-red-600 transition-colors mt-0.5">
-                                    LOGISTICS
-                                </div>
                             </div>
                         </a>
                     </div>
