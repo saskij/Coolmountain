@@ -153,7 +153,7 @@ export function Header() {
                         >
                             <div className="relative">
                                 <NextImage
-                                    src={getAssetPath("/assets/images/logo-transparent.png")}
+                                    src={getAssetPath("/assets/images/logo-logistics.svg")}
                                     alt={COMPANY.name}
                                     width={300}
                                     height={300}
