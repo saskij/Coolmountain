@@ -142,12 +142,12 @@ export function Header() {
 
                     {/* Center Column - Logo */}
                     <div className={cn(
-                        "flex-none flex flex-col items-center justify-center relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-transparent lg:top-2 transition-all duration-500 ease-in-out",
-                        scrolled ? "lg:scale-75 lg:-translate-y-[30px]" : "lg:scale-100 lg:translate-y-0"
+                        "flex-none flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50",
+                        scrolled ? "scale-75 -translate-y-[25px]" : "scale-100 translate-y-0"
                     )}>
                         <span className={cn(
                             "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50 transition-all duration-300",
-                            scrolled ? "opacity-0 invisible" : "opacity-100 visible"
+                            scrolled ? "opacity-0 scale-90" : "opacity-100 scale-100"
                         )}>
                             Visit Logistics Portal
                         </span>
@@ -161,10 +161,10 @@ export function Header() {
                                 <NextImage
                                     src={getAssetPath("/assets/images/Cool Mountan Logistics.png")}
                                     alt={COMPANY.name}
-                                    width={400}
-                                    height={400}
+                                    width={260}
+                                    height={260}
                                     priority
-                                    className="w-auto h-[50px] sm:h-[60px] lg:w-[400px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                                    className="w-auto h-[40px] sm:h-[50px] lg:w-[260px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
                         </a>
