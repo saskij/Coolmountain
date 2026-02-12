@@ -87,18 +87,8 @@ export function Header() {
             >
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between w-full relative">
 
-                    {/* Left Column - Nav Links (Desktop) / Hamburger (Mobile) */}
+                    {/* Left Column - Nav Links (Desktop) */}
                     <div className="flex-1 flex justify-start items-center">
-                        <div className="lg:hidden">
-                            <button
-                                onClick={() => setIsOpen(true)}
-                                className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-red-700 shadow-sm hover:scale-95 transition-transform"
-                            >
-                                <div className="relative w-5 h-5">
-                                    <Menu className="w-5 h-5" strokeWidth={2.5} />
-                                </div>
-                            </button>
-                        </div>
 
                         <nav className="hidden lg:flex items-center gap-x-6">
                             {leftNavLinks.map((link) => {
@@ -142,7 +132,7 @@ export function Header() {
 
                     {/* Center Column - Logo */}
                     <div
-                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50"
+                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-3 transition-all duration-500 ease-in-out z-50"
                         style={{
                             transform: scrolled ? "translateX(-50%) scale(0.7) translateY(-48px)" : "translateX(-50%) scale(1) translateY(0)"
                         }}
@@ -172,15 +162,17 @@ export function Header() {
                         </a>
                     </div>
 
-                    {/* Right Column - Nav Links (Desktop) / Call Us (Mobile) */}
+                    {/* Right Column - Nav Links (Desktop) / Hamburger (Mobile) */}
                     <div className="flex-1 flex justify-end items-center">
                         <div className="lg:hidden">
-                            <a
-                                href={`tel:${COMPANY.contact.dispatchPhone.replace(/-/g, "")}`}
-                                className="flex items-center gap-2 text-sm font-bold text-slate-900 border border-slate-200 bg-white px-4 py-2 rounded-full shadow-sm hover:bg-slate-50"
+                            <button
+                                onClick={() => setIsOpen(true)}
+                                className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-red-700 shadow-sm hover:scale-95 transition-transform"
                             >
-                                <span className="uppercase tracking-wider">Call Us</span>
-                            </a>
+                                <div className="relative w-5 h-5">
+                                    <Menu className="w-5 h-5" strokeWidth={2.5} />
+                                </div>
+                            </button>
                         </div>
 
                         <nav className="hidden lg:flex items-center gap-x-6">
