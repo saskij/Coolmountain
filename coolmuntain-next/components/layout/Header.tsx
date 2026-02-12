@@ -143,7 +143,7 @@ export function Header() {
                     {/* Center Column - Logo */}
                     <div className={cn(
                         "flex-none flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50",
-                        scrolled ? "scale-50 -translate-y-[40px]" : "scale-100 translate-y-0"
+                        scrolled ? "scale-[0.33] -translate-y-[80px]" : "scale-100 translate-y-0"
                     )}>
                         <span className={cn(
                             "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50 transition-all duration-300",
@@ -161,10 +161,10 @@ export function Header() {
                                 <NextImage
                                     src={getAssetPath("/assets/images/Cool Mountan Logistics.png")}
                                     alt={COMPANY.name}
-                                    width={160}
-                                    height={160}
+                                    width={240}
+                                    height={240}
                                     priority
-                                    className="w-auto h-[40px] sm:h-[50px] lg:w-[160px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                                    className="w-auto h-[40px] sm:h-[50px] lg:w-[240px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
                         </a>
