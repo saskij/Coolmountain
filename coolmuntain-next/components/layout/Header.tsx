@@ -96,16 +96,16 @@ export function Header() {
                                     return (
                                         <div key={link.label} className="relative group">
                                             <button className={cn(
-                                                "text-sm font-medium text-slate-700 hover:text-red-700 transition flex items-center gap-1",
-                                                normalizedPathname?.startsWith(link.href) && "text-brand-blue font-bold"
+                                                "text-sm font-medium transition-all duration-300 flex items-center gap-1",
+                                                normalizedPathname?.startsWith(link.href) ? "text-[#cc2016]" : "text-slate-700 hover:text-[#cc2016]"
                                             )}>
                                                 {link.label}
                                             </button>
                                             <div className="absolute top-full left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-200 bg-white shadow-xl rounded-xl p-2 border border-slate-100 min-w-[200px] z-[1000]">
-                                                {link.children.map(child => (
+                                                {link.children?.map(child => (
                                                     <Link key={child.href} href={child.href} className={cn(
-                                                        "block px-4 py-3 hover:bg-slate-50 rounded-lg hover:text-red-700 transition font-semibold text-[13px] border-l-4 hover:border-red-700 hover:pl-6",
-                                                        isActivePage(child.href) ? "text-brand-blue bg-blue-50 border-brand-blue pl-6" : "text-slate-600 border-transparent"
+                                                        "block px-4 py-3 hover:bg-slate-50 rounded-lg hover:text-[#cc2016] transition-all duration-300 font-semibold text-[13px] border-l-4",
+                                                        isActivePage(child.href) ? "text-[#cc2016] bg-red-50 border-[#cc2016] pl-6" : "text-slate-600 border-transparent hover:pl-6"
                                                     )}>
                                                         {child.label}
                                                     </Link>
@@ -114,18 +114,25 @@ export function Header() {
                                         </div>
                                     )
                                 }
-                                return (
-                                    <Link
-                                        key={link.href}
-                                        href={link.href}
-                                        className={cn(
-                                            "text-sm font-medium text-slate-700 hover:text-red-700 transition",
-                                            isActivePage(link.href) && "text-brand-blue font-bold"
-                                        )}
-                                    >
-                                        {link.label}
-                                    </Link>
-                                )
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className={cn(
+                                        "text-sm font-medium transition-all duration-300 relative py-1",
+                                        isActivePage(link.href)
+                                            ? "text-[#cc2016]"
+                                            : "text-slate-700 hover:text-[#cc2016]"
+                                    )}
+                                >
+                                    {link.label}
+                                    {isActivePage(link.href) && (
+                                        <motion.div
+                                            layoutId="activeTab"
+                                            className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#cc2016]"
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
+                                </Link>
                             })}
                         </nav>
                     </div>
@@ -181,11 +188,20 @@ export function Header() {
                                     key={link.href}
                                     href={link.href}
                                     className={cn(
-                                        "text-sm font-medium text-slate-700 hover:text-red-700 transition",
-                                        isActivePage(link.href) && "text-brand-blue font-bold"
+                                        "text-sm font-medium transition-all duration-300 relative py-1",
+                                        isActivePage(link.href)
+                                            ? "text-[#cc2016]"
+                                            : "text-slate-700 hover:text-[#cc2016]"
                                     )}
                                 >
                                     {link.label}
+                                    {isActivePage(link.href) && (
+                                        <motion.div
+                                            layoutId="activeTabRight"
+                                            className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#cc2016]"
+                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                        />
+                                    )}
                                 </Link>
                             ))}
                         </nav>
@@ -225,13 +241,14 @@ export function Header() {
                                 <nav className="flex flex-col space-y-2">
                                     {NAV_LINKS.map((link) => {
                                         if (link.children) {
+                                            const isChildActive = normalizedPathname?.startsWith(link.href)
                                             return (
                                                 <div key={link.label} className="border-b border-slate-50">
                                                     <button
                                                         onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
                                                         className={cn(
-                                                            "flex items-center justify-between w-full text-xl font-bold py-3 hover:text-red-700 transition",
-                                                            normalizedPathname?.startsWith(link.href) ? "text-brand-blue bg-blue-50 pl-2" : "text-slate-800"
+                                                            "flex items-center justify-between w-full text-xl font-bold py-3 transition-colors duration-300",
+                                                            isChildActive ? "text-[#cc2016] bg-red-50 pl-2" : "text-slate-800 hover:text-[#cc2016]"
                                                         )}
                                                     >
                                                         <span>{link.label}</span>
@@ -252,10 +269,10 @@ export function Header() {
                                                                             href={child.href}
                                                                             onClick={() => setIsOpen(false)}
                                                                             className={cn(
-                                                                                "block text-lg font-semibold py-2 border-l-2 pl-4 transition",
+                                                                                "block text-lg font-semibold py-2 border-l-2 pl-4 transition-all duration-300",
                                                                                 isActivePage(child.href)
-                                                                                    ? "text-brand-blue border-brand-blue bg-blue-50"
-                                                                                    : "text-slate-600 border-slate-200 hover:text-red-700 hover:border-red-600"
+                                                                                    ? "text-[#cc2016] border-[#cc2016] bg-red-50"
+                                                                                    : "text-slate-600 border-slate-200 hover:text-[#cc2016] hover:border-[#cc2016]"
                                                                             )}
                                                                         >
                                                                             {child.label}
@@ -273,10 +290,10 @@ export function Header() {
                                                 key={link.href}
                                                 href={link.href}
                                                 className={cn(
-                                                    "text-xl font-bold transition py-3 border-b border-slate-50 block",
+                                                    "text-xl font-bold transition-colors duration-300 py-3 border-b border-slate-50 block",
                                                     isActivePage(link.href)
-                                                        ? "text-brand-blue bg-blue-50 pl-2"
-                                                        : "text-slate-800 hover:text-red-700"
+                                                        ? "text-[#cc2016] bg-red-50 pl-2"
+                                                        : "text-slate-800 hover:text-[#cc2016]"
                                                 )}
                                                 onClick={() => setIsOpen(false)}
                                             >
