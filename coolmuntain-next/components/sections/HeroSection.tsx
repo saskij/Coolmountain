@@ -2,7 +2,8 @@ import { Container } from "@/components/ui/Container"
 import NextImage from "next/image"
 import { Reveal } from "@/components/ui/Reveal"
 import { BASE_PATH } from "@/lib/constants"
-import { cn } from "@/lib/utils"
+import { BASE_PATH } from "@/lib/constants"
+import { cn, getAssetPath } from "@/lib/utils"
 
 interface HeroSectionProps {
     title: string
@@ -37,13 +38,11 @@ export function HeroSection({
 
     // For standard HTML tags (video poster, manual img), we MUST manually prepend BASE_PATH
     // because they don't know about next.config.js configuration
-    const bgImageAbs = backgroundImage.startsWith("/")
-        ? `${BASE_PATH}${backgroundImage}`
-        : backgroundImage
+    // For standard HTML tags (video poster, manual img), we MUST manually prepend BASE_PATH
+    // because they don't know about next.config.js configuration
+    const bgImageAbs = getAssetPath(backgroundImage)
 
-    const bgVideo = backgroundVideo && backgroundVideo.startsWith("/")
-        ? `${BASE_PATH}${backgroundVideo}`
-        : backgroundVideo
+    const bgVideo = backgroundVideo ? getAssetPath(backgroundVideo) : backgroundVideo
 
     // Video is disabled on mobile (hidden) and only plays once (no loop)
     // We remove the JS loop logic entirely as requested.

@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation"
 import { Menu, X, ChevronDown, Facebook, Linkedin } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
-import { cn } from "@/lib/utils"
+import { cn, getAssetPath } from "@/lib/utils"
 
 import { NAV_LINKS, COMPANY, BASE_PATH } from "@/lib/constants"
 

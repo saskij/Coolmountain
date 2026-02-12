@@ -5,6 +5,7 @@ import NextImage from "next/image";
 import { usePathname } from "next/navigation";
 import { BASE_PATH, COMPANY } from "@/lib/constants";
 import { Facebook, Linkedin, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { cn, getAssetPath } from "@/lib/utils";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();

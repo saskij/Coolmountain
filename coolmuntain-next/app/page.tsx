@@ -162,7 +162,7 @@ export default function Home() {
               <Reveal direction="right" delay={0.4} className="h-full">
                 <div className="relative w-full h-full rounded-2xl shadow-lg overflow-hidden group border border-slate-200 bg-slate-50">
                   <NextImage
-                    src={`${BASE_PATH}/assets/images/home-intro-truck.png`}
+                    src="/assets/images/home-intro-truck.png"
                     alt="Cool Mountain truck"
                     fill
                     sizes="(max-width: 1280px) 100vw, 50vw"
