@@ -2,7 +2,7 @@ import { Container } from "@/components/ui/Container"
 import NextImage from "next/image"
 import { Reveal } from "@/components/ui/Reveal"
 import { BASE_PATH } from "@/lib/constants"
-import { BASE_PATH } from "@/lib/constants"
+
 import { cn, getAssetPath } from "@/lib/utils"
 
 interface HeroSectionProps {
