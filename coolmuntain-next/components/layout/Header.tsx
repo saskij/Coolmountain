@@ -14,6 +14,7 @@ import { NAV_LINKS, COMPANY, BASE_PATH } from "@/lib/constants"
 export function Header() {
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    const [isMobile, setIsMobile] = useState(false)
     const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
     const pathname = usePathname()
 
@@ -54,6 +55,15 @@ export function Header() {
         // Check initial scroll
         handleScroll()
         return () => window.removeEventListener("scroll", handleScroll)
+    }, [])
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1024)
+        }
+        handleResize()
+        window.addEventListener("resize", handleResize)
+        return () => window.removeEventListener("resize", handleResize)
     }, [])
 
     // Close mobile menu on route change
@@ -139,13 +149,15 @@ export function Header() {
 
                     {/* Center Column - Logo */}
                     <div
-                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-3 transition-all duration-500 ease-in-out z-50"
+                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-3 transition-all duration-500 ease-in-out z-50 pointer-events-none"
                         style={{
-                            transform: scrolled ? "translateX(-50%) scale(0.7) translateY(-48px)" : "translateX(-50%) scale(1) translateY(0)"
+                            transform: isMobile
+                                ? (scrolled ? "translateX(-50%) scale(0.75) translateY(0)" : "translateX(-50%) scale(1) translateY(0)")
+                                : (scrolled ? "translateX(-50%) scale(0.7) translateY(-48px)" : "translateX(-50%) scale(1) translateY(0)")
                         }}
                     >
                         <span className={cn(
-                            "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50 transition-all duration-300",
+                            "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden lg:block relative z-50 transition-all duration-300",
                             scrolled ? "opacity-0 scale-75" : "opacity-100 scale-100"
                         )}>
                             Visit Logistics Portal
@@ -154,7 +166,7 @@ export function Header() {
                             href={COMPANY.externalLinks.brokerPortal}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="group flex flex-col items-center relative"
+                            className="group flex flex-col items-center relative pointer-events-auto"
                         >
                             <div className="relative">
                                 <NextImage
@@ -163,7 +175,7 @@ export function Header() {
                                     width={240}
                                     height={240}
                                     priority
-                                    className="w-auto h-[40px] sm:h-[50px] lg:w-[240px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                                    className="w-auto h-[55px] sm:h-[60px] lg:w-[240px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
                         </a>
