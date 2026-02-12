@@ -141,10 +141,12 @@ export function Header() {
                     </div>
 
                     {/* Center Column - Logo */}
-                    <div className={cn(
-                        "flex-none flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50",
-                        scrolled ? "scale-[0.33] -translate-y-[80px]" : "scale-100 translate-y-0"
-                    )}>
+                    <div
+                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50"
+                        style={{
+                            transform: scrolled ? "scale(0.333) translateY(-80px)" : "scale(1) translateY(0)"
+                        }}
+                    >
                         <span className={cn(
                             "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50 transition-all duration-300",
                             scrolled ? "opacity-0 scale-75" : "opacity-100 scale-100"
