@@ -144,7 +144,7 @@ export function Header() {
                     <div
                         className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50"
                         style={{
-                            transform: scrolled ? "translateX(-50%) scale(0.4) translateY(-60px)" : "translateX(-50%) scale(1) translateY(0)"
+                            transform: scrolled ? "translateX(-50%) scale(0.7) translateY(-48px)" : "translateX(-50%) scale(1) translateY(0)"
                         }}
                     >
                         <span className={cn(
