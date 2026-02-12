@@ -1,7 +1,7 @@
 import Link from "next/link"
 import NextImage from "next/image"
 import { Truck, Thermometer, Zap, ArrowRight, ChevronRight } from "lucide-react"
-import { cn } from "@/lib/utils"
+import { cn, getAssetPath } from "@/lib/utils"
 
 
 // Map icon string names to Lucide components
@@ -41,7 +41,7 @@ export function ServiceCard({ title, description, href, iconName = "Truck", clas
             <div className="relative w-full aspect-video overflow-hidden">
                 {backgroundImage ? (
                     <NextImage
-                        src={backgroundImage || ""}
+                        src={getAssetPath(backgroundImage || "")}
                         alt={title}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"

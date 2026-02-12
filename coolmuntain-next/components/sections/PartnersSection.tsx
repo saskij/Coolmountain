@@ -4,7 +4,7 @@ import NextImage from "next/image"
 import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/SectionTitle"
 import { BASE_PATH } from "@/lib/constants"
-import { cn } from "@/lib/utils"
+import { cn, getAssetPath } from "@/lib/utils"
 
 // Unique source of truth for logos
 const UNIQUE_LOGOS = [
@@ -79,7 +79,7 @@ function LogoItem({ logo }: { logo: typeof UNIQUE_LOGOS[0] }) {
     return (
         <div className="logo-item relative h-20 w-auto min-w-[120px] flex items-center justify-center grayscale opacity-50 transition-all duration-500 hover:grayscale-0 hover:opacity-100 hover:scale-110 cursor-pointer">
             <NextImage
-                src={logo.src}
+                src={getAssetPath(logo.src)}
                 alt={logo.name}
                 width={logo.width}
                 height={logo.height}
