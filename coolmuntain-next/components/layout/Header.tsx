@@ -48,7 +48,7 @@ export function Header() {
     // Handle scroll effect
     useEffect(() => {
         const handleScroll = () => {
-            setScrolled(window.scrollY > 50)
+            setScrolled(window.scrollY > 25)
         }
         window.addEventListener("scroll", handleScroll)
         // Check initial scroll
@@ -141,8 +141,13 @@ export function Header() {
                     </div>
 
                     {/* Center Column - Logo */}
-                    <div className="flex-none flex flex-col items-center justify-center relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-transparent lg:top-0 lg:z-50 lg:mt-2">
-                        <span className="text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50">
+                    <div className={cn(
+                        "flex-none flex flex-col items-center justify-center relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 bg-transparent lg:top-0 lg:z-50 lg:-mt-2 transition-all duration-500 ease-in-out"
+                    )}>
+                        <span className={cn(
+                            "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden sm:block relative z-50 transition-opacity duration-300",
+                            scrolled ? "opacity-0" : "opacity-100"
+                        )}>
                             Visit Logistics Portal
                         </span>
                         <a
@@ -159,8 +164,8 @@ export function Header() {
                                     height={400}
                                     priority
                                     className={cn(
-                                        "w-auto h-[50px] sm:h-[60px] lg:w-[400px] lg:h-auto transition-all duration-300 drop-shadow-md group-hover:scale-105 ease-in-out",
-                                        scrolled ? "lg:scale-50 lg:mb-0" : "lg:-mb-28" // Retract on scroll and hang more
+                                        "w-auto h-[50px] sm:h-[60px] lg:w-[400px] lg:h-auto transition-all duration-500 ease-in-out drop-shadow-md group-hover:scale-105",
+                                        scrolled ? "lg:scale-75 lg:-translate-y-[20px] lg:mb-0" : "lg:scale-100 lg:-mb-28 lg:translate-y-0"
                                     )}
                                 />
                             </div>
