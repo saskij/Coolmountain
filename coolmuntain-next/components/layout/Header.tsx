@@ -142,9 +142,9 @@ export function Header() {
 
                     {/* Center Column - Logo */}
                     <div
-                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 -translate-x-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50"
+                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-1 transition-all duration-500 ease-in-out z-50 origin-top"
                         style={{
-                            transform: scrolled ? "scale(0.333) translateY(-80px)" : "scale(1) translateY(0)"
+                            transform: scrolled ? "translateX(-50%) scale(0.333) translateY(-80px)" : "translateX(-50%) scale(1) translateY(0)"
                         }}
                     >
                         <span className={cn(
