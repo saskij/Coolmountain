@@ -168,7 +168,7 @@ export function Header() {
 
                     {/* Center Column - Logo */}
                     <div
-                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-3 transition-all duration-500 ease-in-out z-50 pointer-events-none"
+                        className="flex-none flex flex-col items-center justify-center absolute left-1/2 bg-transparent top-5 transition-all duration-500 ease-in-out z-50 pointer-events-none"
                         style={{
                             transform: isMobile
                                 ? "translateX(-50%) scale(1) translateY(0)"
@@ -256,7 +256,7 @@ export function Header() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                            className="fixed inset-y-0 right-0 z-[200] w-[80vw] max-w-sm bg-white shadow-2xl flex flex-col h-full border-l border-slate-100"
+                            className="fixed inset-y-0 right-0 z-[200] w-[70vw] max-w-xs bg-white shadow-2xl flex flex-col h-full border-l border-slate-100"
                         >
                             <div className="flex items-center justify-between p-6 border-b border-slate-100">
                                 <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Menu</span>
@@ -339,7 +339,7 @@ export function Header() {
                                         href={COMPANY.externalLinks.driverApp}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex items-center justify-center w-auto px-8 h-12 rounded-full bg-brand-red text-sm font-bold uppercase tracking-widest text-white hover:bg-brand-red-hover transition shadow-lg active:scale-95"
+                                        className="flex items-center justify-center w-auto px-8 h-12 rounded-[6px] bg-brand-red text-sm font-bold uppercase tracking-widest text-white hover:bg-brand-red-hover transition shadow-lg active:scale-95"
                                     >
                                         Apply as a Driver
                                     </a>

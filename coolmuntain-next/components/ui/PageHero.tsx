@@ -46,7 +46,7 @@ export function PageHero({
             </div>
 
             <Container className="relative z-10 w-full">
-                <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+                <div className="max-w-4xl mr-auto text-left flex flex-col items-start bg-transparent">
                     <Reveal direction="up" delay={0.1}>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter text-white drop-shadow-xl mb-6">
                             {title}
@@ -54,13 +54,13 @@ export function PageHero({
                     </Reveal>
 
                     {/* Decorative Line */}
-                    <Reveal direction="up" delay={0.2} className="w-full flex justify-center">
+                    <Reveal direction="up" delay={0.2} className="w-full flex justify-start">
                         <div className="h-1.5 w-24 bg-brand-red rounded-full mb-6" />
                     </Reveal>
 
                     {subtitle && (
                         <Reveal direction="up" delay={0.3}>
-                            <p className="text-lg md:text-xl text-zinc-100 font-medium max-w-2xl leading-relaxed drop-shadow-md">
+                            <p className="text-lg md:text-xl text-zinc-100 font-medium max-w-2xl leading-relaxed drop-shadow-md text-left">
                                 {subtitle}
                             </p>
                         </Reveal>
