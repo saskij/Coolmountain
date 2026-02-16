@@ -117,26 +117,29 @@ export function Header() {
                             </Link>
                         </div>
 
-                        <nav className="hidden xl:flex items-center gap-x-6">
+                        <nav className="hidden xl:flex items-center gap-x-8">
                             {leftNavLinks.map((link) => {
                                 if (link.children) {
                                     return (
-                                        <div key={link.label} className="relative group">
+                                        <div key={link.label} className="relative group/dropdown h-full flex items-center">
                                             <button className={cn(
-                                                "text-sm font-medium transition-all duration-300 flex items-center gap-1",
-                                                normalizedPathname?.startsWith(link.href) ? "text-[#cc2016]" : "text-slate-700 hover:text-[#cc2016]"
+                                                "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-1",
+                                                normalizedPathname?.startsWith(link.href) ? "text-[#cc2016]" : "text-slate-900 hover:text-[#cc2016]"
                                             )}>
                                                 {link.label}
+                                                <ChevronDown className="w-3 h-3 ml-1 opacity-50 group-hover/dropdown:opacity-100 transition-opacity" />
                                             </button>
-                                            <div className="absolute top-full left-0 mt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible translate-y-2 group-hover:translate-y-0 transition-all duration-200 bg-white shadow-xl rounded-xl p-2 border border-slate-100 min-w-[200px] z-[1000]">
-                                                {link.children?.map(child => (
-                                                    <Link key={child.href} href={child.href} className={cn(
-                                                        "block px-4 py-3 hover:bg-slate-50 rounded-lg hover:text-[#cc2016] transition-all duration-300 font-semibold text-[13px] border-l-4",
-                                                        isActivePage(child.href) ? "text-[#cc2016] bg-red-50 border-[#cc2016] pl-6" : "text-slate-600 border-transparent hover:pl-6"
-                                                    )}>
-                                                        {child.label}
-                                                    </Link>
-                                                ))}
+                                            <div className="absolute top-full left-0 mt-0 pt-4 w-56 opacity-0 invisible group-hover/dropdown:opacity-100 group-hover/dropdown:visible translate-y-2 group-hover/dropdown:translate-y-0 transition-all duration-300 z-[1000]">
+                                                <div className="bg-white shadow-2xl rounded-sm p-2 border-t-2 border-[#cc2016]">
+                                                    {link.children?.map(child => (
+                                                        <Link key={child.href} href={child.href} className={cn(
+                                                            "block px-5 py-3 hover:bg-slate-50 text-[12px] font-bold uppercase tracking-wider transition-all duration-200 border-l-2",
+                                                            isActivePage(child.href) ? "text-[#cc2016] bg-red-50 border-[#cc2016]" : "text-slate-600 border-transparent hover:border-slate-300 hover:text-slate-900"
+                                                        )}>
+                                                            {child.label}
+                                                        </Link>
+                                                    ))}
+                                                </div>
                                             </div>
                                         </div>
                                     )
@@ -146,20 +149,18 @@ export function Header() {
                                         key={link.href}
                                         href={link.href}
                                         className={cn(
-                                            "text-sm font-medium transition-all duration-300 relative py-1",
+                                            "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 relative py-2 group",
                                             isActivePage(link.href)
                                                 ? "text-[#cc2016]"
-                                                : "text-slate-700 hover:text-[#cc2016]"
+                                                : "text-slate-900 hover:text-[#cc2016]"
                                         )}
                                     >
                                         {link.label}
-                                        {isActivePage(link.href) && (
-                                            <motion.div
-                                                layoutId="activeTab"
-                                                className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#cc2016]"
-                                                transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                            />
-                                        )}
+                                        {/* Hover Line */}
+                                        <span className={cn(
+                                            "absolute bottom-0 left-0 w-full h-[2px] bg-[#cc2016] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                                            isActivePage(link.href) ? "scale-x-100" : ""
+                                        )} />
                                     </Link>
                                 )
                             })}
@@ -213,26 +214,24 @@ export function Header() {
                             </button>
                         </div>
 
-                        <nav className="hidden xl:flex items-center gap-x-6">
+                        <nav className="hidden xl:flex items-center gap-x-8">
                             {rightNavLinks.map((link) => (
                                 <Link
                                     key={link.href}
                                     href={link.href}
                                     className={cn(
-                                        "text-sm font-medium transition-all duration-300 relative py-1",
+                                        "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 relative py-2 group",
                                         isActivePage(link.href)
                                             ? "text-[#cc2016]"
-                                            : "text-slate-700 hover:text-[#cc2016]"
+                                            : "text-slate-900 hover:text-[#cc2016]"
                                     )}
                                 >
                                     {link.label}
-                                    {isActivePage(link.href) && (
-                                        <motion.div
-                                            layoutId="activeTabRight"
-                                            className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#cc2016]"
-                                            transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                                        />
-                                    )}
+                                    {/* Hover Line */}
+                                    <span className={cn(
+                                        "absolute bottom-0 left-0 w-full h-[2px] bg-[#cc2016] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100",
+                                        isActivePage(link.href) ? "scale-x-100" : ""
+                                    )} />
                                 </Link>
                             ))}
                         </nav>
