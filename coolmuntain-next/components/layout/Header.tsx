@@ -59,7 +59,7 @@ export function Header() {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth < 1024)
+            setIsMobile(window.innerWidth < 1280)
         }
         handleResize()
         window.addEventListener("resize", handleResize)
@@ -99,8 +99,25 @@ export function Header() {
 
                     {/* Left Column - Nav Links (Desktop) */}
                     <div className="flex-1 flex justify-start items-center">
+                        {/* Mobile Home Logo */}
+                        <div className="xl:hidden relative z-50 pointer-events-auto">
+                            <Link href="/" onClick={(e) => {
+                                if (normalizedPathname === "/") {
+                                    e.preventDefault()
+                                    window.scrollTo({ top: 0, behavior: "smooth" })
+                                }
+                            }}>
+                                <NextImage
+                                    src={getAssetPath("/assets/images/Cool Mountain Logistics.png")}
+                                    alt={COMPANY.name}
+                                    width={48}
+                                    height={48}
+                                    className="w-12 h-auto object-contain"
+                                />
+                            </Link>
+                        </div>
 
-                        <nav className="hidden lg:flex items-center gap-x-6">
+                        <nav className="hidden xl:flex items-center gap-x-6">
                             {leftNavLinks.map((link) => {
                                 if (link.children) {
                                     return (
@@ -159,7 +176,7 @@ export function Header() {
                         }}
                     >
                         <span className={cn(
-                            "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden lg:block relative z-50 transition-all duration-300",
+                            "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden xl:block relative z-50 transition-all duration-300",
                             scrolled ? "opacity-0 scale-75" : "opacity-100 scale-100"
                         )}>
                             Visit Logistics Portal
@@ -185,7 +202,7 @@ export function Header() {
 
                     {/* Right Column - Nav Links (Desktop) / Hamburger (Mobile) */}
                     <div className="flex-1 flex justify-end items-center">
-                        <div className="lg:hidden">
+                        <div className="xl:hidden">
                             <button
                                 onClick={() => setIsOpen(true)}
                                 className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-red-700 shadow-sm hover:scale-95 transition-transform"
@@ -196,7 +213,7 @@ export function Header() {
                             </button>
                         </div>
 
-                        <nav className="hidden lg:flex items-center gap-x-6">
+                        <nav className="hidden xl:flex items-center gap-x-6">
                             {rightNavLinks.map((link) => (
                                 <Link
                                     key={link.href}
@@ -235,11 +252,11 @@ export function Header() {
                             className="fixed inset-0 z-[150] bg-slate-900/50 backdrop-blur-sm"
                         />
                         <motion.div
-                            initial={{ x: "-100%" }}
+                            initial={{ x: "100%" }}
                             animate={{ x: 0 }}
-                            exit={{ x: "-100%" }}
+                            exit={{ x: "100%" }}
                             transition={{ type: "spring", damping: 30, stiffness: 300 }}
-                            className="fixed inset-y-0 left-0 z-[200] w-[80vw] max-w-sm bg-white shadow-2xl flex flex-col h-full border-r border-slate-100"
+                            className="fixed inset-y-0 right-0 z-[200] w-[80vw] max-w-sm bg-white shadow-2xl flex flex-col h-full border-l border-slate-100"
                         >
                             <div className="flex items-center justify-between p-6 border-b border-slate-100">
                                 <span className="text-sm font-bold uppercase tracking-widest text-slate-500">Menu</span>

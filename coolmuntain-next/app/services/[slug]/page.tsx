@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation"
 import { SERVICES } from "@/lib/constants"
-import { HeroSection } from "@/components/sections/HeroSection"
+import { PageHero } from "@/components/ui/PageHero"
 import { Container } from "@/components/ui/Container"
 import { SectionTitle } from "@/components/ui/SectionTitle"
 import { Reveal } from "@/components/ui/Reveal"
@@ -52,12 +52,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <HeroSection
+            <PageHero
                 title={service.title}
                 subtitle={service.description}
-                height="medium"
                 backgroundImage="/assets/images/services-hero.jpg"
-                backgroundVideo=""
             />
 
             <section className="py-20 bg-slate-50 overflow-hidden relative">

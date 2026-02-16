@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container"
-import { HeroSection } from "@/components/sections/HeroSection"
+import { PageHero } from "@/components/ui/PageHero"
 import { Reveal } from "@/components/ui/Reveal"
 import { Button } from "@/components/ui/Button"
 import { COMPANY, BASE_PATH } from "@/lib/constants"
@@ -22,23 +22,20 @@ export const metadata: Metadata = {
 export default function JoinTeamPage() {
     return (
         <div className="flex flex-col min-h-screen">
-            <HeroSection
+            <PageHero
                 title="Join Our Team"
                 subtitle="Explore opportunities for company drivers and owner operators, plus the benefits of working with a team that prioritizes safety and professionalism."
-                height="medium"
                 backgroundImage="/assets/images/join-our-team-hero.jpg"
-                backgroundVideo=""
             >
                 <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center justify-center gap-2">
                         <span>USDOT #28965</span>
                         <span className="opacity-60">•</span>
                         <span>MC #654322</span>
                     </div>
-
                 </div>
-            </HeroSection>
+            </PageHero>
 
             {/* Company Drivers Section */}
             <section className="bg-white py-20">

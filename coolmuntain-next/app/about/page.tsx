@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container"
-import { HeroSection } from "@/components/sections/HeroSection"
+import { PageHero } from "@/components/ui/PageHero"
 import { Reveal } from "@/components/ui/Reveal"
 import { BASE_PATH } from "@/lib/constants"
 import { HeroButtons } from "@/components/sections/HeroButtons"
@@ -21,24 +21,20 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <div className="flex flex-col min-h-screen">
-            <HeroSection
-                // Force Update
+            <PageHero
                 title="About Us"
                 subtitle="A team built on safety, trust, and long-term partnerships."
-                height="medium"
                 backgroundImage="/assets/images/about-hero.jpg"
-                backgroundVideo="" // Disable video for this page
             >
                 <HeroButtons className="mt-8" />
                 <div className="mt-8 text-xs font-semibold text-white/80 flex flex-col gap-2">
-                    <div className="flex flex-wrap items-center gap-2">
+                    <div className="flex flex-wrap items-center justify-center gap-2">
                         <span>USDOT #28965</span>
                         <span className="opacity-60">•</span>
                         <span>MC #654322</span>
                     </div>
-
                 </div>
-            </HeroSection>
+            </PageHero>
 
             <section className="relative overflow-hidden bg-slate-50 py-20">
                 {/* Background Elements */}
