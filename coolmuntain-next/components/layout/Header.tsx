@@ -38,8 +38,8 @@ export function Header() {
         return normalizedPathname === href
     }
 
-    // Handle logo click behavior
-    const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Handle home/logo click behavior
+    const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
         if (normalizedPathname === "/") {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: "smooth" })
@@ -136,6 +136,7 @@ export function Header() {
                                     <Link
                                         key={link.href}
                                         href={link.href}
+                                        onClick={link.href === "/" ? handleHomeClick : undefined}
                                         className={cn(
                                             "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 relative py-2 group",
                                             isActivePage(link.href)
@@ -175,6 +176,7 @@ export function Header() {
                             href={COMPANY.externalLinks.brokerPortal}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={handleHomeClick}
                             className="group flex flex-col items-center relative pointer-events-auto"
                         >
                             <div className="relative">
@@ -206,6 +208,7 @@ export function Header() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
+                                    onClick={link.href === "/" ? handleHomeClick : undefined}
                                     className={cn(
                                         "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 relative py-2 group",
                                         isActivePage(link.href)
@@ -313,7 +316,10 @@ export function Header() {
                                                         ? "text-[#cc2016] bg-red-50 pl-2"
                                                         : "text-slate-800 hover:text-[#cc2016]"
                                                 )}
-                                                onClick={() => setIsOpen(false)}
+                                                onClick={(e) => {
+                                                    setIsOpen(false)
+                                                    if (link.href === "/") handleHomeClick(e as any)
+                                                }}
                                             >
                                                 {link.label}
                                             </Link>
