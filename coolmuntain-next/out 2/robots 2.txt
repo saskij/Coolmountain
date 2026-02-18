@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+Sitemap: https://coolmountaintransport.com/sitemap.xml

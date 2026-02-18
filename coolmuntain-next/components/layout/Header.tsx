@@ -91,31 +91,18 @@ export function Header() {
         <>
             <header
                 className={cn(
-                    "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 glass-header items-center flex h-20",
-                    scrolled ? "scrolled shadow-sm bg-white/90 backdrop-blur-md" : ""
+                    "fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 items-center flex h-24 lg:h-20",
+                    scrolled
+                        ? "scrolled shadow-md bg-white backdrop-blur-md border-b border-slate-100"
+                        : "bg-transparent border-b border-transparent"
                 )}
             >
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between w-full relative">
 
                     {/* Left Column - Nav Links (Desktop) */}
                     <div className="flex-1 flex justify-start items-center">
-                        {/* Mobile Home Logo */}
-                        <div className="xl:hidden relative z-50 pointer-events-auto">
-                            <Link href="/" onClick={(e) => {
-                                if (normalizedPathname === "/") {
-                                    e.preventDefault()
-                                    window.scrollTo({ top: 0, behavior: "smooth" })
-                                }
-                            }}>
-                                <NextImage
-                                    src={getAssetPath("/assets/images/Cool Mountain Logistics.png")}
-                                    alt={COMPANY.name}
-                                    width={48}
-                                    height={48}
-                                    className="w-12 h-auto object-contain"
-                                />
-                            </Link>
-                        </div>
+                        {/* Mobile Logo Removed - Now using centered logo exclusively */}
+                        <div className="xl:hidden" />
 
                         <nav className="hidden xl:flex items-center gap-x-8">
                             {leftNavLinks.map((link) => {
@@ -195,7 +182,7 @@ export function Header() {
                                     width={240}
                                     height={240}
                                     priority
-                                    className="w-auto h-[85px] sm:h-[100px] lg:w-[240px] lg:h-auto drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                                    className="w-auto h-[90px] sm:h-[110px] lg:w-[240px] lg:h-auto drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
                         </a>
@@ -206,11 +193,9 @@ export function Header() {
                         <div className="xl:hidden">
                             <button
                                 onClick={() => setIsOpen(true)}
-                                className="flex items-center justify-center w-10 h-10 rounded-full border border-slate-200 bg-white text-red-700 shadow-sm hover:scale-95 transition-transform"
+                                className="flex items-center justify-center px-4 py-2 rounded-[6px] bg-[#cc2016] text-white shadow-xl hover:bg-[#b01c13] transition-all active:scale-95"
                             >
-                                <div className="relative w-5 h-5">
-                                    <Menu className="w-5 h-5" strokeWidth={2.5} />
-                                </div>
+                                <span className="text-[14px] font-black uppercase tracking-[0.1em] px-0.5">Menu</span>
                             </button>
                         </div>
 
