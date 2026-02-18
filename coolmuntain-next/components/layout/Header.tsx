@@ -93,8 +93,8 @@ export function Header() {
                 className={cn(
                     "fixed top-0 left-0 right-0 z-[100] w-full transition-all duration-300 items-center flex h-24 lg:h-20",
                     scrolled
-                        ? "scrolled shadow-md bg-white backdrop-blur-md border-b border-slate-100"
-                        : "bg-transparent border-b border-transparent"
+                        ? "scrolled shadow-md bg-white border-b border-slate-100"
+                        : "bg-black/30 backdrop-blur-[10px] border-b border-transparent"
                 )}
             >
                 <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex h-full items-center justify-between w-full relative">
@@ -111,7 +111,8 @@ export function Header() {
                                         <div key={link.label} className="relative group/dropdown h-full flex items-center">
                                             <button className={cn(
                                                 "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 flex items-center gap-1",
-                                                normalizedPathname?.startsWith(link.href) ? "text-[#cc2016]" : "text-slate-900 hover:text-[#cc2016]"
+                                                normalizedPathname?.startsWith(link.href) ? "text-[#cc2016]" : "text-slate-900 hover:text-[#cc2016]",
+                                                !scrolled && "text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]"
                                             )}>
                                                 {link.label}
                                                 <ChevronDown className="w-3 h-3 ml-1 opacity-50 group-hover/dropdown:opacity-100 transition-opacity" />
@@ -139,7 +140,8 @@ export function Header() {
                                             "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 relative py-2 group",
                                             isActivePage(link.href)
                                                 ? "text-[#cc2016]"
-                                                : "text-slate-900 hover:text-[#cc2016]"
+                                                : "text-slate-900 hover:text-[#cc2016]",
+                                            !scrolled && "text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]"
                                         )}
                                     >
                                         {link.label}
@@ -208,7 +210,8 @@ export function Header() {
                                         "text-[13px] font-bold uppercase tracking-widest transition-all duration-300 relative py-2 group",
                                         isActivePage(link.href)
                                             ? "text-[#cc2016]"
-                                            : "text-slate-900 hover:text-[#cc2016]"
+                                            : "text-slate-900 hover:text-[#cc2016]",
+                                        !scrolled && "text-white [text-shadow:1px_1px_3px_rgba(0,0,0,0.5)]"
                                     )}
                                 >
                                     {link.label}
