@@ -40,7 +40,7 @@ export function Header() {
 
     // Handle home/logo click behavior
     const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (normalizedPathname === "/") {
+        if (normalizedPathname === "/" && e.currentTarget.getAttribute('href') === '/') {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: "smooth" })
         }
@@ -170,12 +170,10 @@ export function Header() {
                             "text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-1 whitespace-nowrap hidden xl:block relative z-50 transition-all duration-300",
                             scrolled ? "opacity-0 scale-75" : "opacity-100 scale-100"
                         )}>
-                            Visit Logistics Portal
+                            {normalizedPathname === "/" ? "Logistics Portal" : "Home"}
                         </span>
                         <a
-                            href={COMPANY.externalLinks.brokerPortal}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={normalizedPathname === "/" ? COMPANY.externalLinks.brokerPortal : "/"}
                             onClick={handleHomeClick}
                             className="group flex flex-col items-center relative pointer-events-auto"
                         >

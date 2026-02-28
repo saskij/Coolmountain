@@ -30,7 +30,7 @@ export const COMPANY = {
     },
     externalLinks: {
         driverApp: "https://intelliapp.driverapponline.com/c/coolmountaintransport?uri_b=ia_coolmountaintransport_1398127899",
-        brokerPortal: "#" // TODO: Update with actual broker portal URL
+        brokerPortal: "https://saskij.github.io/cool-mountain-logistics/"
     },
     meta: {
         usdot: "2414797",
