@@ -40,7 +40,8 @@ export function Header() {
 
     // Handle home/logo click behavior
     const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        if (normalizedPathname === "/" && e.currentTarget.getAttribute('href') === '/') {
+        const href = e.currentTarget.getAttribute('href')
+        if (normalizedPathname === "/" && href === '/') {
             e.preventDefault()
             window.scrollTo({ top: 0, behavior: "smooth" })
         }
@@ -172,8 +173,10 @@ export function Header() {
                         )}>
                             {normalizedPathname === "/" ? "Logistics Portal" : "Home"}
                         </span>
-                        <a
+                        <Link
                             href={normalizedPathname === "/" ? COMPANY.externalLinks.brokerPortal : "/"}
+                            target={normalizedPathname === "/" ? "_blank" : undefined}
+                            rel={normalizedPathname === "/" ? "noopener noreferrer" : undefined}
                             onClick={handleHomeClick}
                             className="group flex flex-col items-center relative pointer-events-auto"
                         >
@@ -187,7 +190,7 @@ export function Header() {
                                     className="w-auto h-[90px] sm:h-[110px] lg:w-[240px] lg:h-auto drop-shadow-lg group-hover:scale-105 transition-transform duration-300"
                                 />
                             </div>
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Right Column - Nav Links (Desktop) / Hamburger (Mobile) */}
