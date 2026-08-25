@@ -44,8 +44,8 @@ export function HeroSection({
 
     const bgVideo = backgroundVideo ? getAssetPath(backgroundVideo) : backgroundVideo
 
-    // Video is disabled on mobile (hidden) and only plays once (no loop)
-    // We remove the JS loop logic entirely as requested.
+    // Video is disabled on mobile (hidden) and loops continuously as an ambient background.
+    // Looping via the native HTML `loop` attribute (no JS).
 
     return (
         <section
@@ -79,6 +79,7 @@ export function HeroSection({
                 {bgVideo && (
                     <video
                         autoPlay
+                        loop
                         muted
                         playsInline
                         preload="none"
