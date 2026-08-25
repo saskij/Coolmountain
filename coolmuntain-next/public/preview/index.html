@@ -103,7 +103,7 @@
 <!-- HERO -->
 <section class="cm-hero">
   <div class="cm-hero-bg"></div>
-  <video class="cm-hero-video" autoplay loop muted playsinline preload="metadata" poster="img/heroposter.jpg"><source src="../assets/videos/hero-video.mp4" type="video/mp4"></video>
+  <video class="cm-hero-video" autoplay loop muted playsinline preload="metadata"><source src="../assets/videos/hero-video.mp4" type="video/mp4"></video>
   <div class="cm-hero-side">SERVING ALL 48 STATES</div>
   <div class="cm-wrap cm-hero-inner">
     <div class="cm-reveal">
@@ -586,6 +586,10 @@
 </a>
 
 <script>
+(function(){var v=document.querySelector('.cm-hero-video');if(!v)return;
+  function on(){v.classList.add('is-playing');}
+  if(!v.paused&&v.readyState>2)on();
+  v.addEventListener('playing',on);v.addEventListener('loadeddata',function(){if(!v.paused)on();});})();
 (function(){
   var root=document.documentElement;
   /* ---- theme toggle (persisted, guarded) ---- */

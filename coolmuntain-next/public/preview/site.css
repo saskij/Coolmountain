@@ -781,9 +781,8 @@ p{margin:0}
 
 /* hero: the still under the video is the video's own first frame, so the
    switch from poster to playback is invisible (video is hidden <900px) */
-@media (min-width:901px){
-  .cm-hero .cm-hero-bg{background-image:var(--img-heroposter);animation:none}
-}
+/* the still stays the wide 2.36:1 photo — a 16:9 video frame gets cropped
+   by ~31% on a 2560-wide monitor and the tractor loses its roofline */
 
 /* ============================================================
    SERVICES DROPDOWN
@@ -854,3 +853,8 @@ p{margin:0}
   .cm-footer .bottom .legal{gap:.4rem 1.4rem}
   .cm-footer .bottom a{min-height:40px;display:inline-flex;align-items:center}
 }
+
+/* video dissolves in over the still once it actually starts playing */
+.cm-hero-video{opacity:0;transition:opacity .8s ease}
+.cm-hero-video.is-playing{opacity:1}
+@media (prefers-reduced-motion:reduce){.cm-hero-video{transition:none}}
