@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expedited | Cool Mountain Transport</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<!-- ORG / DIVISION BAR -->
+<div class="cm-org">
+  <div class="cm-wrap">
+    <span class="cm-org-name">Cool&nbsp;Mountain</span>
+    <nav class="cm-org-tabs" aria-label="Company divisions">
+      <a class="cm-org-tab is-active" href="index.html" aria-current="page">
+        <span class="t">Transport</span><span class="s">Asset-Based Carrier</span>
+      </a>
+      <a class="cm-org-tab" href="https://saskij.github.io/cool-mountain-logistics/" target="_blank" rel="noopener">
+        <span class="t">Logistics <svg class="cm-ic ext" viewBox="0 0 24 24"><path d="M7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg></span>
+        <span class="s">Freight Brokerage</span>
+      </a>
+    </nav>
+    <div class="cm-org-r">
+      <span class="st"><i class="dot"></i>24/7 Dispatch</span>
+      <a href="tel:2084752500" class="tel">(208)&nbsp;475-2500</a>
+      <button class="cm-iconbtn" id="cmTheme" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg class="cm-ic" id="cmThemeIcon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+<!-- HEADER -->
+<header class="cm-header" id="cmHeader">
+  <div class="cm-wrap">
+    <div class="cm-h-l">
+      <button class="cm-iconbtn cm-menu-btn" id="cmMenu" aria-label="Open menu">
+        <svg class="cm-ic" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <nav class="cm-nav cm-nav--l" aria-label="Primary">
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="equipment.html">Equipment</a>
+      </nav>
+    </div>
+    <a href="index.html" class="cm-logo" aria-label="Cool Mountain Transport &mdash; home"></a>
+    <div class="cm-h-r">
+      <nav class="cm-nav cm-nav--r" aria-label="Primary">
+        <a href="careers.html">Careers</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="cm-btn cm-btn--red cm-btn-quote">Get a Quote</a>
+      <a href="tel:2084752500" class="cm-iconbtn cm-call-btn" aria-label="Call dispatch"><svg class="cm-ic" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.74a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg></a>
+    </div>
+  </div>
+</header>
+<div class="cm-drawer-back" id="cmBack"></div>
+<aside class="cm-drawer" id="cmDrawer" aria-label="Mobile menu">
+  <div class="cm-drawer-head">
+    <span class="lbl">Menu / Nav</span>
+    <button class="cm-iconbtn" id="cmClose" aria-label="Close menu" style="border-color:var(--line-2);color:var(--ink);background:transparent">
+      <svg class="cm-ic" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+  </div>
+  <div class="cm-drawer-div">
+    <span class="dlbl">Divisions</span>
+    <span class="dtab is-active"><b>Transport</b><i>Asset-Based Carrier</i></span>
+    <a class="dtab" href="https://saskij.github.io/cool-mountain-logistics/" target="_blank" rel="noopener"><b>Logistics <svg class="cm-ic ext" viewBox="0 0 24 24"><path d="M7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg></b><i>Freight Brokerage</i></a>
+  </div>
+  <a class="nav" href="index.html" data-close>Home</a>
+  <a class="nav" href="about.html" data-close>About</a>
+  <a class="nav" href="services.html" data-close>Services</a>
+  <a class="nav" href="equipment.html" data-close>Equipment</a>
+  <a class="nav" href="careers.html" data-close>Careers</a>
+  <a class="nav" href="news.html" data-close>News</a>
+  <a class="nav" href="contact.html" data-close>Contact</a>
+  <a class="cm-btn cm-btn--red" href="contact.html" data-close>Get a Quote</a>
+  <a class="cm-btn cm-btn--ghost" href="tel:2084752500" data-close>Call (208) 475-2500</a>
+</aside>
+<span id="top"></span>
+
+<section class="cm-inner-hero">
+  <div class="cm-inner-bg" style="background-image:var(--img-expedited)"></div>
+  <div class="cm-wrap cm-inner-inner">
+    <div class="cm-reveal">
+      <nav class="cm-crumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a><span class="sep">/</span>
+        <a href="services.html">Services</a><span class="sep">/</span>
+        <span class="cur">Expedited</span>
+      </nav>
+      <div class="cm-badge"><i class="dot"></i><span class="hl">Team Service &middot; Time-Critical</span><span class="sep"></span><span>Nampa, Idaho</span></div>
+      <h1>Expedited &amp;<br>Team Service</h1>
+      <p class="sub">When &ldquo;on time&rdquo; isn&rsquo;t enough. Team drivers alternate shifts to keep your freight moving around the clock.</p>
+      <div class="cm-inner-cta">
+        <a href="#contact" class="cm-btn cm-btn--red">Get a Quote <svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="tel:2084752500" class="cm-btn cm-btn--on-photo"><svg class="cm-ic" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.74a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg>Call Dispatch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cm-specs">
+  <div class="cm-wrap"><div class="grid cm-stagger">
+      <div class="cm-stat"><div class="num">24/7<span class="u"></span></div>
+        <div class="lbl">Wheels Rolling</div><div class="cap">Non-stop team transit</div></div>
+      <div class="cm-stat"><div class="num">2<span class="u">&times;</span></div>
+        <div class="lbl">Drivers per Load</div><div class="cap">Alternating shifts</div></div>
+      <div class="cm-stat"><div class="num">100<span class="u">%</span></div>
+        <div class="lbl">Satellite Tracked</div><div class="cap">Real-time position updates</div></div>
+      <div class="cm-stat"><div class="num">&mdash;<span class="u"></span></div>
+        <div class="lbl">Guaranteed Windows</div><div class="cap">Available on request</div></div>
+  </div></div>
+</section>
+
+<section class="cm-section cm-ov">
+  <div class="cm-wrap">
+    <div class="cm-ov-grid">
+      <div class="cm-reveal">
+        <span class="cm-eyebrow">The Service</span>
+        <h2>Built Around<br>Your Cargo</h2>
+        <p class="body">For time-critical shipments, our expedited team service offers non-stop transport to ensure your freight arrives as quickly as safely possible. Our team drivers alternate shifts to keep the wheels moving 24/7, significantly reducing transit times for high-priority loads.</p>
+        <p class="body">Every load is dispatched by a team that answers the phone at any hour, on equipment that is late-model, inspected, and maintained on a strict preventative schedule.</p>
+      </div>
+      <div class="cm-featcard cm-reveal">
+        <span class="lbl">What&rsquo;s Included</span>
+        <ul>
+          <li><svg class="cm-ic" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Team drivers for continuous, non-stop movement</li>
+          <li><svg class="cm-ic" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Guaranteed delivery windows available</li>
+          <li><svg class="cm-ic" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Real-time satellite tracking and proactive updates</li>
+          <li><svg class="cm-ic" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Dispatched immediately on confirmation</li>
+          <li><svg class="cm-ic" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Priority handling for production-critical freight</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cm-section alt">
+  <div class="cm-wrap">
+    <div class="cm-head cm-reveal">
+      <span class="cm-eyebrow">Typical Freight</span>
+      <h2>What We Haul</h2>
+    </div>
+    <div class="cm-comm cm-stagger">
+      <span><i></i>Automotive parts</span>
+      <span><i></i>Production-critical components</span>
+      <span><i></i>Medical supplies</span>
+      <span><i></i>Event &amp; AV equipment</span>
+      <span><i></i>High-value cargo</span>
+      <span><i></i>Recovery freight</span>
+    </div>
+  </div>
+</section>
+
+<section class="cm-caps">
+  <div class="cm-caps-bg"></div>
+  <div class="cm-wrap">
+    <div class="cm-head cm-reveal">
+      <span class="cm-eyebrow on-photo">How It Runs</span>
+      <h2>From Booking<br>to Delivery</h2>
+      <p>Four steps, the same every time &mdash; so you always know where your freight is and who to call.</p>
+    </div>
+    <div class="cm-steps cm-stagger">
+      <div class="cm-step"><span class="n">01</span><h3>Dispatched Immediately</h3><p>The moment the load is confirmed, a team is assigned and rolling &mdash; no staging delay.</p></div>
+      <div class="cm-step"><span class="n">02</span><h3>Team Drivers Roll</h3><p>Two drivers alternate shifts so the truck keeps moving while one rests legally.</p></div>
+      <div class="cm-step"><span class="n">03</span><h3>Non-Stop Transit</h3><p>Satellite tracking with proactive updates; dispatch monitors the clock the whole way.</p></div>
+      <div class="cm-step"><span class="n">04</span><h3>On-Window Delivery</h3><p>Delivered inside the promised window, with confirmation back to your team.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cm-section">
+  <div class="cm-wrap">
+    <div class="cm-head cm-reveal">
+      <span class="cm-eyebrow">Also Available</span>
+      <h2>Other Services</h2>
+    </div>
+    <div class="cm-other cm-stagger">
+    <a class="cm-oth" href="service-dry-van.html">
+      <span class="ph" style="background-image:var(--img-dryvan)"></span>
+      <span class="tx"><span class="k">Other Service</span><h3>Dry Van</h3></span>
+      <svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    <a class="cm-oth" href="service-refrigerated.html">
+      <span class="ph" style="background-image:var(--img-reefer)"></span>
+      <span class="tx"><span class="k">Other Service</span><h3>Refrigerated</h3></span>
+      <svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+    </div>
+  </div>
+</section>
+
+<section class="cm-cta" id="contact">
+  <div class="cm-cta-bg"></div>
+  <div class="cm-wrap cm-reveal">
+    <span class="cm-eyebrow on-photo">Let&rsquo;s Move</span>
+    <h2>Ready to Move<br>Your Freight?</h2>
+    <p>Experience a logistics partner that pairs modern technology with old-school reliability. Talk to dispatch today.</p>
+    <div class="cm-cta-row">
+      <a href="mailto:joan@coolmtntransport.com" class="cm-btn cm-btn--red">Request a Quote <svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="tel:2084752500" class="cm-cta-phone"><svg class="cm-ic" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.74a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg>Dispatch: (208) 475-2500</a>
+    </div>
+    <div class="cm-cta-status">
+      <span><i></i>24/7 Dispatch</span>
+      <span><i class="b"></i>Real-Time Tracking</span>
+      <span><i class="r"></i>Nationwide Coverage</span>
+    </div>
+  </div>
+</section>
+
+<footer class="cm-footer">
+  <div class="cm-wrap">
+    <div class="top">
+      <div>
+        <div class="cm-foot-logo" role="img" aria-label="Cool Mountain Transport"></div>
+        <p class="blurb">Reliable Freight. Professional Drivers. Solving complex logistics problems with a modern fleet and a safety commitment.</p>
+        <div class="cm-socials">
+          <a href="https://www.facebook.com/coolmtntransport" target="_blank" rel="noopener" aria-label="Facebook"><svg class="cm-ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/cool-mountain-transport/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="cm-ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.4 2.5 4.4 5.9V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>About Us</a></li>
+          <li><a href="equipment.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Equipment</a></li>
+          <li><a href="news.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>News</a></li>
+          <li><a href="careers.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>All Services</a></li>
+          <li><a href="service-dry-van.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Dry Van</a></li>
+          <li><a href="service-refrigerated.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Refrigerated</a></li>
+          <li><a href="service-expedited.html"><svg class="cm-ic" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>Expedited</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="cm-contact-row"><svg class="cm-ic" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>1428 Madison Avenue<br>Nampa, Idaho 83687</span></div>
+        <div class="cm-contact-row"><svg class="cm-ic" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.74a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg><a href="tel:2084752500">(208) 475-2500</a></div>
+        <div class="cm-contact-row"><svg class="cm-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:joan@coolmtntransport.com">joan@coolmtntransport.com</a></div>
+        <div class="cm-contact-row"><svg class="cm-ic" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2"/><path d="M7 7V4h10v3"/><path d="M7 19v-4h10v4"/></svg><span>Fax 208-906-8585<br>P.O. Box 48, Nampa, ID 83651</span></div>
+        <div class="cm-contact-row"><svg class="cm-ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg><span>Driver Careers &mdash; Joan<br><a href="tel:2084755773">(208) 475-5773</a></span></div>
+      </div>
+    </div>
+    <div class="cm-foot-div">
+      <span class="lbl">One company &middot; Two divisions</span>
+      <div class="cards">
+        <span class="card is-active"><b>Cool Mountain Transport</b><i>Asset-Based Carrier &middot; USDOT 2414797 &middot; MC 879475</i></span>
+        <a class="card" href="https://saskij.github.io/cool-mountain-logistics/" target="_blank" rel="noopener"><b>Cool Mountain Logistics</b><i>Freight Brokerage &middot; USDOT 04371123 &middot; MC 1712055</i><svg class="cm-ic" viewBox="0 0 24 24"><path d="M7 17 17 7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+      </div>
+    </div>
+    <div class="bottom">
+      <p>&copy; 2026 Cool Mountain Transport. All Rights Reserved.</p>
+      <div class="legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="applicant-privacy.html">Applicant Privacy</a>
+        <span class="dot-id">USDOT #2414797 &middot; MC #879475</span>
+      </div>
+    </div>
+  </div>
+</footer>
+<a href="tel:2084752500" class="cm-fab" aria-label="Call dispatch">
+  <svg class="cm-ic" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.74-1.74a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg>
+</a>
+<script>
+(function(){
+  var root=document.documentElement;
+  /* ---- theme toggle (persisted, guarded) ---- */
+  var stored=null;
+  try{stored=localStorage.getItem('cmt-theme');}catch(e){}
+  if(stored==='dark'||stored==='light'){root.setAttribute('data-theme',stored);}
+  function sync(){
+    var dark = root.getAttribute('data-theme')==='dark' ||
+      (!root.getAttribute('data-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    var ic=document.getElementById('cmThemeIcon');
+    if(!ic)return;
+    ic.innerHTML = dark
+      ? '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
+      : '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
+  }
+  sync();
+  var tbtn=document.getElementById('cmTheme');
+  if(tbtn){tbtn.addEventListener('click',function(){
+    var cur=root.getAttribute('data-theme');
+    var sysDark=window.matchMedia('(prefers-color-scheme: dark)').matches;
+    var next = cur ? (cur==='dark'?'light':'dark') : (sysDark?'light':'dark');
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('cmt-theme',next);}catch(e){}
+    sync();
+  });}
+
+  /* ---- header scroll ---- */
+  var header=document.getElementById('cmHeader');
+  function onScroll(){ if(header) header.classList.toggle('is-scrolled', window.scrollY>40); }
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  /* ---- mobile drawer ---- */
+  var drawer=document.getElementById('cmDrawer'), back=document.getElementById('cmBack');
+  function openD(){drawer.classList.add('open');back.classList.add('open');document.body.style.overflow='hidden';}
+  function closeD(){drawer.classList.remove('open');back.classList.remove('open');document.body.style.overflow='';}
+  var mb=document.getElementById('cmMenu'); if(mb)mb.addEventListener('click',openD);
+  var cb=document.getElementById('cmClose'); if(cb)cb.addEventListener('click',closeD);
+  if(back)back.addEventListener('click',closeD);
+  document.querySelectorAll('[data-close]').forEach(function(a){a.addEventListener('click',closeD);});
+
+  /* ---- concept: intercept placeholder links ---- */
+  document.querySelectorAll('[data-link]').forEach(function(a){
+    a.addEventListener('click',function(e){e.preventDefault();});
+  });
+
+  /* ---- reveal on scroll ---- */
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealables=document.querySelectorAll('.cm-reveal,.cm-stagger');
+  if(reduce || !('IntersectionObserver' in window)){
+    revealables.forEach(function(el){el.classList.add('is-in');});
+  }else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('is-in');
+          if(en.target.querySelector('[data-count]')) runCount(en.target);
+          io.unobserve(en.target);
+        }
+      });
+    },{threshold:.18,rootMargin:'0px 0px -8% 0px'});
+    revealables.forEach(function(el){io.observe(el);});
+  }
+
+  /* ---- count up ---- */
+  function runCount(scope){
+    scope.querySelectorAll('[data-count]').forEach(function(el){
+      var target=parseInt(el.getAttribute('data-count'),10);
+      if(reduce){return;}
+      var comma=el.getAttribute('data-comma');
+      var start=null, dur=1300;
+      function fmt(n){return comma? n.toLocaleString('en-US'):String(n);}
+      function step(ts){
+        if(!start)start=ts;
+        var p=Math.min((ts-start)/dur,1);
+        var eased=1-Math.pow(1-p,3);
+        el.textContent=fmt(Math.round(target*eased));
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+})();
+</script>
+</body>
+</html>
