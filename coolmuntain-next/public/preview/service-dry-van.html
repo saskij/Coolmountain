@@ -41,7 +41,14 @@
       </button>
       <nav class="cm-nav cm-nav--l" aria-label="Primary">
         <a href="about.html">About</a>
-        <a href="services.html" class="active">Services</a>
+        <div class="cm-has-sub">
+          <a href="services.html" class="active">Services<svg class="cm-caret" viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="cm-sub">
+            <a href="service-dry-van.html">Dry Van</a>
+            <a href="service-refrigerated.html">Refrigerated</a>
+            <a href="service-expedited.html">Expedited</a>
+          </div>
+        </div>
         <a href="equipment.html">Equipment</a>
       </nav>
     </div>
@@ -73,6 +80,9 @@
   <a class="nav" href="index.html" data-close>Home</a>
   <a class="nav" href="about.html" data-close>About</a>
   <a class="nav" href="services.html" data-close>Services</a>
+  <a class="nav sub" href="service-dry-van.html" data-close>Dry Van</a>
+  <a class="nav sub" href="service-refrigerated.html" data-close>Refrigerated</a>
+  <a class="nav sub" href="service-expedited.html" data-close>Expedited</a>
   <a class="nav" href="equipment.html" data-close>Equipment</a>
   <a class="nav" href="careers.html" data-close>Careers</a>
   <a class="nav" href="news.html" data-close>News</a>

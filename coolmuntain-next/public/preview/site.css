@@ -25,6 +25,7 @@
   /* image data-URIs injected at build time */
   --img-logo: url("img/logo.png");
   --img-hero: url("img/hero.jpg");
+  --img-heroposter: url("img/heroposter.jpg");
   --img-dryvan: url("img/dryvan.jpg");
   --img-reefer: url("img/reefer.jpg");
   --img-expedited: url("img/expedited.jpg");
@@ -719,3 +720,137 @@ p{margin:0}
 .cm-cbox .v a{color:var(--ink);transition:color .2s}
 .cm-cbox .v a:hover{color:var(--red)}
 .cm-cbox .s{font-size:.85rem;color:var(--ink-3);margin-top:.2rem}
+
+/* ============================================================
+   WIDE DISPLAYS — dispatcher monitors (21:9 and up)
+   The container grows with the screen so the page never reads
+   as a narrow column stranded in the middle of a big monitor.
+   ============================================================ */
+@media (min-width:1700px){
+  .cm-wrap{max-width:1460px}
+  .cm-hero{min-height:clamp(640px,88vh,1000px)}
+  .cm-hero .sub{max-width:56ch}
+}
+@media (min-width:2100px){
+  html{font-size:17px}
+  .cm-wrap{max-width:1700px}
+  .cm-svc-grid{gap:1.8rem}
+  .cm-caps-grid,.cm-tech-grid,.cm-pill-grid{gap:2px}
+}
+@media (min-width:2600px){
+  html{font-size:18px}
+  .cm-wrap{max-width:1980px}
+  .cm-hero{min-height:clamp(700px,84vh,1120px)}
+}
+@media (min-width:3200px){
+  html{font-size:19px}
+  .cm-wrap{max-width:2260px}
+}
+/* very wide AND short (3440x1440 etc.) — keep the hero from eating the fold */
+@media (min-width:1700px) and (max-height:900px){
+  .cm-hero{min-height:96vh}
+  .cm-hero-inner{padding-top:180px;padding-bottom:48px}
+}
+
+/* ---- tablet / phone polish ---- */
+@media (max-width:900px){
+  .cm-hero h1{font-size:clamp(30px,7.2vw,52px)}
+  .cm-inner-hero h1{font-size:clamp(28px,7vw,46px)}
+  .cm-hero .sub,.cm-inner-hero .sub{font-size:1rem;max-width:100%}
+}
+@media (max-width:620px){
+  .cm-hero-cta,.cm-inner-cta{width:100%}
+  .cm-hero-cta .cm-btn,.cm-inner-cta .cm-btn{flex:1 1 auto;justify-content:center}
+  .cm-hero-spec{gap:.5rem;font-size:.68rem}
+  .cm-cta-row{flex-direction:column;align-items:flex-start;gap:.9rem}
+  .cm-cta-row .cm-btn{width:100%}
+  .cm-speclist .row{flex-direction:column;gap:.25rem}
+  .cm-speclist .v{text-align:left}
+  .cm-crumb{flex-wrap:wrap}
+}
+
+/* grid cells must be allowed to shrink below their content width */
+.cm-stat,.cm-svc,.cm-cap,.cm-tech,.cm-pill,.cm-prog,.cm-news,.cm-nrow,.cm-step{min-width:0}
+.cm-stat .num{overflow-wrap:anywhere}
+@media (max-width:560px){
+  .cm-stats .grid,.cm-specs .grid{grid-template-columns:1fr}
+  .cm-stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.09);padding:2rem 1.4rem}
+  .cm-stat:last-child{border-bottom:none}
+  .cm-stat .num{font-size:clamp(2rem,10vw,2.9rem)}
+}
+
+/* hero: the still under the video is the video's own first frame, so the
+   switch from poster to playback is invisible (video is hidden <900px) */
+@media (min-width:901px){
+  .cm-hero .cm-hero-bg{background-image:var(--img-heroposter);animation:none}
+}
+
+/* ============================================================
+   SERVICES DROPDOWN
+   ============================================================ */
+.cm-has-sub{position:relative;display:flex;align-items:center}
+.cm-has-sub>a{display:inline-flex;align-items:center;gap:.4em}
+.cm-caret{width:13px;height:13px;stroke:currentColor;stroke-width:2.4;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.7;transition:transform .25s ease}
+.cm-has-sub:hover .cm-caret,.cm-has-sub:focus-within .cm-caret{transform:rotate(180deg);opacity:1}
+/* hover bridge: keeps the menu open while the cursor crosses the gap */
+.cm-has-sub::after{content:"";position:absolute;top:100%;left:0;right:0;height:14px}
+.cm-sub{
+  position:absolute;top:calc(100% + 12px);left:50%;transform:translate(-50%,8px);
+  min-width:216px;background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--red);
+  border-radius:4px;box-shadow:0 22px 44px -20px rgba(8,15,25,.55);padding:.4rem;
+  display:flex;flex-direction:column;z-index:90;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .22s ease,transform .22s ease,visibility .22s;
+}
+.cm-has-sub:hover .cm-sub,.cm-has-sub:focus-within .cm-sub{opacity:1;visibility:visible;pointer-events:auto;transform:translate(-50%,0)}
+.cm-header .cm-sub a{
+  font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.08em;
+  font-size:.8rem;font-weight:500;color:var(--ink);text-shadow:none;
+  padding:.72rem .9rem;border-radius:3px;white-space:nowrap;transition:background .18s,color .18s,padding-left .18s;
+}
+.cm-header .cm-sub a::after{display:none}
+.cm-header .cm-sub a:hover{background:var(--surface-2);color:var(--red);padding-left:1.2rem}
+/* drawer sub-items */
+.cm-drawer a.nav.sub{font-size:1rem;padding-left:1.1rem;color:var(--ink-3);border-bottom:1px dashed var(--line)}
+.cm-drawer a.nav.sub:hover{color:var(--red)}
+
+/* ============================================================
+   FIND US
+   ============================================================ */
+.cm-find{padding:clamp(64px,9vw,120px) 0;background:var(--surface-2);border-top:1px solid var(--line)}
+.cm-find-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,5vw,64px);align-items:center}
+.cm-find h2{font-size:clamp(1.8rem,3.6vw,2.8rem);font-weight:700;line-height:1;margin-top:1rem}
+.cm-find .lead{margin-top:1.1rem;color:var(--ink-3);font-size:1.02rem;max-width:46ch}
+.cm-find-rows{display:flex;flex-direction:column;gap:1.1rem;margin:1.8rem 0}
+.cm-find-rows .row{display:flex;gap:.9rem;align-items:flex-start}
+.cm-find-rows .row .cm-ic{width:20px;height:20px;color:var(--red);flex:none;margin-top:.2rem}
+.cm-find-rows .k{display:block;font-family:"IBM Plex Mono",monospace;font-size:.66rem;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-3);margin-bottom:.2rem}
+.cm-find-rows .v{display:block;color:var(--ink-2);font-size:.98rem;line-height:1.5}
+.cm-find-map{position:relative;border:1px solid var(--line);border-radius:5px;overflow:hidden;
+  aspect-ratio:16/10;background:var(--surface);box-shadow:var(--shadow)}
+.cm-find-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+@media(max-width:900px){
+  .cm-find-grid{grid-template-columns:1fr;gap:34px}
+  .cm-find-map{aspect-ratio:4/3}
+}
+/* fallback panel used where an embedded map cannot load */
+.cm-map-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:.9rem;text-align:center;padding:2rem;background:var(--dark);color:var(--on-dark)}
+.cm-map-fallback .pin{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--red);color:#fff;box-shadow:0 12px 26px -10px rgba(214,45,23,.75)}
+.cm-map-fallback .pin .cm-ic{width:26px;height:26px}
+.cm-map-fallback .addr{font-family:"Oswald",sans-serif;text-transform:uppercase;letter-spacing:.05em;
+  font-size:1.12rem;font-weight:600;color:#fff;line-height:1.3}
+.cm-map-fallback .coords{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;color:#8b97a2}
+
+/* comfortable touch targets on phones (44px min) */
+@media (max-width:820px){
+  .cm-footer ul{gap:.2rem}
+  .cm-footer ul a{min-height:44px;display:flex;align-items:center;padding:.3rem 0}
+  .cm-legal-nav a{padding:.9rem 1.1rem}
+  .cm-crumb a{padding:.4rem 0}
+  .cm-footer .bottom .legal{gap:.4rem 1.4rem}
+  .cm-footer .bottom a{min-height:40px;display:inline-flex;align-items:center}
+}
