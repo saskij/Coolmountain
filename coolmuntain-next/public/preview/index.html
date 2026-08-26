@@ -104,6 +104,17 @@
 <section class="cm-hero">
   <div class="cm-hero-bg"></div>
   <video class="cm-hero-video" autoplay loop muted playsinline preload="none" data-wide="../assets/videos/hero-video.mp4" data-tall="hero-vertical.mp4" aria-label="Cool Mountain Transport fleet on the road"></video>
+<script>
+(function(){var v=document.currentScript.previousElementSibling;
+ if(!v||!v.classList.contains('cm-hero-video'))return;
+ var tall=window.matchMedia('(max-width: 900px)').matches;
+ var src=v.getAttribute(tall?'data-tall':'data-wide');
+ if(!src)return;
+ v.src=src;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});
+ function on(){v.classList.add('is-playing');}
+ if(!v.paused&&v.readyState>2)on();
+ v.addEventListener('loadeddata',on);v.addEventListener('playing',on);})();
+</script>
   <div class="cm-hero-side">SERVING ALL 48 STATES</div>
   <div class="cm-wrap cm-hero-inner">
     <div class="cm-reveal">
@@ -586,14 +597,6 @@
 </a>
 
 <script>
-(function(){var v=document.querySelector('.cm-hero-video');if(!v)return;
-  var tall=window.matchMedia('(max-width: 900px)').matches;
-  var src=v.getAttribute(tall?'data-tall':'data-wide');
-  if(src){v.src=src;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});}
-  function on(){v.classList.add('is-playing');}
-  if(!v.paused&&v.readyState>2)on();
-  v.addEventListener('playing',on);
-  v.addEventListener('loadeddata',function(){if(!v.paused)on();});})();
 (function(){
   var root=document.documentElement;
   /* ---- theme toggle (persisted, guarded) ---- */
